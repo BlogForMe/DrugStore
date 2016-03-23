@@ -62,7 +62,7 @@ public class ShopCartFragment extends ParentFragment {
     @Override
     public void onResume() {
         super.onResume();
-        NetUtil.getcartRequest(mContext, "13917674553", "eeb5ea54bfd40abc6381681646808472", 1002, httpOps);
+        NetUtil.getcartRequest(mContext, "13917674553", "3c98265f02b13caf5744d0919936844c", 1002, httpOps);
     }
 
     @Override

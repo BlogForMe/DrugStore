@@ -23,13 +23,13 @@ import java.util.List;
 
 public class NetUtil {
     //    public static String baseUrl = "http://appservicetest.818.com/m.aspx";
-    public static String baseUrl = "http://192.168.132.106/m.aspx";
+//    public static String baseUrl = "http://192.168.132.106/m.aspx";
+    public static String baseUrl = "http://appservice.999yaogou.com/m.aspx";
     public static String key = "818Android20150326@$%&*";
     public static String enKeys = "818*j03DB#lqaXst";
 
 
-
-//     20. 启动获取配置接口
+    //     20. 启动获取配置接口
     public static void sendPopularizeRequest(Context context, String ua,
                                              String uid, String logincode, String version, final HttpOptions ops) {
         HashMap map = new HashMap<String, Object>();
