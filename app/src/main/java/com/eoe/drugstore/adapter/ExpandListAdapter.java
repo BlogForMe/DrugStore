@@ -133,6 +133,8 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
 //        ImageLoader.getInstance().displayImage(
 //                (String) getChildData(groupPosition, childPosition).get(
 //                        "drugimg"), viewHolder2.ivImageview, options);
+
+
         // if (flagAdd) {
         // viewHolder2.llAdreduce.setVisibility(View.VISIBLE);
         // viewHolder2.tvCount.setVisibility(View.GONE);
@@ -161,9 +163,9 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
 
         viewHolder2.tvCount.setText("×" + getChildData(groupPosition, childPosition).getNum());
 
-//         viewHolder2.llCheck.setSelected(sc.get(position));
+        viewHolder2.llCheck.setSelected(getChildData(groupPosition, childPosition).isSelect());
         // viewHolder2.llCheck.setTag(position);
-        viewHolder2.llCheck.setOnClickListener(selectClick);
+        viewHolder2.llCheck.setOnClickListener(new SelectClick(groupPosition, childPosition));
         // String sNum = (String) contentMap.get("num");
         // viewHolder2.tvDrugcount.setText(sNum);
         // if (!TextUtils.isEmpty(sNum)) {
@@ -194,17 +196,29 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
         // viewHolder2.rlGostore.setTag(R.id.tag_first, did);
         // viewHolder2.rlGostore.setOnClickListener(selectClick);
         //
-
         return convertView;
     }
 
+    /**
+     * 子项点击
+     */
+    class SelectClick implements View.OnClickListener {
+        private int groupPosition, childPosition;
 
-    View.OnClickListener selectClick = new View.OnClickListener() {
+        public SelectClick(int groupPosition, int childPosition) {
+            this.groupPosition = groupPosition;
+            this.childPosition = childPosition;
+        }
+
         @Override
         public void onClick(View v) {
-
+            boolean isSelect = getChildData(groupPosition, childPosition).isSelect();
+            getChildData(groupPosition, childPosition).setIsSelect(!isSelect);
+            v.setSelected(!isSelect);
+            System.out.println(resultDataList);
         }
-    };
+    }
+
 
     public boolean hasStableIds() {
         return false;
