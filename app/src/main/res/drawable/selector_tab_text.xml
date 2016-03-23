@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--tab字体颜色选择器-->
+    <item android:state_selected="true" android:color="#0199ee"/>
+    <item android:state_pressed="true" android:color="#0199ee"/>
+    <item android:state_active="true" android:color="#0199ee"/>
+    <item android:color="#908e8d"/>
+
+
+</selector>

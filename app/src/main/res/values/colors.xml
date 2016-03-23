@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="bg_gray">#f3f3f4</color>
+    <!-- 分割线颜色 -->
+    <color name="bg_line">#f3f3f4</color>
+
+
+
+
+    <color name="transparent">#00000000</color>
+
+    <!-- text color -->
+    <color name="text_black">#262626</color>
+    <color name="text_black_light">#666666</color>
+    <color name="text_black_explanation">#808080</color>
+
+    <!-- item点击效果颜色 -->
+    <color name="bg_select">#e6e6e6</color>
+
+
+    <!-- 洋李色 -->
+    <color name="gainsboro">#dcdcdc</color>
+</resources>
