@@ -165,7 +165,7 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
 
         viewHolder2.llCheck.setSelected(getChildData(groupPosition, childPosition).isSelect());
         // viewHolder2.llCheck.setTag(position);
-        viewHolder2.llCheck.setOnClickListener(new SelectClick(groupPosition, childPosition));
+//        viewHolder2.llCheck.setOnClickListener(new SelectClick(groupPosition, childPosition));
         // String sNum = (String) contentMap.get("num");
         // viewHolder2.tvDrugcount.setText(sNum);
         // if (!TextUtils.isEmpty(sNum)) {
@@ -215,8 +215,13 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
             boolean isSelect = getChildData(groupPosition, childPosition).isSelect();
             getChildData(groupPosition, childPosition).setIsSelect(!isSelect);
             v.setSelected(!isSelect);
-            System.out.println(resultDataList);
+            if (isCheckAll(groupPosition)) {
+
+            }
+
         }
+
+
     }
 
 
@@ -249,11 +254,31 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
         private ImageView ivImageview;
     }
 
-    // 获取子目录数据
+    /**
+     * 获取子目录数据
+     *
+     * @param groupPosition
+     * @param childPosition
+     * @return
+     */
     private ShopCartBean.ResultdataBean.DruginfoBean getChildData(int groupPosition,
                                                                   int childPosition) {
         return resultDataList.get(groupPosition).getDruginfo().get(childPosition);
     }
 
+    /**
+     * 判断是否全选
+     *
+     * @param groupPosition
+     * @return
+     */
+    private Boolean isCheckAll(int groupPosition) {
+        for (ShopCartBean.ResultdataBean.DruginfoBean drugBean : resultDataList.get(groupPosition).getDruginfo()) {
+            if (!drugBean.isSelect()) {
+                return false;
+            }
+        }
+        return true;
+    }
 
 }

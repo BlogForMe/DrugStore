@@ -32,6 +32,7 @@ public class ShopCartBean extends BaseBean {
         private List<DruginfoBean> druginfo;
         private List<?> lotteryinfo;
         private List<?> ship;
+        private Boolean isGSelect;
 
         public int getShopid() {
             return shopid;
@@ -79,6 +80,14 @@ public class ShopCartBean extends BaseBean {
 
         public void setShip(List<?> ship) {
             this.ship = ship;
+        }
+
+        public Boolean getIsGSelect() {
+            return isGSelect;
+        }
+
+        public void setIsGSelect(Boolean isGSelect) {
+            this.isGSelect = isGSelect;
         }
 
         public static class DruginfoBean {

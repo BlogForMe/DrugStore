@@ -41,6 +41,7 @@ public class ShopCartFragment extends ParentFragment {
             @Override
             public boolean onGroupClick(ExpandableListView parent, View v,
                                         int groupPosition, long id) {
+
                 // TODO Auto-generated method stub
                 Toast.makeText(mContext, "父类", Toast.LENGTH_SHORT).show();
                 return true;
