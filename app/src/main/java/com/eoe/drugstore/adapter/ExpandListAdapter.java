@@ -66,22 +66,17 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
         }
         viewHolder1.tvHeader
                 .setText(resultDataList.get(groupPosition).getShopname());
-        //
-        // viewHolder1.ll_total.setSelected(sc.get(position));
-        // viewHolder1.ll_total.setTag(position);
-        // ArrayList<Map<String, Object>> lotteryinfoList =
-        // (ArrayList<Map<String, Object>>) contentMap
-        // .get("lotteryinfo");
+
+        viewHolder1.ll_total.setSelected(resultDataList.get(groupPosition).getIsGSelect());
+
         // if (lotteryinfoList.isEmpty()) {
         // viewHolder1.tvGetCoubon.setVisibility(View.GONE);
         // } else {
         // viewHolder1.tvGetCoubon.setVisibility(View.VISIBLE);
         // }
-        // viewHolder1.ll_total.setOnClickListener(selectClick);
+        viewHolder1.ll_total.setOnClickListener(new SelectGroupClick(groupPosition));
         // viewHolder1.tvGetCoubon.setTag(position);
         // viewHolder1.tvGetCoubon.setOnClickListener(selectClick);
-        // viewHolder1.llShopNext.setOnClickListener(selectClick);
-        // viewHolder1.llShopNext.setTag(contentMap);
         return convertView;
     }
 
@@ -130,10 +125,6 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
             viewHolder2 = (ViewHolder2) convertView.getTag();
         }
 
-//        ImageLoader.getInstance().displayImage(
-//                (String) getChildData(groupPosition, childPosition).get(
-//                        "drugimg"), viewHolder2.ivImageview, options);
-
 
         // if (flagAdd) {
         // viewHolder2.llAdreduce.setVisibility(View.VISIBLE);
@@ -161,13 +152,10 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
 //         viewHolder2.tvShopPrice.setTextColor(context.getResources()
 //         .getColor(R.color.text_yellow));
 
-        viewHolder2.tvCount.setText("×" + getChildData(groupPosition, childPosition).getNum());
+        viewHolder2.tvDrugcount.setText("×" + getChildData(groupPosition, childPosition).getNum());
 
         viewHolder2.llCheck.setSelected(getChildData(groupPosition, childPosition).isSelect());
-        // viewHolder2.llCheck.setTag(position);
-//        viewHolder2.llCheck.setOnClickListener(new SelectClick(groupPosition, childPosition));
-        // String sNum = (String) contentMap.get("num");
-        // viewHolder2.tvDrugcount.setText(sNum);
+        viewHolder2.llCheck.setOnClickListener(new SelectChildClick(groupPosition, childPosition));
         // if (!TextUtils.isEmpty(sNum)) {
         // if (Integer.parseInt(sNum) == 1) {
         // viewHolder2.ivReduce
@@ -200,12 +188,32 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
     }
 
     /**
+     * 父项点击
+     */
+    private class SelectGroupClick implements View.OnClickListener {
+        private int groupPosition;
+
+        public SelectGroupClick(int groupPosition) {
+            this.groupPosition = groupPosition;
+        }
+
+        @Override
+        public void onClick(View v) {
+            resultDataList.get(groupPosition).setIsGSelect(!v.isSelected());
+            for (ShopCartBean.ResultdataBean.DruginfoBean drugBean : resultDataList.get(groupPosition).getDruginfo()) {
+                drugBean.setIsSelect(!v.isSelected());
+            }
+            notifyDataSetChanged();
+        }
+    }
+
+    /**
      * 子项点击
      */
-    class SelectClick implements View.OnClickListener {
+    class SelectChildClick implements View.OnClickListener {
         private int groupPosition, childPosition;
 
-        public SelectClick(int groupPosition, int childPosition) {
+        public SelectChildClick(int groupPosition, int childPosition) {
             this.groupPosition = groupPosition;
             this.childPosition = childPosition;
         }
@@ -214,10 +222,13 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
         public void onClick(View v) {
             boolean isSelect = getChildData(groupPosition, childPosition).isSelect();
             getChildData(groupPosition, childPosition).setIsSelect(!isSelect);
-            v.setSelected(!isSelect);
+//            v.setSelected(!isSelect);
             if (isCheckAll(groupPosition)) {
-
+                resultDataList.get(groupPosition).setIsGSelect(true);
+            } else {
+                resultDataList.get(groupPosition).setIsGSelect(false);
             }
+            notifyDataSetChanged();
 
         }
 
@@ -280,5 +291,6 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
         }
         return true;
     }
+
 
 }
