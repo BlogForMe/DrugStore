@@ -152,7 +152,7 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
 //         viewHolder2.tvShopPrice.setTextColor(context.getResources()
 //         .getColor(R.color.text_yellow));
 
-        viewHolder2.tvDrugcount.setText("×" + getChildData(groupPosition, childPosition).getNum());
+//        viewHolder2.tvDrugcount.setText("×" + getChildData(groupPosition, childPosition).getNum());
 
         viewHolder2.llCheck.setSelected(getChildData(groupPosition, childPosition).isSelect());
         viewHolder2.llCheck.setOnClickListener(new SelectChildClick(groupPosition, childPosition));
