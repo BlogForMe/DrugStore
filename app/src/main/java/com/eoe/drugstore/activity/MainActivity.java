@@ -57,6 +57,7 @@ public class MainActivity extends ParentActivity {
 
         img.setBackgroundResource(tab.getResIcon());
         text.setText(tab.getResName());
+        System.out.println("你好");
 
         return view;
     }
