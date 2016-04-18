@@ -17,11 +17,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * Created by Jon on 2016/4/17.
  * 练习构建Fragment
- *
+ * <p>
  * 用handler下载图片
  */
 public class HeadlinesFragment extends BaseFragment {
@@ -42,7 +44,9 @@ public class HeadlinesFragment extends BaseFragment {
 
     @Override
     protected void setupData() {
-        new Thread(new Runnable() {
+
+        ExecutorService exec = Executors.newCachedThreadPool();
+        exec.execute(new Runnable() {
             @Override
             public void run() {
                 Message msg = handler.obtainMessage();
@@ -50,19 +54,18 @@ public class HeadlinesFragment extends BaseFragment {
                 Message meage = updateMsg(msg);
                 handler.sendMessage(meage);
             }
-        }).start();
+        });
 
 
     }
 
     private Message updateMsg(Message msg) {
         String url = "http://www.hyhy.tech/he.jpg";
-
         Bitmap img = DownImage(url);
         Bundle data = new Bundle();
         data.putParcelable("img", img);
         msg.setData(data);
-        return  msg;
+        return msg;
     }
 
 
