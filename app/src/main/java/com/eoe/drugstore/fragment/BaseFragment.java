@@ -33,10 +33,14 @@ public abstract class BaseFragment extends Fragment {
 
     protected abstract void setupData();
 
-    protected abstract void sendRequest();
+    protected  void sendRequest(){
 
-    protected abstract void setupRequest(int requestId, int dataType,
-                                         BaseBean result);
+    }
+
+    protected  void setupRequest(int requestId, int dataType,
+                                         BaseBean result){
+
+    }
 
 
 }
