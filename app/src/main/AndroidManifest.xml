@@ -41,7 +41,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.FragmentExerciseActivity"></activity>
+        <activity android:name=".activity.FragmentExerciseActivity">
+            <intent-filter>
+                <action android:name="dian.wo.ba" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
+        <service android:name=".service.FirstService" />
     </application>
 
 </manifest>

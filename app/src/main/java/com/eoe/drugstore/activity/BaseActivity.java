@@ -64,47 +64,6 @@ public abstract class BaseActivity extends AppCompatActivity {
             finish();
         }
     }
-
-
-    @Override
-    protected void onStart() {
-        Log.i(TAG, "--onStart ---Current Activity ==" + this);
-        super.onStart();
-    }
-
-    @Override
-    protected void onRestart() {
-        Log.i(TAG, "--onRestart ---Current Activity ==" + this);
-        super.onRestart();
-    }
-
-    @Override
-    protected void onResume() {
-        Log.i(TAG, "--onResume ---Current Activity ==" + this);
-        super.onResume();
-    }
-
-    @Override
-    protected void onPause() {
-        Log.i(TAG, "--onPause ---Current Activity ==" + this);
-        super.onPause();
-    }
-
-    @Override
-    protected void onStop() {
-        Log.i(TAG, "--onStop ---Current Activity ==" + this);
-        super.onStop();
-    }
-
-    @Override
-    protected void onDestroy() {
-        Log.i(TAG, "--onDestroy ---Current Activity ==" + this);
-
-//        mController.getCxtList().remove(mContext);
-        super.onDestroy();
-
-    }
-
 }
 
 

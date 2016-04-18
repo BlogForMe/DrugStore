@@ -1,16 +1,13 @@
 package com.eoe.drugstore.fragment;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.eoe.drugstore.R;
-import com.eoe.drugstore.activity.FragmentExerciseActivity;
 import com.eoe.drugstore.utils.Logger;
 
 
@@ -35,66 +32,13 @@ public class HomeFragment extends ParentFragment {
         tvClickme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), FragmentExerciseActivity.class);
+
+                Intent intent = new Intent();
+                intent.setAction("dian.wo.ba");
                 getActivity().startActivity(intent);
             }
         });
     }
 
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Logger.d("onCreate---");
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        Logger.d("onStart---");
-
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        Logger.d("onAttach---");
-
-    }
-
-
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        Logger.d("onPause---");
-
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        Logger.d("onStop---");
-
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        Logger.d("onResume---");
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        Logger.d("onDestroyView---");
-
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        Logger.d("onDetach---");
-
-    }
 }

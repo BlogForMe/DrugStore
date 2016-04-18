@@ -95,4 +95,7 @@ public class HeadlinesFragment extends BaseFragment {
         }
     };
 
+
+
+
 }
