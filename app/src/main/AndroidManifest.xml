@@ -44,12 +44,26 @@
         <activity android:name=".activity.FragmentExerciseActivity">
             <intent-filter>
                 <action android:name="dian.wo.ba" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
-
         <service android:name=".service.FirstService" />
+        <service android:name=".service.MyIntentService" />
+
+        <receiver android:name=".BroadCastReceiver.MyReceiver">
+            <intent-filter android:priority="20">
+                <action android:name="com.eoe.drugstore.fragment.communityFragment" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".BroadCastReceiver.MyReceiver2">
+            <intent-filter>
+                <action android:name="com.eoe.drugstore.fragment.communityFragment" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".activity.MultiThreadClientActivity"></activity>
     </application>
 
 </manifest>

@@ -23,7 +23,7 @@ import java.util.concurrent.Executors;
 /**
  * Created by Jon on 2016/4/17.
  * 练习构建Fragment
- * <p>
+ * <p/>
  * 用handler下载图片
  */
 public class HeadlinesFragment extends BaseFragment {
@@ -32,7 +32,7 @@ public class HeadlinesFragment extends BaseFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return initView(R.layout.fragment_community, null);
+        return initView(R.layout.fragment_headline, null);
     }
 
     @Override
@@ -94,8 +94,6 @@ public class HeadlinesFragment extends BaseFragment {
 
         }
     };
-
-
 
 
 }

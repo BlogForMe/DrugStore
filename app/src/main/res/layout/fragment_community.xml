@@ -4,9 +4,24 @@
     android:layout_height="match_parent">
 
 
-    <ImageView
-        android:id="@+id/iv_img"
+    <TextView
+        android:id="@+id/tv_broadcast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/tab_shop" />
+        android:background="@android:color/holo_blue_light"
+        android:padding="10dp"
+        android:text="发送一条广播"
+        android:textSize="@dimen/big_text" />
+
+    <TextView
+        android:id="@+id/tv_order_broadcast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@id/tv_broadcast"
+        android:background="@android:color/holo_blue_light"
+        android:padding="10dp"
+        android:text="发送一条有序广播"
+        android:textSize="@dimen/big_text" />
+
 </RelativeLayout>

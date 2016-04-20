@@ -9,13 +9,15 @@ import android.widget.TextView;
 
 import com.eoe.drugstore.R;
 import com.eoe.drugstore.service.BindService;
+import com.eoe.drugstore.service.MyIntentService;
 
 /**
  * Created by Jon on 2016/4/17.
  * 练习构建Fragment
  */
-public class ArticleFragment extends BaseFragment  implements View.OnClickListener{
+public class ArticleFragment extends BaseFragment implements View.OnClickListener {
     String TAG = "---ArticleFragment -----";
+    private Intent intent;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -30,7 +32,11 @@ public class ArticleFragment extends BaseFragment  implements View.OnClickListen
         TextView tvUnbing = (TextView) v.findViewById(R.id.tv_unbing);
         TextView tvGetBind = (TextView) v.findViewById(R.id.tv_getbing);
 //        final Intent intent = new Intent(getActivity(), FirstService.class);
-        final Intent intent = new Intent(getActivity(), BindService.class);
+
+        TextView tvIntentService = (TextView) v.findViewById(R.id.tv_intent_service);
+
+
+         intent = new Intent(getActivity(), BindService.class);
         tvStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,17 +53,22 @@ public class ArticleFragment extends BaseFragment  implements View.OnClickListen
         tvBind.setOnClickListener(this);
         tvUnbing.setOnClickListener(this);
         tvGetBind.setOnClickListener(this);
+        tvIntentService.setOnClickListener(this);
 
     }
 
     @Override
     protected void setupData() {
-
     }
 
     @Override
     public void onClick(View v) {
-
+        switch (v.getId()) {
+            case R.id.tv_intent_service:
+                Intent intent1 = new Intent(getActivity(), MyIntentService.class);
+                getActivity().startActivity(intent1);
+                break;
+        }
     }
 
 
