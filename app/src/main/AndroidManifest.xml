@@ -63,7 +63,8 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".activity.MultiThreadClientActivity"></activity>
+        <activity android:name=".activity.MultiThreadClientActivity" />
+        <activity android:name=".activity.GetUrlActivity"></activity>
     </application>
 
 </manifest>

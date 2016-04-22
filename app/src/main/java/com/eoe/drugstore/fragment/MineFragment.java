@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.eoe.drugstore.R;
+import com.eoe.drugstore.activity.GetUrlActivity;
 import com.eoe.drugstore.activity.MultiThreadClientActivity;
 
 import java.io.BufferedReader;
@@ -65,6 +66,8 @@ public class MineFragment extends ParentFragment implements AdapterView.OnItemCl
                 startActivity(intent);
                 break;
             case 2:
+                intent = new Intent(mContext, GetUrlActivity.class);
+                startActivity(intent);
                 break;
 
         }
