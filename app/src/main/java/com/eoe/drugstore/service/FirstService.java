@@ -24,9 +24,19 @@ public class FirstService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.i(Tag, "service is Start--");
+        long endTime = System.currentTimeMillis() + 20 * 1000;
+        while (System.currentTimeMillis() < endTime)
+            synchronized (this) {
+                try {
+                    wait(endTime - System.currentTimeMillis());
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        Log.i(Tag, "service is onStartCommand--");
 
-        return super.onStartCommand(intent, flags, startId);
+//        return super.onStartCommand(intent, flags, startId);
+        return START_STICKY;
     }
 
     @Override

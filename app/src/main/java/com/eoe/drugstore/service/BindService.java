@@ -17,7 +17,7 @@ public class BindService extends Service {
     private MyBinder binder = new MyBinder();
 
     public class MyBinder extends Binder {
-        int getCount() {
+       public int getCount() {
             //获取service运行状态
 
             return count;
@@ -43,8 +43,8 @@ public class BindService extends Service {
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {
-                        count++;
                     }
+                    count++;
                 }
             }
         }).start();
@@ -53,6 +53,7 @@ public class BindService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        Log.i(Tag, "service is onStartCommand--");
         return super.onStartCommand(intent, flags, startId);
     }
 
@@ -64,6 +65,11 @@ public class BindService extends Service {
         return super.onUnbind(intent);
     }
 
+    @Override
+    public void onRebind(Intent intent) {
+        super.onRebind(intent);
+        Log.i(Tag, "service is onRebind--");
+    }
 
     @Override
     public void onDestroy() {

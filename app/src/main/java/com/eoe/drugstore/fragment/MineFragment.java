@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.eoe.drugstore.R;
+import com.eoe.drugstore.activity.CodeViewActivity;
 import com.eoe.drugstore.activity.GetUrlActivity;
 import com.eoe.drugstore.activity.MultiThreadClientActivity;
 
@@ -30,7 +31,7 @@ public class MineFragment extends ParentFragment implements AdapterView.OnItemCl
 
     private TextView tvShow;
     private ListView mListview;
-    private String[] arrString = new String[]{"简单例子", "聊天Socket", "URL获取读取网络链接"};
+    private String[] arrString = new String[]{"简单例子", "聊天Socket", "URL获取读取网络链接", "在代码中控制UI界面", "自定义控件"};
     private Intent intent;
 
     @Override
@@ -69,6 +70,16 @@ public class MineFragment extends ParentFragment implements AdapterView.OnItemCl
                 intent = new Intent(mContext, GetUrlActivity.class);
                 startActivity(intent);
                 break;
+            //代码中控制UI界面
+            case 3:
+                intent = new Intent(mContext, CodeViewActivity.class);
+                startActivity(intent);
+                break;
+            case 4:
+                intent = new Intent(mContext, CodeViewActivity.class);
+                startActivity(intent);
+                break;
+
 
         }
 

@@ -64,7 +64,8 @@
         </receiver>
 
         <activity android:name=".activity.MultiThreadClientActivity" />
-        <activity android:name=".activity.GetUrlActivity"></activity>
+        <activity android:name=".activity.GetUrlActivity" />
+        <activity android:name=".activity.CodeViewActivity"></activity>
     </application>
 
 </manifest>
