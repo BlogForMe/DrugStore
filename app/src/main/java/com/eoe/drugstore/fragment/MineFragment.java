@@ -12,9 +12,15 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.eoe.drugstore.R;
+import com.eoe.drugstore.activity.BitmapTest;
+import com.eoe.drugstore.activity.CanvasActivity;
 import com.eoe.drugstore.activity.CodeViewActivity;
+import com.eoe.drugstore.activity.DataTypeActivity;
 import com.eoe.drugstore.activity.GetUrlActivity;
 import com.eoe.drugstore.activity.MultiThreadClientActivity;
+import com.eoe.drugstore.activity.PathTestActivity;
+import com.eoe.drugstore.activity.ViewAnimatorActivity;
+import com.eoe.drugstore.utils.JumpSingleton;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -31,7 +37,8 @@ public class MineFragment extends ParentFragment implements AdapterView.OnItemCl
 
     private TextView tvShow;
     private ListView mListview;
-    private String[] arrString = new String[]{"简单例子", "聊天Socket", "URL获取读取网络链接", "在代码中控制UI界面", "自定义控件"};
+    private String[] arrString = new String[]{"简单例子", "聊天Socket", "URL获取读取网络链接", "在代码中控制UI界面", "自定义控件", "显示Bitmap图片", "绘图"
+            , "Path类", "属性动画", "Data、Type属性与Intent-filter配置"};
     private Intent intent;
 
     @Override
@@ -70,19 +77,34 @@ public class MineFragment extends ParentFragment implements AdapterView.OnItemCl
                 intent = new Intent(mContext, GetUrlActivity.class);
                 startActivity(intent);
                 break;
-            //代码中控制UI界面
             case 3:
-                intent = new Intent(mContext, CodeViewActivity.class);
-                startActivity(intent);
+                //代码中控制UI界面
                 break;
             case 4:
                 intent = new Intent(mContext, CodeViewActivity.class);
                 startActivity(intent);
                 break;
+            case 5:
+                //受用bitmap
+                JumpSingleton.getInstance(mContext).JumpNextAcitivy(BitmapTest.class, false);
+                break;
+            case 6:
+                JumpSingleton.getInstance(mContext).JumpNextAcitivy(CanvasActivity.class, false);
+                break;
+            case 7:
+                //path 类
+                JumpSingleton.getInstance(mContext).JumpNextAcitivy(PathTestActivity.class, false);
+                break;
+            case 8:
+                JumpSingleton.getInstance(mContext).JumpNextAcitivy(ViewAnimatorActivity.class, false);
+                break;
+            case 9:
+                //"Data、Type属性与Intent-filter配置"
+                JumpSingleton.getInstance(mContext).JumpNextAcitivy(DataTypeActivity.class, false);
 
+                break;
 
         }
-
     }
 
 

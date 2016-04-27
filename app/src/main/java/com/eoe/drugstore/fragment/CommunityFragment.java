@@ -20,7 +20,7 @@ import com.eoe.drugstore.activity.MyViewActivity;
  * Created by Administrator on 2016/3/2.
  */
 public class CommunityFragment extends ParentFragment implements AdapterView.OnItemClickListener {
-    private String[] arrays = {"广播消息"};
+    private String[] arrays = {"广播消息", "frameView"};
     private ListView listView;
     private Intent intent;
 
