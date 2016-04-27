@@ -66,32 +66,31 @@
         <activity android:name=".activity.MultiThreadClientActivity" />
         <activity android:name=".activity.GetUrlActivity" />
         <activity android:name=".activity.CodeViewActivity" />
-
         <activity android:name=".activity.BitmapTest" />
         <activity android:name=".activity.CanvasActivity" />
         <activity android:name=".activity.PathTestActivity" />
         <activity android:name=".activity.ViewAnimatorActivity">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:scheme="lee" />
             </intent-filter>
         </activity>
         <activity android:name=".activity.DataTypeActivity" />
         <activity android:name=".activity.FrameActivity" />
         <activity android:name=".activity.MyViewActivity" />
-
-
         <activity
             android:name=".activity.SchemeActivity"
             android:label="指定scheme的Activity">
             <intent-filter>
                 <action android:name="xx" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <!-- 只要Intent的Data属性的scheme是lee，即可启动该Activity -->
                 <data android:scheme="lee" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".activity.BlastActivity"></activity>
     </application>
 
 </manifest>

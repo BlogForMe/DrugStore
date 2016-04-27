@@ -11,8 +11,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.eoe.drugstore.R;
+import com.eoe.drugstore.activity.BlastActivity;
 import com.eoe.drugstore.activity.FrameActivity;
 import com.eoe.drugstore.activity.MyViewActivity;
+import com.eoe.drugstore.utils.JumpSingleton;
 
 
 /**
@@ -20,9 +22,10 @@ import com.eoe.drugstore.activity.MyViewActivity;
  * Created by Administrator on 2016/3/2.
  */
 public class CommunityFragment extends ParentFragment implements AdapterView.OnItemClickListener {
-    private String[] arrays = {"广播消息", "frameView"};
+    private String[] arrays = {"广播消息", "frameView", "指定点爆炸"};
     private ListView listView;
     private Intent intent;
+    private JumpSingleton jInstance;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -32,6 +35,7 @@ public class CommunityFragment extends ParentFragment implements AdapterView.OnI
     @Override
     protected void setupView(View v) {
         super.setupView(v);
+        jInstance = JumpSingleton.getInstance(mContext);
         listView = (ListView) v.findViewById(R.id.listView);
         listView.setAdapter(new ArrayAdapter<String>(mContext, android.R.layout.simple_list_item_1, arrays));
         listView.setOnItemClickListener(this);
@@ -74,6 +78,9 @@ public class CommunityFragment extends ParentFragment implements AdapterView.OnI
             case 1:
                 intent = new Intent(mContext, FrameActivity.class);
                 startActivity(intent);
+                break;
+            case 2:
+                jInstance.JumpNextAcitivy(BlastActivity.class, false);
                 break;
 
         }
