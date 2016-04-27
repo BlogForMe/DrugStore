@@ -24,4 +24,10 @@
         android:text="发送一条有序广播"
         android:textSize="@dimen/big_text" />
 
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv_order_broadcast" />
+
 </RelativeLayout>

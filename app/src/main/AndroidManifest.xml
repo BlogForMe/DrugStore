@@ -65,7 +65,9 @@
 
         <activity android:name=".activity.MultiThreadClientActivity" />
         <activity android:name=".activity.GetUrlActivity" />
-        <activity android:name=".activity.CodeViewActivity"></activity>
+        <activity android:name=".activity.CodeViewActivity" />
+        <activity android:name=".activity.MyViewActivity" />
+        <activity android:name=".activity.FrameActivity"></activity>
     </application>
 
 </manifest>
