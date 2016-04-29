@@ -19,6 +19,7 @@ import com.eoe.drugstore.activity.DataTypeActivity;
 import com.eoe.drugstore.activity.GetUrlActivity;
 import com.eoe.drugstore.activity.MultiThreadClientActivity;
 import com.eoe.drugstore.activity.PathTestActivity;
+import com.eoe.drugstore.activity.PathTextActivity;
 import com.eoe.drugstore.activity.ViewAnimatorActivity;
 import com.eoe.drugstore.utils.JumpSingleton;
 
@@ -38,8 +39,9 @@ public class MineFragment extends ParentFragment implements AdapterView.OnItemCl
     private TextView tvShow;
     private ListView mListview;
     private String[] arrString = new String[]{"简单例子", "聊天Socket", "URL获取读取网络链接", "在代码中控制UI界面", "自定义控件", "显示Bitmap图片", "绘图"
-            , "Path类", "属性动画", "Data、Type属性与Intent-filter配置"};
+            , "Path类", "属性动画", "Data、Type属性与Intent-filter配置", "path绘制"};
     private Intent intent;
+    private JumpSingleton jInstance;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -57,6 +59,8 @@ public class MineFragment extends ParentFragment implements AdapterView.OnItemCl
     @Override
     protected void setupView(View v) {
         super.setupView(v);
+        jInstance = JumpSingleton.getInstance(mContext);
+
         mListview = (ListView) v.findViewById(R.id.my_listview);
 //        tvShow = (TextView) v.findViewById(R.id.tv_show);
         ListAdapter adapter = new ArrayAdapter<>(mContext, android.R.layout.simple_list_item_1, arrString);
@@ -88,6 +92,7 @@ public class MineFragment extends ParentFragment implements AdapterView.OnItemCl
                 //受用bitmap
                 JumpSingleton.getInstance(mContext).JumpNextAcitivy(BitmapTest.class, false);
                 break;
+            //在绘图
             case 6:
                 JumpSingleton.getInstance(mContext).JumpNextAcitivy(CanvasActivity.class, false);
                 break;
@@ -101,9 +106,11 @@ public class MineFragment extends ParentFragment implements AdapterView.OnItemCl
             case 9:
                 //"Data、Type属性与Intent-filter配置"
                 JumpSingleton.getInstance(mContext).JumpNextAcitivy(DataTypeActivity.class, false);
-
                 break;
-
+            case 10:
+                //path绘制
+                jInstance.JumpNextAcitivy(PathTextActivity.class, false);
+                break;
         }
     }
 

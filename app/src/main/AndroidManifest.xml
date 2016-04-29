@@ -90,7 +90,11 @@
                 <data android:scheme="lee" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.BlastActivity"></activity>
+        <activity android:name=".activity.BlastActivity" />
+        <activity android:name=".activity.PathTextActivity" />
+        <activity android:name=".activity.DrawViewAcitivity" />
+        <activity android:name=".activity.HandDrawAcitivy" />
+        <activity android:name=".activity.PinBallActivity"></activity>
     </application>
 
 </manifest>
