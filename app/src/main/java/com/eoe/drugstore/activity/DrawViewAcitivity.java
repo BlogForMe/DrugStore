@@ -10,7 +10,7 @@ import com.eoe.drugstore.R;
 import com.eoe.drugstore.utils.JumpSingleton;
 
 public class DrawViewAcitivity extends ParentActivity {
-    String[] arrayView = {"绘制游戏动画"};
+    String[] arrayView = {"绘制游戏动画","弹球游戏"};
     private ListView lvList;
     private JumpSingleton jumpSingleton;
 

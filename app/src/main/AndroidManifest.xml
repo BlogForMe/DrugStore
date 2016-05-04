@@ -94,7 +94,8 @@
         <activity android:name=".activity.PathTextActivity" />
         <activity android:name=".activity.DrawViewAcitivity" />
         <activity android:name=".activity.HandDrawAcitivy" />
-        <activity android:name=".activity.PinBallActivity"></activity>
+        <activity android:name=".activity.PinBallActivity" />
+        <activity android:name=".activity.PictureProgressActivity" />
     </application>
 
 </manifest>

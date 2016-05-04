@@ -11,6 +11,7 @@ import com.eoe.drugstore.R;
 import com.eoe.drugstore.adapter.ExpandListAdapter;
 import com.eoe.drugstore.bean.BaseBean;
 import com.eoe.drugstore.bean.ShopCartBean;
+import com.eoe.drugstore.httpnet.NetUtil;
 import com.lidroid.xutils.view.annotation.ViewInject;
 
 import java.util.List;
@@ -62,7 +63,7 @@ public class ShopCartFragment extends ParentFragment {
     @Override
     public void onResume() {
         super.onResume();
-//        NetUtil.getcartRequest(mContext, "13917674553", "3c98265f02b13caf5744d0919936844c", 1002, httpOps);
+        NetUtil.getcartRequest(mContext, "13917674553", "3c98265f02b13caf5744d0919936844c", 1002, httpOps);
     }
 
     @Override

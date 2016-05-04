@@ -15,6 +15,7 @@ import com.eoe.drugstore.activity.BlastActivity;
 import com.eoe.drugstore.activity.DrawViewAcitivity;
 import com.eoe.drugstore.activity.FrameActivity;
 import com.eoe.drugstore.activity.MyViewActivity;
+import com.eoe.drugstore.activity.PictureProgressActivity;
 import com.eoe.drugstore.utils.JumpSingleton;
 
 
@@ -23,7 +24,7 @@ import com.eoe.drugstore.utils.JumpSingleton;
  * Created by Administrator on 2016/3/2.
  */
 public class CommunityFragment extends ParentFragment implements AdapterView.OnItemClickListener {
-    private String[] arrays = {"广播消息", "frameView", "指定点爆炸", "图形绘制"};
+    private String[] arrays = {"广播消息", "frameView", "指定点爆炸", "图形绘制", "Image方法"};
     private ListView listView;
     private Intent intent;
     private JumpSingleton jInstance;
@@ -87,7 +88,10 @@ public class CommunityFragment extends ParentFragment implements AdapterView.OnI
                 //图形绘制和动画
                 jInstance.JumpNextAcitivy(DrawViewAcitivity.class, false);
                 break;
-
+            case 4:
+                //图片处理
+                jInstance.JumpNextAcitivy(PictureProgressActivity.class, false);
+                break;
         }
     }
 }

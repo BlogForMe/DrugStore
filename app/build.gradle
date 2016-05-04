@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.eoe.drugstore"
-        minSdkVersion 20
+        minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -27,7 +27,5 @@ dependencies {
     compile 'com.jiechic.library:xUtils:2.6.14'
     compile 'com.google.code.gson:gson:2.2.4'
     compile 'com.squareup.okhttp:okhttp:2.5.0'
-    compile 'com.facebook.fresco:fresco:0.9.0+'
-
-
+    compile 'com.facebook.fresco:fresco:0.10.0'
 }

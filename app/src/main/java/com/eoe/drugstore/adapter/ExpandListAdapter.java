@@ -1,6 +1,7 @@
 package com.eoe.drugstore.adapter;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 import com.eoe.drugstore.R;
 import com.eoe.drugstore.bean.ShopCartBean;
+import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
 
@@ -118,7 +120,7 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
                     .findViewById(R.id.ll_check);
             viewHolder2.rlGostore = (RelativeLayout) convertView
                     .findViewById(R.id.rl_gostore);
-            viewHolder2.ivImageview = (ImageView) convertView
+            viewHolder2.ivImageview = (SimpleDraweeView) convertView
                     .findViewById(R.id.iv_imageview);
             convertView.setTag(viewHolder2);
         } else {
@@ -126,64 +128,16 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
         }
 
 
-        // if (flagAdd) {
-        // viewHolder2.llAdreduce.setVisibility(View.VISIBLE);
-        // viewHolder2.tvCount.setVisibility(View.GONE);
-        // } else {
-        // viewHolder2.llAdreduce.setVisibility(View.GONE);
-        // viewHolder2.tvCount.setVisibility(View.VISIBLE);
-        // }
-        // // 下架否
-        // if ("3".equals(contentMap.get("status"))) {
-        // if (flagAdd) {
-        // viewHolder2.llCheck.setVisibility(View.VISIBLE);
-        // } else {
-        // viewHolder2.llCheck.setVisibility(View.INVISIBLE);
-        // }
-        // viewHolder2.tvShopPrice.setText("商品失效");
-        // viewHolder2.tvShopPrice.setTextColor(context.getResources()
-        // .getColor(R.color.bg_white));
-        // viewHolder2.tvShopPrice.setBackgroundColor(0xffD4D4D4);
-        // } else if ("2".equals(contentMap.get("status"))) {
-        // viewHolder2.llCheck.setVisibility(View.VISIBLE);
         viewHolder2.tvShopPrice.setText("¥"
                 + getChildData(groupPosition, childPosition).getPrice());
-//         viewHolder2.tvShopPrice.setBackgroundColor(0xfff8f8f8);
-//         viewHolder2.tvShopPrice.setTextColor(context.getResources()
-//         .getColor(R.color.text_yellow));
+
+        viewHolder2.ivImageview.setImageURI(Uri.parse(getChildData(groupPosition, childPosition).getDrugimg()));
 
 //        viewHolder2.tvDrugcount.setText("×" + getChildData(groupPosition, childPosition).getNum());
 
         viewHolder2.llCheck.setSelected(getChildData(groupPosition, childPosition).isSelect());
         viewHolder2.llCheck.setOnClickListener(new SelectChildClick(groupPosition, childPosition));
-        // if (!TextUtils.isEmpty(sNum)) {
-        // if (Integer.parseInt(sNum) == 1) {
-        // viewHolder2.ivReduce
-        // .setBackgroundResource(R.drawable.btn_reduce_later);
-        // } else {
-        // viewHolder2.ivReduce
-        // .setBackgroundResource(R.drawable.btn_reduce);
-        // }
-        // }
         // // 绑定数据
-//        viewHolder2.content.setText((String) getChildData(groupPosition, childPosition).get("drugname"));
-        //
-        // viewHolder2.ibAdd.setTag(R.id.tag_second, viewHolder2.tvDrugcount);
-        // viewHolder2.ibAdd.setTag(R.id.tag_third, contentMap);
-        //
-        // viewHolder2.ivReduce.setTag(R.id.tag_second,
-        // viewHolder2.tvDrugcount);
-        // viewHolder2.ivReduce.setTag(R.id.tag_third, contentMap);
-        //
-        // viewHolder2.ibAdd.setOnClickListener(new OnClick());
-        // viewHolder2.ivReduce.setOnClickListener(new OnClick());
-        // viewHolder2.ibAdd.setTag(R.id.tag_first, viewHolder2.ivReduce);
-        // viewHolder2.ivReduce.setTag(R.id.tag_first, viewHolder2.ivReduce);
-        //
-        // String did = (String) contentMap.get("did");
-        // viewHolder2.rlGostore.setTag(R.id.tag_first, did);
-        // viewHolder2.rlGostore.setOnClickListener(selectClick);
-        //
         return convertView;
     }
 
@@ -249,7 +203,6 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
         public TextView tvGetCoubon;
         private TextView tvHeader;
         private LinearLayout ll_total;
-
     }
 
     class ViewHolder2 {
@@ -262,7 +215,7 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
         private LinearLayout llAdreduce;
         private TextView tvCount;
         private RelativeLayout rlGostore;
-        private ImageView ivImageview;
+        private SimpleDraweeView ivImageview;
     }
 
     /**
