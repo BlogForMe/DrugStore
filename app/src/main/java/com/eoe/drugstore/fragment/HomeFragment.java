@@ -1,13 +1,16 @@
 package com.eoe.drugstore.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.eoe.drugstore.R;
+import com.eoe.drugstore.activity.HttpIntenetActivity;
+import com.eoe.drugstore.utils.JumpSingleton;
 import com.eoe.drugstore.utils.Logger;
 
 
@@ -18,6 +21,8 @@ import com.eoe.drugstore.utils.Logger;
 public class HomeFragment extends ParentFragment {
 
 
+    private JumpSingleton instance;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Logger.d("onCreateView---");
@@ -26,16 +31,21 @@ public class HomeFragment extends ParentFragment {
 
     @Override
     protected void setupView(View v) {
-
         super.setupView(v);
-        TextView tvClickme = (TextView) v.findViewById(R.id.clickme);
-        tvClickme.setOnClickListener(new View.OnClickListener() {
+        instance = JumpSingleton.getInstance(mContext);
+        String[] arrays = {"HTTP网络请求"};
+        ListView hListview = (ListView) v.findViewById(R.id.hListview);
+        hListview.setAdapter(new ArrayAdapter<String>(mContext, android.R.layout.simple_list_item_1, arrays));
+        hListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent();
-                intent.setAction("dian.wo.ba");
-                getActivity().startActivity(intent);
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0:
+                        instance.JumpNextAcitivy(HttpIntenetActivity.class, false);
+                        break;
+                    case 1:
+                        break;
+                }
             }
         });
     }

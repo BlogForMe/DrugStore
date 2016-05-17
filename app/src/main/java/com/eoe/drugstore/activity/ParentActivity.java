@@ -10,6 +10,7 @@ import android.view.View.OnClickListener;
 import android.widget.Toast;
 
 import com.eoe.drugstore.httpnet.HttpOptions;
+import com.eoe.drugstore.utils.JumpSingleton;
 
 
 /**
@@ -25,13 +26,18 @@ public class ParentActivity extends BaseActivity implements OnClickListener {
     public static final String FIRST_START_TAG = "firstStartTag";
 
     protected LayoutInflater inflate;
+    protected JumpSingleton jInstalce;
+
 
     @Override
     protected void init(int layoutId) {
+        super.init(layoutId);
+        jInstalce = JumpSingleton.getInstance(mContext);
         httpOps = new HttpOptions.Builder().uiHandler(requestHandler)
                 .requestMethod(HttpOptions.Method.POST).build();
         inflate = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
-        super.init(layoutId);
+
+
     }
 
 

@@ -96,6 +96,10 @@
         <activity android:name=".activity.HandDrawAcitivy" />
         <activity android:name=".activity.PinBallActivity" />
         <activity android:name=".activity.PictureProgressActivity" />
+        <activity android:name=".activity.HttpIntenetActivity" />
+        <activity android:name=".activity.URLTest" />
+        <activity android:name=".activity.GetPostMain" />
+        <activity android:name=".activity.MultiThreadDown"></activity>
     </application>
 
 </manifest>

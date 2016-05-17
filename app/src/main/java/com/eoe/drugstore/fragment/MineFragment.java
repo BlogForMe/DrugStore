@@ -38,7 +38,7 @@ public class MineFragment extends ParentFragment implements AdapterView.OnItemCl
 
     private TextView tvShow;
     private ListView mListview;
-    private String[] arrString = new String[]{"简单例子", "聊天Socket", "URL获取读取网络链接", "在代码中控制UI界面", "自定义控件", "显示Bitmap图片", "绘图"
+    private String[] arrString ={"简单例子", "聊天Socket", "URL获取读取网络链接", "在代码中控制UI界面", "自定义控件", "显示Bitmap图片", "绘图"
             , "Path类", "属性动画", "Data、Type属性与Intent-filter配置", "path绘制"};
     private Intent intent;
     private JumpSingleton jInstance;
@@ -53,14 +53,12 @@ public class MineFragment extends ParentFragment implements AdapterView.OnItemCl
         super.setupData();
         //socket简单事例
 //        simpleSocket();
-
     }
 
     @Override
     protected void setupView(View v) {
         super.setupView(v);
         jInstance = JumpSingleton.getInstance(mContext);
-
         mListview = (ListView) v.findViewById(R.id.my_listview);
 //        tvShow = (TextView) v.findViewById(R.id.tv_show);
         ListAdapter adapter = new ArrayAdapter<>(mContext, android.R.layout.simple_list_item_1, arrString);

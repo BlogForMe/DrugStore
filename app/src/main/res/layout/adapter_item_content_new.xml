@@ -16,7 +16,7 @@
         android:layout_centerVertical="true"
         android:padding="10dp">
 
-        <ImageViewh
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/tv_collect_check" />
@@ -91,7 +91,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:background="@mipmap/btn_reduce" />
+                    android:src="@mipmap/btn_reduce" />
 
                 <TextView
                     android:id="@+id/tv_drug_count"
@@ -110,7 +110,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:background="@mipmap/btn_add" />
+                    android:src="@mipmap/btn_add" />
             </LinearLayout>
         </RelativeLayout>
     </RelativeLayout>
