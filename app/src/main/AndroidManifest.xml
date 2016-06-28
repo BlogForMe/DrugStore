@@ -99,7 +99,8 @@
         <activity android:name=".activity.HttpIntenetActivity" />
         <activity android:name=".activity.URLTest" />
         <activity android:name=".activity.GetPostMain" />
-        <activity android:name=".activity.MultiThreadDown"></activity>
+        <activity android:name=".activity.MultiThreadDown" />
+        <activity android:name=".activity.MyServiceActivity"></activity>
     </application>
 
 </manifest>
