@@ -13,6 +13,7 @@
         android:id="@+id/tv_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_bright"
         android:text="启动" />
 
     <TextView
@@ -20,6 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/tv_bind"
+        android:background="@android:color/holo_green_light"
         android:layout_alignLeft="@+id/tv_unbind"
         android:layout_alignStart="@+id/tv_unbind"
         android:text="停止" />
@@ -30,6 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_start"
         android:layout_marginTop="68dp"
+        android:background="@android:color/holo_purple"
         android:text="Bind Service"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -39,6 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/tv_bind"
         android:layout_centerHorizontal="true"
+        android:background="@android:color/holo_orange_light"
         android:text="Unbind Service"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
