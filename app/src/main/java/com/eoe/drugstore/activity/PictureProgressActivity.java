@@ -31,7 +31,7 @@ public class PictureProgressActivity extends ParentActivity {
 
 
         ivImageView = (SimpleDraweeView) findViewById(R.id.iv_imageview);     //ImageView显示图片
-        Uri uri = Uri.parse("http://www.hyhy.tech/he.jpg");
+        Uri uri = Uri.parse("http://192.168.10.146:8080/JavaEEHelloWorld_war_exploded/img/beaty.jpg");
         ImageRequest request = ImageRequestBuilder.newBuilderWithSource(uri).setProgressiveRenderingEnabled(true).build();
 
         PipelineDraweeController controller = (PipelineDraweeController) Fresco.newDraweeControllerBuilder().setImageRequest(request).build();

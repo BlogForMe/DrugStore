@@ -100,7 +100,15 @@
         <activity android:name=".activity.URLTest" />
         <activity android:name=".activity.GetPostMain" />
         <activity android:name=".activity.MultiThreadDown" />
-        <activity android:name=".activity.MyServiceActivity"></activity>
+        <activity android:name=".activity.OkhttpCacheActivity" />
+        <activity android:name=".activity.WebGetActivity" />
+        <activity android:name=".activity.AActivity" />
+        <activity
+            android:name=".activity.BActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".activity.CActivity" />
+        <activity android:name=".activity.LeakageActivity" />
+        <activity android:name=".activity.ServiceActivity"></activity>
     </application>
 
 </manifest>

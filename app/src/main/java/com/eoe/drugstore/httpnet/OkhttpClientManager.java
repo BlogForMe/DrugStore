@@ -1,36 +1,28 @@
 package com.eoe.drugstore.httpnet;
 
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.widget.ImageView;
 
 import com.google.gson.Gson;
-import com.squareup.okhttp.Call;
-import com.squareup.okhttp.Callback;
-import com.squareup.okhttp.FormEncodingBuilder;
-import com.squareup.okhttp.Headers;
-import com.squareup.okhttp.MediaType;
-import com.squareup.okhttp.MultipartBuilder;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.RequestBody;
-import com.squareup.okhttp.Response;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.lang.reflect.Type;
-import java.net.CookieManager;
-import java.net.CookiePolicy;
 import java.net.FileNameMap;
 import java.net.URLConnection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+
+import okhttp3.Cache;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.FormBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 /**
  * Created by zhy on 15/8/17.
@@ -40,14 +32,17 @@ public class OkhttpClientManager {
     private OkHttpClient mOkHttpClient;
     private Handler mDelivery;
     private Gson mGson;
+    private static Context mContext;
 
 
     private static final String TAG = "OkHttpClientManager";
 
     private OkhttpClientManager() {
-        mOkHttpClient = new OkHttpClient();
+        int cacheSize = 10 * 1024 * 1024;
+        Cache cache = new Cache(mContext.getCacheDir(), cacheSize);
+        mOkHttpClient = new OkHttpClient.Builder().cache(cache).build();
         //cookie enabled
-        mOkHttpClient.setCookieHandler(new CookieManager(null, CookiePolicy.ACCEPT_ORIGINAL_SERVER));
+//        mOkHttpClient.setCookieHandler(new CookieManager(null, CookiePolicy.ACCEPT_ORIGINAL_SERVER));
         mDelivery = new Handler(Looper.getMainLooper());
         mGson = new Gson();
     }
@@ -155,12 +150,12 @@ public class OkhttpClientManager {
         deliveryResult(callback, request);
     }
 
-    /**
+   /* *//**
      * 同步基于post的文件上传
      *
      * @param params
      * @return
-     */
+     *//*
     private Response _post(String url, File[] files, String[] fileKeys, Param... params) throws IOException {
         Request request = buildMultipartFormRequest(url, files, fileKeys, params);
         return mOkHttpClient.newCall(request).execute();
@@ -176,7 +171,7 @@ public class OkhttpClientManager {
         return mOkHttpClient.newCall(request).execute();
     }
 
-    /**
+    *//**
      * 异步基于post的文件上传
      *
      * @param url
@@ -184,13 +179,13 @@ public class OkhttpClientManager {
      * @param files
      * @param fileKeys
      * @throws IOException
-     */
+     *//*
     private void _postAsyn(String url, ResultCallback callback, File[] files, String[] fileKeys, Param... params) throws IOException {
         Request request = buildMultipartFormRequest(url, files, fileKeys, params);
         deliveryResult(callback, request);
     }
 
-    /**
+    *//**
      * 异步基于post的文件上传，单文件不带参数上传
      *
      * @param url
@@ -198,13 +193,13 @@ public class OkhttpClientManager {
      * @param file
      * @param fileKey
      * @throws IOException
-     */
+     *//*
     private void _postAsyn(String url, ResultCallback callback, File file, String fileKey) throws IOException {
         Request request = buildMultipartFormRequest(url, new File[]{file}, new String[]{fileKey}, null);
         deliveryResult(callback, request);
     }
 
-    /**
+    *//**
      * 异步基于post的文件上传，单文件且携带其他form参数上传
      *
      * @param url
@@ -213,19 +208,21 @@ public class OkhttpClientManager {
      * @param fileKey
      * @param params
      * @throws IOException
-     */
+     *//*
     private void _postAsyn(String url, ResultCallback callback, File file, String fileKey, Param... params) throws IOException {
         Request request = buildMultipartFormRequest(url, new File[]{file}, new String[]{fileKey}, params);
         deliveryResult(callback, request);
     }
 
+    */
+
     /**
      * 异步下载文件
-     *
-     * @param url
-     * @param destFileDir 本地文件存储的文件夹
-     * @param callback
-     */
+     * <p/>
+     * //     * @param url
+     * //     * @param destFileDir 本地文件存储的文件夹
+     * //     * @param callback
+     *//*
     private void _downloadAsyn(final String url, final String destFileDir, final ResultCallback callback) {
         final Request request = new Request.Builder()
                 .url(url)
@@ -268,8 +265,7 @@ public class OkhttpClientManager {
 
             }
         });
-    }
-
+    }*/
     private String getFileName(String path) {
         int separatorIndex = path.lastIndexOf("/");
         return (separatorIndex < 0) ? path : path.substring(separatorIndex + 1, path.length());
@@ -277,11 +273,11 @@ public class OkhttpClientManager {
 
     /**
      * 加载图片
-     *
-     * @param view
-     * @param url
-     * @throws IOException
-     */
+     * <p/>
+     * //     * @param view
+     * //     * @param url
+     * //     * @throws IOException
+     *//*
     private void _displayImage(final ImageView view, final String url, final int errorResId) {
         final Request request = new Request.Builder()
                 .url(url)
@@ -333,7 +329,7 @@ public class OkhttpClientManager {
 
 
     }
-
+*/
     private void setErrorResId(final ImageView view, final int errorResId) {
         mDelivery.post(new Runnable() {
             @Override
@@ -369,7 +365,8 @@ public class OkhttpClientManager {
         return getInstance()._postAsString(url, params);
     }
 
-    public static void postAsyn(String url, final ResultCallback callback, Param... params) {
+    public static void postAsyn(String url, Context context, final ResultCallback callback, Param... params) {
+        mContext = context;
         getInstance()._postAsyn(url, callback, params);
     }
 
@@ -378,7 +375,7 @@ public class OkhttpClientManager {
     }
 
 
-    public static Response post(String url, File[] files, String[] fileKeys, Param... params) throws IOException {
+   /* public static Response post(String url, File[] files, String[] fileKeys, Param... params) throws IOException {
         return getInstance()._post(url, files, fileKeys, params);
     }
 
@@ -415,12 +412,12 @@ public class OkhttpClientManager {
 
     public static void downloadAsyn(String url, String destDir, ResultCallback callback) {
         getInstance()._downloadAsyn(url, destDir, callback);
-    }
+    }*/
 
     //****************************
 
 
-    private Request buildMultipartFormRequest(String url, File[] files,
+   /* private Request buildMultipartFormRequest(String url, File[] files,
                                               String[] fileKeys, Param[] params) {
         params = validateParam(params);
 
@@ -439,7 +436,7 @@ public class OkhttpClientManager {
                 fileBody = RequestBody.create(MediaType.parse(guessMimeType(fileName)), file);
                 //TODO 根据文件名设置contentType
                 builder.addPart(Headers.of("Content-Disposition",
-                                "form-data; name=\"" + fileKeys[i] + "\"; filename=\"" + fileName + "\""),
+                        "form-data; name=\"" + fileKeys[i] + "\"; filename=\"" + fileName + "\""),
                         fileBody);
             }
         }
@@ -449,7 +446,7 @@ public class OkhttpClientManager {
                 .url(url)
                 .post(requestBody)
                 .build();
-    }
+    }*/
 
     private String guessMimeType(String path) {
         FileNameMap fileNameMap = URLConnection.getFileNameMap();
@@ -484,22 +481,24 @@ public class OkhttpClientManager {
 
     private Map<String, String> mSessions = new HashMap<String, String>();
 
-    private void deliveryResult(final ResultCallback callback, Request request) {
+    private void deliveryResult(final ResultCallback callback, final Request request) {
+
+
         mOkHttpClient.newCall(request).enqueue(new Callback() {
             @Override
-            public void onFailure(final Request request, final IOException e) {
+            public void onFailure(Call call, IOException e) {
                 sendFailedStringCallback(request, e, callback);
             }
 
             @Override
-            public void onResponse(final Response response) {
+            public void onResponse(Call call, Response response) throws IOException {
                 try {
                     final String string = response.body().string();
                     if (callback.mType == String.class) {
                         sendSuccessResultCallback(string, callback);
                     } else {
-                        Type call = callback.mType;
-                        Object o = mGson.fromJson(string, call);
+                        Type callt = callback.mType;
+                        Object o = mGson.fromJson(string, callt);
                         sendSuccessResultCallback(o, callback);
                     }
 
@@ -510,8 +509,8 @@ public class OkhttpClientManager {
                 {
                     sendFailedStringCallback(response.request(), e, callback);
                 }
-
             }
+
         });
     }
 
@@ -540,15 +539,13 @@ public class OkhttpClientManager {
         if (params == null) {
             params = new Param[0];
         }
-        FormEncodingBuilder builder = new FormEncodingBuilder();
+        FormBody.Builder builder = new FormBody.Builder();
+
         for (Param param : params) {
             builder.add(param.key, param.value);
         }
-        RequestBody requestBody = builder.build();
-        return new Request.Builder()
-                .url(url)
-                .post(requestBody)
-                .build();
+        FormBody requestBody = builder.build();
+        return new Request.Builder().url(url).post(requestBody).build();
     }
 
 

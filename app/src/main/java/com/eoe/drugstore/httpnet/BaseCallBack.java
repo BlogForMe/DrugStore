@@ -1,10 +1,11 @@
 package com.eoe.drugstore.httpnet;
 
 import com.google.gson.internal.$Gson$Types;
-import com.squareup.okhttp.Callback;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
+
+import okhttp3.Callback;
 
 /**
  * Created by Jon on 2016/3/6.

@@ -61,7 +61,6 @@ public class GetPostMain extends ParentActivity {
                     @Override
                     public void run() {
                         super.run();
-                        response = GetPostUtil.sendPost("http://192.168.1.105:8080/JavaEEHelloWorld_war_exploded/login.jsp", "name=crazyit.org&pass=leegang");
                     }
                 }.start();
                 //发送消息通知UI线程更新UI组件

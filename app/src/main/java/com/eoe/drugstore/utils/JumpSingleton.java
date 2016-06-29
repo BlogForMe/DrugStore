@@ -18,7 +18,7 @@ public class JumpSingleton {
 
     public void JumpNextAcitivy(Class<?> name, boolean finishFlag) {
         Intent intent = new Intent(context, name);
-        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+//        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         ((Activity) context).startActivity(intent);
         if (finishFlag) {
             ((Activity) context).finish();

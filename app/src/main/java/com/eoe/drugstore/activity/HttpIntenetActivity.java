@@ -12,7 +12,7 @@ import com.eoe.drugstore.R;
 public class HttpIntenetActivity extends ParentActivity {
 
     private GridView lvInternet;
-    private String[] iarray = {"使用URL读取网络资源", "URLConnection提交请求", "使用HttpURLConnection", "4"};
+    private String[] iarray = {"使用URL读取网络资源", "URLConnection提交请求", "使用HttpURLConnection", "Okhttp缓存", "WEB服务端请求"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +39,13 @@ public class HttpIntenetActivity extends ParentActivity {
                     case 2:
                         jInstalce.JumpNextAcitivy(MultiThreadDown.class, false);
                         break;
+                    case 3:
+                        jInstalce.JumpNextAcitivy(OkhttpCacheActivity.class, false);
+                        break;
+                    case 4:
+                        jInstalce.JumpNextAcitivy(WebGetActivity.class, false);
+                        break;
+
                 }
             }
         });
