@@ -14,7 +14,7 @@ import com.eoe.drugstore.service.FirstService;
 public class ServiceActivity extends ParentActivity {
     private FirstService.MyBind myBind;
 
-    private ServiceConnection connection = new ServiceConnection() {
+     ServiceConnection connection = new ServiceConnection() {
 
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
@@ -31,18 +31,20 @@ public class ServiceActivity extends ParentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         init(R.layout.activity_service);
+        Log.i(FirstService.Tag, "MainActivity thread id is " + Thread.currentThread().getId());
         final Intent intent = new Intent(ServiceActivity.this, FirstService.class);
 
         findViewById(R.id.tv_start).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                intent.putExtra("hehe", "过来");
                 ServiceActivity.this.startService(intent);
             }
         });
         findViewById(R.id.tv_stop).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i(FirstService.Tag, "service is onStartCommand--");
+//                Log.i(FirstService.Tag, "click stop Service button");
 
                 ServiceActivity.this.stopService(intent);
             }
@@ -56,9 +58,25 @@ public class ServiceActivity extends ParentActivity {
         findViewById(R.id.tv_unbind).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i(FirstService.Tag, "service is onStartCommand--");
+//                Log.i(FirstService.Tag, "click Unbind Service button --");
                 unbindService(connection);
             }
         });
+
+        findViewById(R.id.bt_stopservice).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(FirstService.Tag, "click stopservicebutton --");
+
+                myBind.stopService();
+            }
+        });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (connection != null)
+            unbindService(connection);
     }
 }

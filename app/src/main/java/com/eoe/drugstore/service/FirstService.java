@@ -4,13 +4,15 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
+import android.os.ParcelUuid;
+import android.os.Process;
 import android.util.Log;
 
 /**
  * Created by Jon on 2016/4/18.
  */
 public class FirstService extends Service {
-    public  static  String Tag = "FirstService";
+    public static String Tag = "FirstService";
 
     private MyBind mBind = new MyBind();
 
@@ -22,7 +24,16 @@ public class FirstService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
+//        Log.i(FirstService.Tag, "Service thread id is " + Thread.currentThread().getId());
         Log.i(Tag, "service is Created--");
+//        Log.i(Tag, "process id is--" + Process.myPid());
+
+//        try {
+//            Thread.sleep(30000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+
     }
 
     @Override
@@ -33,6 +44,8 @@ public class FirstService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+//        String heString = intent.getStringExtra("hehe");
+//        Log.d("FirstService", heString);
 //        long endTime = System.currentTimeMillis() + 20 * 1000;
 //        while (System.currentTimeMillis() < endTime)
 //            synchronized (this) {
@@ -59,5 +72,13 @@ public class FirstService extends Service {
         public void startDownload() {
             Log.i(Tag, "startDownload() executed");
         }
+
+        public void stopService() {
+            FirstService.this.stopSelf();
+            Log.i(Tag, "stopService() executed");
+        }
     }
+
+
+
 }

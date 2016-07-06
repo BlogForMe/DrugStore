@@ -4,7 +4,10 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
+import android.os.RemoteException;
 import android.util.Log;
+
+import com.eoe.drugstore.aidl.ICat;
 
 /**
  * Created by Jon on 2016/4/19.
@@ -14,13 +17,18 @@ public class BindService extends Service {
     private String Tag = "BindService";
     private int count;
     private boolean quit;
-    private MyBinder binder = new MyBinder();
+    private CatBinder catBinder;
 
-    public class MyBinder extends Binder {
-       public int getCount() {
-            //获取service运行状态
+    public class CatBinder extends ICat.Stub {
 
-            return count;
+        @Override
+        public String getColor() throws RemoteException {
+            return "get fron remote service";
+        }
+
+        @Override
+        public double getWeight() throws RemoteException {
+            return 999.9;
         }
     }
 
@@ -28,7 +36,7 @@ public class BindService extends Service {
     public IBinder onBind(Intent intent) {
         Log.i(Tag, "Service is Binded");
         //返回IBinder对象
-        return binder;
+        return catBinder;
     }
 
 
@@ -36,18 +44,7 @@ public class BindService extends Service {
     public void onCreate() {
         super.onCreate();
         Log.i(Tag, "service is Created--");
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (!quit) {
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                    }
-                    count++;
-                }
-            }
-        }).start();
+        catBinder = new CatBinder();
     }
 
 
@@ -74,7 +71,6 @@ public class BindService extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        this.quit =true;
         Log.i(Tag, "service is onDestroy--");
     }
 }

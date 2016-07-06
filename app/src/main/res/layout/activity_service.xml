@@ -18,6 +18,8 @@
             android:id="@+id/tv_start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@android:color/holo_blue_bright"
+            android:padding="10dp"
             android:text="启动" />
 
         <TextView
@@ -26,7 +28,9 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="30dp"
-            android:background="@color/bg_gray"
+            android:background="@android:color/holo_green_light"
+
+            android:padding="10dp"
             android:text="停止" />
     </RelativeLayout>
 
@@ -35,6 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rl1"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal"
         android:padding="10dp">
 
@@ -42,17 +47,27 @@
             android:id="@+id/tv_bind"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@android:color/holo_purple"
+            android:padding="10dp"
             android:text="绑定" />
 
         <TextView
-            android:id="@id/tv_unbind"
+            android:id="@+id/tv_unbind"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="30dp"
-            android:background="@color/bg_gray"
+            android:background="@android:color/holo_orange_light"
+            android:padding="10dp"
             android:text="解绑" />
     </RelativeLayout>
 
-
+    <Button
+        android:id="@+id/bt_stopservice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl2"
+        android:layout_marginTop="30dp"
+        android:padding="10dp"
+        android:text="停止Service" />
 </RelativeLayout>

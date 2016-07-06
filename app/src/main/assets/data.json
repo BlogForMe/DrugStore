@@ -1,0 +1,1160 @@
+{
+	"state": "success",
+	"successCode": 200,
+	"successMessage": "",
+	"data": {
+		"AppInfo": {
+			"point_unit": "\u79ef\u5206",
+			"has_point": 1
+		},
+		"FastTaskList": {
+			"PointList": [{
+				"ad_id": "16133",
+				"display_order": "3",
+				"ad_subject": "\u95ea\u94f6\u5947\u5f02",
+				"ad_summary": "\u95ea\u94f6\u5947\u5f02 \u6709\u4fe1\u7528\u5c31\u6709\u672a\u6765",
+				"icon_path": "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-03\/3dd1a1baa5c22508fe4130b876e2e4a5.png",
+				"package_name": "com.syqy.wecash",
+				"download_url": "http:\/\/501xm.cache.cheerpic.com\/source\/chizi\/201606\/Wecash_4.6.8-22000a.apk",
+				"download_count": 1049,
+				"tips_text": "\u606d\u559c\u60a8,\u95ea\u94f6\u5947\u5f02\u5b89\u88c5\u6210\u529f,\u6ce8\u518c\u8bd5\u73a90\u5206\u949f\u5c31\u80fd\u83b7\u5f97\u79ef\u5206!",
+				"type": 4,
+				"web_jump": 0,
+				"browser": "default",
+				"has_today_task": 1,
+				"order": 1,
+				"track_id": "fb337b7cccc41b27",
+				"point": 270
+			}, {
+				"ad_id": "16641",
+				"display_order": "5",
+				"ad_subject": "\u5c0f\u7b97\u76d8\u8d22\u5bcc",
+				"ad_summary": "\u6ce8\u518c\u5373\u900160\u5143\u7ea2\u5305\uff0c\u65b0\u624b\u4eab\u53d77\u592918%\u5e74\u5316\u6536\u76ca\uff01",
+				"icon_path": "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-05\/b32a2e4074a8847bdcdae71b20ff4550.jpg",
+				"package_name": "com.trj.xsp.cn",
+				"download_url": "http:\/\/501xm.cache.cheerpic.com\/source\/chizi\/201606\/superxsp.apk",
+				"download_count": 1153,
+				"tips_text": "\u606d\u559c\u60a8,\u5c0f\u7b97\u76d8\u8d22\u5bcc\u5b89\u88c5\u6210\u529f,\u6ce8\u518c\u8bd5\u73a90\u5206\u949f\u5c31\u80fd\u83b7\u5f97\u79ef\u5206!",
+				"type": 4,
+				"web_jump": 0,
+				"browser": "default",
+				"has_today_task": 1,
+				"order": 1,
+				"track_id": "b26f0044c185b5ec",
+				"point": 1200
+			}, {
+				"ad_id": "16691",
+				"display_order": "7",
+				"ad_subject": "\u55e8\u79c0\u79c0\u573a",
+				"ad_summary": "\u90a3\u6fc0\u60c5\uff01\u90a3\u72c2\u91ce\uff01\u9752\u6625\u5728\u54ea\uff01\uff01\uff01",
+				"icon_path": "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-05\/0cc22ea1b5298ba4359c04b37aed246b.png",
+				"package_name": "com.haixiu.ui",
+				"download_url": "http:\/\/501xm.cache.cheerpic.com\/source\/chizi\/201605\/haixiu-0524.apk",
+				"download_count": 911,
+				"tips_text": "\u606d\u559c\u60a8,\u55e8\u79c0\u79c0\u573a\u5b89\u88c5\u6210\u529f,\u6ce8\u518c\u8bd5\u73a92\u5206\u949f\u5c31\u80fd\u83b7\u5f97\u79ef\u5206!",
+				"type": 4,
+				"web_jump": 0,
+				"browser": "default",
+				"has_today_task": 1,
+				"order": 1,
+				"track_id": "b75ef42ab8be5816",
+				"point": 54
+			}, {
+				"ad_id": "16682",
+				"display_order": "8",
+				"ad_subject": "\u54aa\u5495\u89c6\u9891",
+				"ad_summary": "\u54aa\u5495\u89c6\u9891\uff0c\u7cbe\u5f69\u968f\u65f6\u4e0a\u6f14\uff01\uff01\uff01",
+				"icon_path": "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-05\/196dd7f5d4e05d7534add373d121148c.png",
+				"package_name": "com.cmcc.cmvideo",
+				"download_url": "http:\/\/501xm.cache.cheerpic.com\/source\/chizi\/201605\/migu-0524.apk",
+				"download_count": 828,
+				"tips_text": "\u606d\u559c\u60a8,\u54aa\u5495\u89c6\u9891\u5b89\u88c5\u6210\u529f,\u6ce8\u518c\u8bd5\u73a910\u5206\u949f\u5c31\u80fd\u83b7\u5f97\u79ef\u5206!",
+				"type": 4,
+				"web_jump": 0,
+				"browser": "default",
+				"has_today_task": 1,
+				"order": 1,
+				"track_id": "67e93768ab351eb8",
+				"point": 26.25
+			}, {
+				"ad_id": "16823",
+				"display_order": "14",
+				"ad_subject": "\u4eac\u4e1c\u91d1\u878d",
+				"ad_summary": "\u4eac\u4e1c\u7406\u8d22\uff0c\u603b\u6709\u4e00\u6b3e\u9002\u5408\u4f60\uff01\uff01\uff01",
+				"icon_path": "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-06\/c674e0c3cd98fa0258e6141d8fd76dd8.png",
+				"package_name": "com.jd.jrapp",
+				"download_url": "http:\/\/501xm.cache.cheerpic.com\/source\/chizi\/201606\/jrapp0616.apk",
+				"download_count": 836,
+				"tips_text": "\u606d\u559c\u60a8,\u4eac\u4e1c\u91d1\u878d\u5b89\u88c5\u6210\u529f,\u6ce8\u518c\u8bd5\u73a92\u5206\u949f\u5c31\u80fd\u83b7\u5f97\u79ef\u5206!",
+				"type": 1,
+				"web_jump": 0,
+				"browser": "default",
+				"has_today_task": 1,
+				"order": 1,
+				"track_id": "436f606010dff97c",
+				"point": 9.75
+			}, {
+				"ad_id": "16125",
+				"display_order": "16",
+				"ad_subject": "\u8d85\u7ea7\u7fa4\u82f1\u4f202z",
+				"ad_summary": "\u4e07\u4eba\u5728\u7ebf\u5f81\u6218\u4e00\u7edf\u4e09\u56fd\u9738\u4e1a\uff01",
+				"icon_path": "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-03\/6241c6c6baadd9af6d87cebfc62e06c2.png",
+				"package_name": "net.joywii.qysg2d.kkk",
+				"download_url": "http:\/\/501xm.cache.cheerpic.com\/source\/chizi\/201606\/sgqyz6342.apk",
+				"download_count": 864,
+				"tips_text": "\u606d\u559c\u60a8,\u8d85\u7ea7\u7fa4\u82f1\u4f202z\u5b89\u88c5\u6210\u529f,\u6ce8\u518c\u8bd5\u73a93\u5206\u949f\u5c31\u80fd\u83b7\u5f97\u79ef\u5206!",
+				"type": 4,
+				"web_jump": 0,
+				"browser": "default",
+				"has_today_task": 1,
+				"order": 1,
+				"track_id": "82914dd4875aeec0",
+				"point": 50
+			}, {
+				"ad_id": "14195",
+				"display_order": "19",
+				"ad_subject": "\u6709\u8d5a",
+				"ad_summary": "\u4e2d\u56fd\u7b2c\u4e00\u7684\u624b\u673a\u8d5a\u94b1\u5e73\u53f0\uff01",
+				"icon_path": "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-03\/29d3f7d6f9270102821005eb14c93263.png",
+				"package_name": "com.android.youzhuan",
+				"download_url": "http:\/\/501xm.cache.cheerpic.com\/source\/chizi\/201603\/1862432-20150616.apk",
+				"download_count": 911,
+				"tips_text": "\u606d\u559c\u60a8,\u6709\u8d5a\u5b89\u88c5\u6210\u529f,\u6ce8\u518c\u8bd5\u73a92\u5206\u949f\u5c31\u80fd\u83b7\u5f97\u79ef\u5206!",
+				"type": 1,
+				"web_jump": 0,
+				"browser": "default",
+				"has_today_task": 1,
+				"order": 1,
+				"track_id": "0286bb1cdb98b959",
+				"point": 4
+			}, {
+				"ad_id": "16961",
+				"display_order": "4",
+				"ad_subject": "\u79e6\u65f6\u660e\u6708",
+				"ad_summary": "\u65b0\u7248\u201c\u95ee\u9f0e\u5929\u4e0b\u201d\uff0c\u4ebf\u4e07\u79e6\u8ff7\u90fd\u5728\u73a9!",
+				"icon_path": "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-06\/ef0af1ce576da9adeeb585ddf0ea2fb5.png",
+				"package_name": "cc.thedream.qinsmoon.mi",
+				"download_url": "http:\/\/501xm.cache.cheerpic.com\/source\/chizi\/201606\/meng_1158_1_android.apk",
+				"download_count": 925,
+				"tips_text": "\u606d\u559c\u60a8,\u79e6\u65f6\u660e\u6708\u5b89\u88c5\u6210\u529f,\u6ce8\u518c\u8bd5\u73a93\u5206\u949f\u5c31\u80fd\u83b7\u5f97\u79ef\u5206!",
+				"type": 2,
+				"web_jump": 0,
+				"browser": "default",
+				"has_today_task": 0,
+				"order": 2,
+				"track_id": "1ac38b889429e08b",
+				"point": 180
+			}, {
+				"ad_id": "16998",
+				"display_order": "9",
+				"ad_subject": "Feel2z",
+				"ad_summary": "\u4e00\u952e\u5f00\u542f\u4f60\u7684\u8fd0\u52a8\u5065\u5eb7\u751f\u6d3b",
+				"icon_path": "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-07\/e4f83c4ece7ab99f89480a788400b5b0.png",
+				"package_name": "com.zhiyun.feel",
+				"download_url": "http:\/\/501xm.cache.cheerpic.com\/source\/chizi\/201607\/feelad13.apk",
+				"download_count": 794,
+				"tips_text": "\u606d\u559c\u60a8,Feel2z\u5b89\u88c5\u6210\u529f,\u6ce8\u518c\u8bd5\u73a94\u5206\u949f\u5c31\u80fd\u83b7\u5f97\u79ef\u5206!",
+				"type": 2,
+				"web_jump": 0,
+				"browser": "default",
+				"has_today_task": 0,
+				"order": 2,
+				"track_id": "b9c05beed036e052",
+				"point": 60
+			}, {
+				"ad_id": "16662",
+				"display_order": "12",
+				"ad_subject": "\u8c46\u8c46\u8da3\u73a9",
+				"ad_summary": "\u9501\u5c4f\u89e3\u9501\u80fd\u8d5a\u94b1\uff0c10\u5143\u8d77\u63d0\u73b0",
+				"icon_path": "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-05\/53edbc3c34f0520613fbc57d083da83f.png",
+				"package_name": "com.ddfun",
+				"download_url": "http:\/\/501xm.cache.cheerpic.com\/source\/chizi\/201606\/qumi-20160606.apk",
+				"download_count": 962,
+				"tips_text": "\u606d\u559c\u60a8,\u8c46\u8c46\u8da3\u73a9\u5b89\u88c5\u6210\u529f,\u6ce8\u518c\u8bd5\u73a96\u5206\u949f\u5c31\u80fd\u83b7\u5f97\u79ef\u5206!",
+				"type": 2,
+				"web_jump": 0,
+				"browser": "default",
+				"has_today_task": 0,
+				"order": 2,
+				"track_id": "16ef7c70d8fb9d9e",
+				"point": 60
+			}, {
+				"ad_id": "16767",
+				"display_order": "15",
+				"ad_subject": "\u7f57\u9a6c\u65f6\u4ee3",
+				"ad_summary": "\u738b\u57ce\u4e89\u9738,\u7b56\u7565\u4e3a\u738b,\u66b4\u529b\u5f81\u6218,\u4e00\u7edf\u5929\u4e0b.",
+				"icon_path": "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-06\/4ec886f80246f66f50d71788292e7611.png",
+				"package_name": "com.wzsj.kkkwan",
+				"download_url": "http:\/\/501xm.cache.cheerpic.com\/source\/chizi\/201606\/7315.apk",
+				"download_count": 896,
+				"tips_text": "\u606d\u559c\u60a8,\u7f57\u9a6c\u65f6\u4ee3\u5b89\u88c5\u6210\u529f,\u6ce8\u518c\u8bd5\u73a95\u5206\u949f\u5c31\u80fd\u83b7\u5f97\u79ef\u5206!",
+				"type": 2,
+				"web_jump": 0,
+				"browser": "default",
+				"has_today_task": 0,
+				"order": 2,
+				"track_id": "5fac3955664028cd",
+				"point": 100
+			}, {
+				"ad_id": "16999",
+				"display_order": "18",
+				"ad_subject": "\u91d1\u50a8\u5b9d",
+				"ad_summary": "1011111111111",
+				"icon_path": "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-07\/11c0129ea508470e695bc383158e2ebe.JPG",
+				"package_name": "com.rongxun.JingChuBao",
+				"download_url": "http:\/\/501xm.cache.cheerpic.com\/source\/chizi\/201607\/71841562.apk",
+				"download_count": 636,
+				"tips_text": "\u606d\u559c\u60a8,\u91d1\u50a8\u5b9d\u5b89\u88c5\u6210\u529f,\u8bd5\u75281\u5206\u949f\u5373\u53ef\u83b7\u5f97\u79ef\u5206!",
+				"type": 3,
+				"web_jump": 0,
+				"browser": "default",
+				"has_today_task": 0,
+				"order": 2,
+				"track_id": "40e9182c17784aa0",
+				"point": 1000
+			}],
+			"NoPointList": [{
+				"ad_id": "15941",
+				"display_order": "1",
+				"ad_subject": "JoinU",
+				"ad_summary": "\u53c2\u4e0eJoinU\uff0c\u8d62\u53d6iPhone6s Plus\uff01",
+				"icon_path": "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-03\/bec8764c66758b015d78a3cff0815c1e.png",
+				"package_name": "com.hiteam.greatu",
+				"download_url": "http:\/\/501xm.cache.cheerpic.com\/source\/chizi\/201607\/greatu0705.apk",
+				"download_count": 504,
+				"tips_text": "",
+				"type": 2,
+				"web_jump": 0,
+				"browser": "default",
+				"has_today_task": 0,
+				"order": 1,
+				"track_id": "ccae85aaa8df8de7",
+				"point": 110
+			}, {
+				"ad_id": "15280",
+				"display_order": "7",
+				"ad_subject": "\u8d85\u7ea7\u6218\u8230",
+				"ad_summary": "\u5e26\u611f\u6d77\u6218\u7c7b\u7b56\u7565\u624b\u673a\u6e38\u620f\uff01",
+				"icon_path": "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-03\/abff272fc8f1d7ce135f3165418583c0.png",
+				"package_name": "com.SuperOfFleet.cjjd3",
+				"download_url": "http:\/\/501xm.cache.cheerpic.com\/source\/chizi\/201603\/SuperOfFleet_0_5249.apk",
+				"download_count": 1183,
+				"tips_text": "",
+				"type": 2,
+				"web_jump": 0,
+				"browser": "default",
+				"has_today_task": 0,
+				"order": 1,
+				"track_id": "401dab290049f56a"
+			}, {
+				"ad_id": "14582",
+				"display_order": "13",
+				"ad_subject": "JJ\u6597\u5730\u4e3b",
+				"ad_summary": "JJ\u6597\u5730\u4e3b-\u6709\u6280\u672f\u5c31\u80fd\u514d\u8d39\u8d62\u8bdd\u8d39",
+				"icon_path": "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-03\/713fb3a9f479681368997b3d01f56c37.png",
+				"package_name": "cn.jj",
+				"download_url": "http:\/\/501xm.cache.cheerpic.com\/source\/chizi\/201604\/35433-20160413.apk",
+				"download_count": 856,
+				"tips_text": "",
+				"type": 2,
+				"web_jump": 0,
+				"browser": "default",
+				"has_today_task": 0,
+				"order": 1,
+				"track_id": "ef4db138c2987e92"
+			}, {
+				"ad_id": "16701",
+				"display_order": "17",
+				"ad_subject": "\u79c0\u5427\u76f4\u64ad",
+				"ad_summary": "\u79c0\u5427,\u56fd\u5185\u6700\u706b\u7206\u7684\u771f\u4eba\u89c6\u9891\u4e92\u52a8\u76f4\u64ad\u793e\u533a",
+				"icon_path": "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-05\/66fdea9b2933f829540e177b042134a3.png",
+				"package_name": "com.xiu8.android.activity",
+				"download_url": "http:\/\/501xm.cache.cheerpic.com\/source\/chizi\/201606\/APP26.apk",
+				"download_count": 863,
+				"tips_text": "",
+				"type": 2,
+				"web_jump": 0,
+				"browser": "default",
+				"has_today_task": 0,
+				"order": 1,
+				"track_id": "d54583589c1bac47",
+				"point": 60
+			}]
+		},
+		"SignIn": [{
+			"ad_id": "14195",
+			"display_order": "19",
+			"ad_subject": "\u6709\u8d5a",
+			"ad_summary": "\u4e2d\u56fd\u7b2c\u4e00\u7684\u624b\u673a\u8d5a\u94b1\u5e73\u53f0\uff01",
+			"icon_path": "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-03\/29d3f7d6f9270102821005eb14c93263.png",
+			"package_name": "com.android.youzhuan",
+			"download_url": "http:\/\/501xm.cache.cheerpic.com\/source\/chizi\/201603\/1862432-20150616.apk",
+			"download_count": 911,
+			"tips_text": "\u606d\u559c\u60a8,\u6709\u8d5a\u5b89\u88c5\u6210\u529f,\u6ce8\u518c\u8bd5\u73a92\u5206\u949f\u5c31\u80fd\u83b7\u5f97\u79ef\u5206!",
+			"type": 1,
+			"web_jump": 0,
+			"browser": "default",
+			"has_today_task": 1,
+			"order": 1,
+			"track_id": "0286bb1cdb98b959",
+			"point": 4
+		}, {
+			"ad_id": "16823",
+			"display_order": "14",
+			"ad_subject": "\u4eac\u4e1c\u91d1\u878d",
+			"ad_summary": "\u4eac\u4e1c\u7406\u8d22\uff0c\u603b\u6709\u4e00\u6b3e\u9002\u5408\u4f60\uff01\uff01\uff01",
+			"icon_path": "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-06\/c674e0c3cd98fa0258e6141d8fd76dd8.png",
+			"package_name": "com.jd.jrapp",
+			"download_url": "http:\/\/501xm.cache.cheerpic.com\/source\/chizi\/201606\/jrapp0616.apk",
+			"download_count": 836,
+			"tips_text": "\u606d\u559c\u60a8,\u4eac\u4e1c\u91d1\u878d\u5b89\u88c5\u6210\u529f,\u6ce8\u518c\u8bd5\u73a92\u5206\u949f\u5c31\u80fd\u83b7\u5f97\u79ef\u5206!",
+			"type": 1,
+			"web_jump": 0,
+			"browser": "default",
+			"has_today_task": 1,
+			"order": 1,
+			"track_id": "436f606010dff97c",
+			"point": 9.75
+		}],
+		"AdDetails": {
+			"15941": {
+				"description": "[\u6ce8\u660eJoinU\u8d62\u53d6iPhone6SP\uff01]<br \/>\u4f5c\u4e3a\u4e00\u6b3e\u5168\u65b0\u4e0a\u7ebf\u7684\u624b\u673a\u8f6f\u4ef6\uff0cJoinU\u5b9e\u73b0\u4e86\u540c\u65f6\u4e0e\u51e0\u4e4e\u6240\u6709\u56fd\u5185\u77e5\u540d\u793e\u4ea4\u5a92\u4f53\u7684\u65e0\u7f1d\u5bf9\u63a5\u3002\u5e38\u7528\u7684\u793e\u4ea4\u56e2\u5efa\u8d26\u6237\u53ef\u76f4\u63a5\u767b\u5f55\u5230JoinU\uff0c\u5e76\u8fdb\u884c\u6570\u636e\/\u8d44\u6e90\u7684\u5206\u4eab\u4e0e\u53d1\u5e03\u3002\u8fdb\u5165\u5e94\u7528\u540e\u4fbf\u662fJoinU\u4e3b\u754c\u9762\uff0c\u51e0\u4e4e\u6db5\u76d6\u4e86\u6574\u4e2aJoinU\u7684\u4e3b\u8981\u529f\u80fd\uff0c\u7b80\u7ea6\u6613\u61c2\uff0c\u5feb\u6377\u5b9e\u7528\u2014\u2014\u4eba\u6027\u5316\u7684\u8bbe\u8ba1\u80fd\u591f\u8fc5\u901f\u6d88\u9664\u65b0\u7528\u6237\u5bf9\u8f6f\u4ef6\u7684\u964c\u751f\u611f\uff0c\u540c\u65f6\u4e5f\u5927\u5927\u589e\u52a0\u4e86\u7528\u6237\u5bf9\u8f6f\u4ef6\u7684\u4f7f\u7528\u5ea6\uff0c\u4e5f\u63d0\u5347\u4e86\u53ef\u64cd\u4f5c\u5ea6\u3002",
+				"ad_subject": "JoinU",
+				"ad_summary": "\u53c2\u4e0eJoinU\uff0c\u8d62\u53d6iPhone6s Plus\uff01",
+				"screenshots": ["http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-03\/db3b515ad3dcfba3233736c58edee2aa.jpg", "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-03\/ed7406478f3ab1a3da645d941e20ec9b.jpg"],
+				"size": "37.5M",
+				"task": null
+			},
+			"16133": {
+				"description": "\u95ea\u94f6\u5947\u5f02\uff08\u539f\u540d\u201cWecash\u95ea\u94f6\u201d\uff09\uff0c\u53e3\u7891\u6700\u597d\u7684\u91d1\u878dAPP\uff0c\u4ebf\u4e07\u5e74\u8f7b\u4eba\u7684\u4fe1\u7528\u94b1\u5305<br \/>\u5165\u9009\u5168\u7403\u91d1\u878d\u79d1\u6280\u521b\u65b0\u516c\u53f850\u5f3a\uff0c\u4e2d\u56fd\u552f\u4e00\u4e0a\u699c<br \/>\u6700\u53d7\u79fb\u52a8\u7528\u6237\u559c\u7231\u7684\u91d1\u878d\u5e94\u7528Top 3<br \/><br \/>---\u725b\u903c\u529f\u80fd---<br \/><br \/>\u3010\u8d85\u5feb\u6388\u4fe1\u3011\u4ec5\u97003\u5206\u949f\uff0c\u884c\u4e1a\u6700\u5feb\uff0c\u6ca1\u6709\u4e4b\u4e00<br \/><br \/>\u3010\u5f53\u5929\u5230\u8d26\u3011\u6025\u4f60\u6240\u9700\uff0c\u7528\u94b1\u6beb\u65e0\u538b\u529b<br \/><br \/>\u3010\u591a\u51fa\u8d44\u65b9\u3011\u54ea\u4e2a\u987a\u773c\u9009\u54ea\u4e2a\uff0c\u5c31\u8fd9\u4e48\u4efb\u6027<br \/><br \/>\u3010\u60ca\u559c\u7ea2\u5305\u3011\u9080\u8bf7\u597d\u53cb\u5373\u5f9715\u5143\u5927\u7ea2\u5305\uff0c\u4e0d\u9650\u91cf\u4f9b\u5e94<br \/><br \/>\u3010\u4fe1\u7528\u751f\u6d3b\u3011\u79df\u8f66\u3001\u79df\u623f\u3001\u65c5\u6e38\u3001\u8d2d\u7269\u55e8\u7ffb\u5929",
+				"ad_subject": "\u95ea\u94f6\u5947\u5f02",
+				"ad_summary": "\u95ea\u94f6\u5947\u5f02 \u6709\u4fe1\u7528\u5c31\u6709\u672a\u6765",
+				"screenshots": ["http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-03\/c37e37fc395edea93d55a4001b60d1e5.png", "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-03\/40d167d64bf1293aade4c34564c6546b.png"],
+				"size": "5.2M",
+				"task": {
+					"_1": {
+						"step": 1,
+						"step_desc": "\u6ce8\u518c\u70b9\u6512\u4fe1\u7528\u5b9e\u540d\u8ba4\u8bc1\u5e76\u7ed1\u5b9a\u6dd8\u5b9d\u548c\u4eac\u4e1c\u8d26\u53f7",
+						"time_need": 0,
+						"point": 270,
+						"status": 3,
+						"nodoing": 5
+					},
+					"_2": {
+						"step": 2,
+						"step_desc": "\u6b21\u65e5\u7b54\u9898\u8d5a\u79ef\u5206",
+						"time_need": 60,
+						"point": 15,
+						"status": 4
+					},
+					"_3": {
+						"step": 3,
+						"step_desc": "3\u65e5\u7b7e\u5230\u8d5a\u79ef\u5206",
+						"time_need": 60,
+						"point": 15,
+						"status": 4
+					}
+				}
+			},
+			"16961": {
+				"description": "\u300a\u79e6\u65f6\u660e\u6708\u300b\u6b63\u7248\u5b98\u65b9\u624b\u6e38\uff0c\u5b98\u65b9\u6388\u6743\u3001\u52a8\u6f2b\u539f\u58f0\u6f14\u7ece\u3001\u539f\u521b\u56e2\u961f\u52a0\u76df\u76d1\u5236\uff01<br \/>\u5168\u65b0\u7248\u672c\u201c\u8bf8\u5b50\u767e\u5bb6\u201d\u4e2d\u6d3b\u8dc3\u5ea6\u6a21\u5757\u5168\u65b0\u6539\u7248\uff0c\u673a\u5173\u517d\u65b0\u589e\u5929\u8d4b\u6280\u80fd\uff0c\u597d\u53cb\u526f\u672c\u589e\u52a0\u82f1\u96c4\u6a21\u5f0f\uff01<br \/>\u4e3a\u611f\u8c22\u5404\u4f4d\u73a9\u5bb6\u966a\u4f34\u6211\u4eec\u8d70\u8fdb\u7b2c\u5341\u4e2a\u7248\u672c\u201c\u8bf8\u5b50\u767e\u5bb6\u201d\uff0c\u7248\u672c\u66f4\u65b0\u4e4b\u9645\u8d85\u591a\u798f\u5229\u7b49\u4f60\u6765\u62ff\uff01",
+				"ad_subject": "\u79e6\u65f6\u660e\u6708",
+				"ad_summary": "\u65b0\u7248\u201c\u95ee\u9f0e\u5929\u4e0b\u201d\uff0c\u4ebf\u4e07\u79e6\u8ff7\u90fd\u5728\u73a9!",
+				"screenshots": ["http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-06\/d098e1920b8c3f7af54ad68dbdfb740c.jpg", "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-06\/6d4630c27b8cd2754d5436d61b5e121f.jpg"],
+				"size": "156.4M",
+				"task": {
+					"_1": {
+						"step": 1,
+						"step_desc": "\u5b89\u88c5\u5c0f\u7c73\u52a9\u624b\u5e76\u5c0f\u7c73\u8d26\u53f7\u6ce8\u518c\u767b\u5f55",
+						"time_need": 180,
+						"point": 90,
+						"status": 3
+					},
+					"_2": {
+						"step": 2,
+						"step_desc": "\u5f53\u5929\u518d\u6b21\u6253\u5f00\u767b\u5f55\u6e38\u620f3\u5206\u949f",
+						"time_need": 180,
+						"point": 27,
+						"status": 4
+					},
+					"_3": {
+						"step": 3,
+						"step_desc": "\u6b21\u65e5\u6253\u5f00\u6e38\u620f5\u5206\u949f",
+						"time_need": 300,
+						"point": 36,
+						"status": 4
+					},
+					"_4": {
+						"step": 4,
+						"step_desc": "3\u65e5\u6253\u5f00\u6e38\u620f5\u5206\u949f",
+						"time_need": 300,
+						"point": 27,
+						"status": 4
+					}
+				}
+			},
+			"16641": {
+				"description": "\u5c0f\u7b97\u76d8\u8d22\u5bcc\u7f51\uff08www.xspcf.com\uff09\uff0c\u503c\u5f97\u60a8\u4fe1\u8d56\u7684\u4e92\u8054\u7f51\u91d1\u878d\u4fe1\u606f\u670d\u52a1\u5e73\u53f0\uff0c\u4e3a\u8001\u767e\u59d3\u63d0\u4f9b\u4f4e\u98ce\u9669\u7684\u7406\u8d22\u4ea7\u54c1\u4fe1\u606f\u64ae\u5408\u670d\u52a1\uff0c\u5728\u878d\u8d44\u4eba\u3001\u6295\u8d44\u4eba\u4e0e\u7406\u8d22\u4ea7\u54c1\u53d1\u5e03\u673a\u6784\u4e4b\u95f4\u63d0\u4f9b\u5c45\u95f4\u91d1\u878d\u4fe1\u606f\u670d\u52a1\uff0c\u4ee5\u5e2e\u52a9\u5404\u65b9\u5b8c\u6210\u6295\u878d\u8d44\u4ea4\u6613\u4fe1\u606f\u64ae\u5408\u3002\u6210\u7acb\u81f3\u4eca0\u8fdd\u7ea60\u903e\u671f\uff0c\u5168\u90e8\u6295\u8d44\u8005\u83b7\u76ca\u3002<br \/>\u5c0f\u7b97\u76d8\u7684\u4f18\u52bf\uff1a<br \/>1\u3001\t\u4e0a\u5e02\u516c\u53f8\u798f\u6765\u68ee\u96c6\u56e2\uff08TANH\uff09\u662f\u6218\u7565\u5408\u4f5c\u4f19\u4f34\uff1b<br \/>2\u3001\t\u7531\u4e16\u754c\u94f6\u884c\u603b\u90e8\u91d1\u878d\u7ecf\u6d4e\u5e08\u90d1\u5eb7\u5f6c\u5148\u751f\u51fa\u4efb\u98ce\u63a7\u603b\u76d1\uff1b<br \/>3\u3001\t\u8d44\u91d1\u94f6\u884c\u76d1\u7ba1\uff0c\u98ce\u9669\u5907\u7528\u91d1\u5148\u884c\u8d54\u4ed8\uff0c\u5168\u7a0b\u6cd5\u5f8b\u76d1\u7ba1\uff1b<br \/>4\u3001\t\u963f\u91cc\u4e91\u4fe1\u606f\u50a8\u5b58\u6280\u672f\uff0c\u786e\u4fdd\u5e73\u53f0\u5b89\u5168\u7a33\u5b9a\uff1b<br \/>5\u3001\t\u8f66\u8f86\u8db3\u989d\u8d28\u62bc\u7b49\u3002<br \/>\u5ba2\u670d\u70ed\u7ebf\uff1a400 857 5858<br \/>\u5c0f\u7b97\u76d8\u798f\u5229\uff1a<br \/>\u3010\u65b0\u624b\u4e13\u4eab\u3011\u6ce8\u518c\u5373\u900160\u5143\u7ea2\u5305\uff0c\u65b0\u624b\u6295\u8d44\u53ef\u4eab\u53d77\u592918%\u5e74\u5316\u6536\u76ca\uff1b<br \/>\u3010\u7a33\u5065\u6536\u76ca\u3011\u5e38\u89c4\u4ea7\u54c115\u5929\u81f390\u5929\uff0c\u5e74\u5316\u4e3a8%\u81f311.5%\uff1b<br \/>\u3010\u6295\u8d44\u4fbf\u6377\u3011100\u5143\u8d77\u6295\uff0c8\u79d2\u5f00\u6237\uff0c\u95ea\u7535\u4ea4\u6613\u3002",
+				"ad_subject": "\u5c0f\u7b97\u76d8\u8d22\u5bcc",
+				"ad_summary": "\u6ce8\u518c\u5373\u900160\u5143\u7ea2\u5305\uff0c\u65b0\u624b\u4eab\u53d77\u592918%\u5e74\u5316\u6536\u76ca\uff01",
+				"screenshots": ["http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-05\/f7e728c751b58ba6edaf49c85210bdd6.jpg", "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-05\/4ea3ee33e242be9fc2ea00f9c348d470.jpg"],
+				"size": "3.7M",
+				"task": {
+					"_1": {
+						"step": 1,
+						"step_desc": "\u6ce8\u518c\u5b9e\u540d\u8ba4\u8bc1\u5e76\u6295\u8d44\u65b0\u624b\u6807100\u5143",
+						"time_need": 0,
+						"point": 1200,
+						"status": 3,
+						"nodoing": 5
+					}
+				}
+			},
+			"15788": {
+				"description": "\u3010\u5e73\u53f0\u80cc\u666f\u3011<br \/>\u9686\u6210\u96c6\u56e2\uff08\u80a1\u7968\u4ee3\u7801:01225)\u53d1\u8d77\u4e92\u8054\u7f51\u91d1\u878d\u7406\u8d22\u5e73\u53f0!<br \/>\u3010\u9ad8\u6536\u76ca\u4ea7\u54c1\u3011<br \/>8.2%~16.2%\u9884\u671f\u5e74\u5316\u6536\u76ca<br \/>\u3010\u65b0\u624b\u798f\u5229\u3011<br \/>\u65b0\u4eba\u4e13\u4eab60\u7ea2\u5305;\u5c0a\u4eab16.2%\u5e74\u5316\u6536\u76ca<br \/>\u3010\u4ea7\u54c1\u7b80\u4ecb\u3011<br \/> \u94b1\u5185\u52a9\u4e0e\u5eb7\u5b8f\u96c6\u56e2\uff08\u80a1\u7968\u4ee3\u7801:01019\uff09\u7b49\u591a\u5bb6\u6295\u878d\u8d44\u673a\u6784\u8fbe\u6210\u6218\u7565\u5408\u4f5c\uff1b\u65d7\u4e0b\u62e5\u6709\u94b1\u8d1d\u52d2\u3001\u57ab\u8d37\u5b9d\u3001\u62bc\u8f66\u5b9d\u3001\u8f66\u5546\u5b9d\u4e3b\u8425\u7406\u8d22\u4ea7\u54c1,\u4e3a\u4e2a\u4eba\u6295\u8d44\u7406\u8d22\u63d0\u4f9b\u201c\u4e13\u4e1a\u3001\u5b89\u5168\u3001\u900f\u660e\u3001\u8bda\u4fe1\u3001\u9ad8\u6548\u201d\u7684\u4e92\u8054\u7f51\u91d1\u878d\u7406\u8d22\u5e73\u53f0\u3002<br \/>\u3010\u5b89\u5168\u4fdd\u969c\u3011<br \/>1.\u4e25\u683c\u7684\u5ba1\u6838\u5236\u5ea6<br \/>2.\u6c11\u751f\u94f6\u884c\u63d0\u4f9b\u8d44\u91d1\u8d26\u6237\u76d1\u7ba1\u8d44\u91d1\u5b89\u5168\u3002<br \/>3.\u540c\u76fe\u79d1\u6280\u63d0\u4f9b\u6280\u672f\u624b\u6bb5\u9632\u63a7\u5f02\u5e38\u4ea4\u6613\u3002<br \/>4.\u5b89\u5b58\u79d1\u6280\u7535\u5b50\u4fdd\u5168\u7ba1\u7406\u7cfb\u7edf\u63d0\u4f9b\u6cd5\u5f8b\u4fdd\u969c\u3002<br \/>5.\u62c5\u4fdd\u516c\u53f8100%\u5168\u989d\u62c5\u4fdd\u3002<br \/>6.\u7b2c\u4e09\u65b9\u5f8b\u5e08\u4e8b\u52a1\u6240\u5168\u7a0b\u6cd5\u5f8b\u76d1\u7763\u3002",
+				"ad_subject": "\u94b1\u5185\u52a9\u7406\u8d22",
+				"ad_summary": "\u65b0\u4eba\u9996\u6b21\u6295\u8d44\u900160\u5143\u7ea2\u5305",
+				"screenshots": ["http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-04\/a598715ca5f278b33d015926b9bfacfb.jpg"],
+				"size": "8.7M"
+			},
+			"15280": {
+				"description": "\u300a\u8d85\u7ea7\u8230\u961f\u300b\u662f\u4e00\u6b3e\u6d77\u6218\u9898\u6750\u7684\u6218\u4e89\u7b56\u7565\u7c7b\u624b\u673a\u6e38\u620f\uff0c\u5177\u6709\u7cbe\u7ec6\u903c\u771f\u7684\u753b\u9762\u548c\u7ec6\u8282\uff0c\u7ec8\u6781\u7b56\u7565\u5bf9\u6297\uff0c\u4f53\u9a8c\u771f\u5b9e\u7684\u6d77\u4e0a\u6218\u4e89\u3002\u5e7f\u9614\u7684\u4e16\u754c\u5730\u56fe\uff0c\u4ea7\u91cf\u4e30\u5bcc\u7684\u8d44\u6e90\u77ff\u533a\uff0c\u540c\u65f6\u53ef\u652f\u6301\u5341\u6570\u4e07\u73a9\u5bb6\u5728\u540c\u4e00\u5f20\u5730\u56fe\u4e0a\u8fdb\u884c1V1\u7684\u6218\u6597\uff0c\u4e00\u7fa4\u5bf9\u4e00\u7fa4\u7684\u6df7\u6218\u3002\u6536\u96c6\u8d44\u6e90\uff0c\u7ec4\u5efa\u8230\u961f\uff0c\u5347\u7ea7\u79d1\u6280\uff0c\u6253\u9020\u81ea\u5df1\u7684\u84dd\u6d77\u6d77\u519b\u3002\u7ade\u6280\u573a\uff0c\u8de8\u670d\u6218\u7b49\u4f60\u6765\u6218\uff0c\u5404\u79cd\u5a01\u9707\u4e16\u754c\u7684\u8d85\u7ea7\u6218\u8230\uff0c\u6253\u9020\u6700\u5f3a\u8230\u961f\uff0c\u642d\u914d\u4e07\u5343\u73a9\u6cd5\uff0c\u4f53\u9a8c\u5dc5\u5cf0\u6d77\u6218\u3002\u7b80\u5355\u6613\u61c2\u7684\u6e38\u620f\u6d41\u7a0b\uff0c\u8f7b\u677e\u4e0a\u624b\u7684\u64cd\u4f5c\uff0c\u7528\u6307\u5c16\u6307\u70b9\u6c5f\u5c71\uff0c\u7eb5\u6a2a\u5927\u6d0b\uff0c\u626b\u8361\u4e00\u5207\u654c\u4eba\uff0c\u5f00\u542f\u5168\u6c11\u6d77\u6218\u65f6\u4ee3\u3002",
+				"ad_subject": "\u8d85\u7ea7\u6218\u8230",
+				"ad_summary": "\u5e26\u611f\u6d77\u6218\u7c7b\u7b56\u7565\u624b\u673a\u6e38\u620f\uff01",
+				"screenshots": ["http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-03\/c4ca3415de97b5e2c9ccab0b73d749d3.jpg", "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-03\/21c39a72e5a497b005d6650e480fc8c8.jpg"],
+				"size": "19.2M"
+			},
+			"16691": {
+				"description": "\u6fc0\u60c5\u7684\u6f14\u7ece\uff0c\u72c2\u91ce\u7684\u9752\u6625\u3002<br \/>\u5168\u65b0\u7684\u7f8e\u5973\u76f4\u64ad\u5e73\u53f0\uff0c\u9ad8\u6e05\u7684\u89c6\u9891\u753b\u9762\uff0c\u7eda\u4e3d\u7684\u52a8\u753b\u7279\u6548\uff0c\u4e30\u5bcc\u7684\u4e92\u52a8\u5f62\u5f0f\uff0c\u7ed9\u4f60\u591c\u5e97\u9152\u5427\u7684\u6781\u81f4\u4f53\u9a8c\u3002<br \/>\u8fd9\u91cc\u6709\u4e13\u4e1a\u6a21\u7279\u3001\u5728\u8bfb\u6821\u82b1\u3001\u6027\u611f\u821e\u8005\uff0c\u60f3\u4e0d\u60f3\u8ddf\u5979\u4eec\u505a\u670b\u53cb\uff1f <br \/><br \/>\u4e07\u4eba\u76f4\u64ad\u95f4\u4e00\u8d77\u55e8\u79d2\u62cd\u4f53\u9a8c\u73b0\u573a\u52a8\u611fYY\u5973\u795e\u4eb2\u5bc6\u4e92\u52a8!<br \/>\u55e8\u79c0\u79c0\u573a\u5c31\u662f\u4f60\u8ffd\u6c42\u6fc0\u60c5\u548c\u72c2\u91ce\u7684\u5927party\uff0c\u5feb\u6765\u52a0\u5165\u6211\u4eec\u5427\u3002<br \/><br \/>\u6765\u4ea4\u53cb\uff1aYY\u7f8e\u5973\u9762\u5bf9\u9762\u52b2\u7206\u7545\u804a \u89c6\u9891\u5973\u4e3b\u64ad\u771f\u4eba\u89c6\u9891\u804a\u5929 \u4ece\u6b64\u544a\u522b\u5bc2\u5bde\u5355\u8eab \u8ba9\u4f60\u9047\u89c1\u7830\u7136\u5fc3\u52a8\u7684\u5979\u3002<br \/>\u6765\u4e92\u52a8\uff1a \u9001\u793c\u7269\uff0c\u73a9\u6e38\u620f\uff0c\u79c0\u5ea7\u9a7e\uff0c\u6e05\u7eaf\u7f8e\u5973\u89c6\u9891\u804a\u5929 \u5973\u795e\u4e0e\u4f60\u4e00\u8d77\u55e8\u3002<br \/>\u6765\u4eab\u53d7\uff1a \u4e92\u52a8\u8fde\u7ebf\uff0c\u79c1\u4fe1\u4ea4\u53cb \u6f14\u5531\u4f1a\u822c\u7684\u97f3\u6548\u3001\u591c\u5e97\u822c\u7684\u52a8\u611f\uff0c\u53bb\u4f53\u4f1a\u6fc0\u60c5\u548c\u72c2\u91ce\u5e26\u6765\u7684\u523a\u6fc0\u5427\u3002",
+				"ad_subject": "\u55e8\u79c0\u79c0\u573a",
+				"ad_summary": "\u90a3\u6fc0\u60c5\uff01\u90a3\u72c2\u91ce\uff01\u9752\u6625\u5728\u54ea\uff01\uff01\uff01",
+				"screenshots": ["http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-05\/aca3843edafb3c3f83425a577983eef1.jpg", "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-05\/4d24e03d006f73df73d0fe0613f7ed91.jpg"],
+				"size": "18.2M",
+				"task": {
+					"_1": {
+						"step": 1,
+						"step_desc": "\u5b89\u88c5qq\u767b\u9646\u6253\u5f00\u79c0\u573a\u4f53\u9a8c2\u5206\u949f",
+						"time_need": 120,
+						"point": 54,
+						"status": 3,
+						"nodoing": 5
+					},
+					"_2": {
+						"step": 2,
+						"step_desc": "\u6b21\u65e5\u6253\u5f00\u89c2\u770b\u76f4\u64ad3\u5206\u949f",
+						"time_need": 180,
+						"point": 10.8,
+						"status": 4
+					},
+					"_3": {
+						"step": 3,
+						"step_desc": "3\u65e5\u8fdb\u4efb\u610f\u623f\u95f4\u4f53\u9a8c3\u5206\u949f",
+						"time_need": 180,
+						"point": 9,
+						"status": 4
+					},
+					"_4": {
+						"step": 4,
+						"step_desc": "4\u65e5\u8fdb\u4efb\u610f\u623f\u95f4\u4f53\u9a8c2\u5206\u949f",
+						"time_need": 120,
+						"point": 7.2,
+						"status": 4
+					},
+					"_5": {
+						"step": 5,
+						"step_desc": "5\u65e5\u8fdb\u4efb\u610f\u623f\u95f4\u4f53\u9a8c2\u5206\u949f",
+						"time_need": 120,
+						"point": 4.5,
+						"status": 4
+					},
+					"_6": {
+						"step": 6,
+						"step_desc": "6\u65e5\u8fdb\u4efb\u610f\u623f\u95f4\u4f53\u9a8c2\u5206\u949f",
+						"time_need": 120,
+						"point": 2.7,
+						"status": 4
+					},
+					"_7": {
+						"step": 7,
+						"step_desc": "7\u65e5\u8fdb\u4efb\u610f\u623f\u95f4\u4f53\u9a8c2\u949f",
+						"time_need": 120,
+						"point": 1.8,
+						"status": 4
+					}
+				}
+			},
+			"16682": {
+				"description": "\u54aa\u5495\u89c6\u9891\uff0c\u7cbe\u5f69\u968f\u65f6\u4e0a\u6f14~\u54aa\u5495\u89c6\u9891\u5168\u65b0\u6765\u88ad\uff01\uff01\uff01\u72ec\u5bb6\u539f\u753b\u7535\u5f71\u5927\u7247\u3001\u70ed\u64ad\u9ad8\u6e05\u7535\u89c6\u5267\u96c6\u3001\u70ed\u95e8\u7efc\u827a\u8282\u76ee\u3001\u660e\u661f\u6f14\u5531\u4f1a\u53ca\u4f53\u80b2\u8d5b\u4e8b\u3001\u5b8c\u5584\u7684\u4f1a\u5458\u4f53\u7cfb\uff0c\u8ba9\u60a8\u4eab\u53d7\u5b8c\u7f8e\u7684\u4f7f\u7528\u4f53\u9a8c\uff01<br \/>\u536b\u89c6\u76f4\u64ad\uff1a\u6e56\u5357\u536b\u89c6 \u6d59\u6c5f\u536b\u89c6 \u4e1c\u65b9\u536b\u89c6 \u6c5f\u82cf\u536b\u89c6 \u5b89\u5fbd\u536b\u89c6\u7b49\u8d85\u8fc7500\u8def\u536b\u89c6\u9ad8\u6e05\u76f4\u64ad\uff1b<br \/>\u70ed\u64ad\u5927\u5267\uff1a\u7231\u4eba\u7684\u8c0e\u8a00 \u7231\u7684\u9636\u68af \u5c71\u6d77\u7ecf\u8d64\u5f71\u4f20\u8bf4 \u56e0\u4e3a\u7231\u60c5\u6709\u5e78\u798f <br \/>\u70ab\u9177\u7efc\u827a\uff1a\u82b1\u6837\u59d0\u59d0 \u6211\u4eec\u76f8\u7231\u5427 Running man \u5927\u724c\u5bf9\u738b\u724c \u6211\u662f\u6b4c\u624b\u7b2c\u56db\u5b63<br \/>\u5927\u7247\u9996\u64ad\uff1a\u8c0b\u6740\u4f3c\u6c34\u5e74\u534e \u5510\u4eba\u8857\u63a2\u6848 \u8001\u70ae\u513f \u5c71\u6cb3\u6545\u4eba \u901a\u7075\u795e\u63a2<br \/>\u91cd\u78c5\u4f53\u80b2\uff1a\u4e9a\u51a0\u51b3\u8d5b \u4e16\u9884\u8d5b \u6b27\u51a0NBA\u82f1\u8d85CBA\u897f\u7532 \u5fb7\u7532 \u610f\u7532",
+				"ad_subject": "\u54aa\u5495\u89c6\u9891",
+				"ad_summary": "\u54aa\u5495\u89c6\u9891\uff0c\u7cbe\u5f69\u968f\u65f6\u4e0a\u6f14\uff01\uff01\uff01",
+				"screenshots": ["http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-05\/2765ddf11576c89e75f6bb20e4a9325c.jpg", "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-05\/2535753fbf60facef48dd0ef140d8336.jpg"],
+				"size": "13.6M",
+				"task": {
+					"_1": {
+						"step": 1,
+						"step_desc": "\u70b9\u201c\u6211\u7684\u201d\u624b\u673a\u53f7\u6ce8\u518c\u770b\u89c6\u989110\u5206\u949f",
+						"time_need": 600,
+						"point": 26.25,
+						"status": 3,
+						"nodoing": 5
+					},
+					"_2": {
+						"step": 2,
+						"step_desc": "\u5f53\u5929\u6253\u5f00\u770b\u89c6\u98918\u5206\u949f",
+						"time_need": 480,
+						"point": 3.75,
+						"status": 4
+					},
+					"_3": {
+						"step": 3,
+						"step_desc": "\u6b21\u65e5\u6253\u5f00\u770b1\u4e2a\u89c6\u98916\u5206\u949f",
+						"time_need": 360,
+						"point": 11.25,
+						"status": 4
+					},
+					"_4": {
+						"step": 4,
+						"step_desc": "3\u65e5\u6253\u5f00\u770b1\u4e2a\u89c6\u98916\u5206\u949f",
+						"time_need": 360,
+						"point": 7.5,
+						"status": 4
+					},
+					"_5": {
+						"step": 5,
+						"step_desc": "4\u65e5\u6253\u5f00\u770b1\u4e2a\u89c6\u98916\u5206\u949f",
+						"time_need": 360,
+						"point": 7.5,
+						"status": 4
+					},
+					"_6": {
+						"step": 6,
+						"step_desc": "5\u65e5\u6253\u5f00\u770b1\u4e2a\u89c6\u98916\u5206\u949f",
+						"time_need": 360,
+						"point": 7.5,
+						"status": 4
+					},
+					"_7": {
+						"step": 7,
+						"step_desc": "6\u65e5\u6253\u5f00\u770b1\u4e2a\u89c6\u98916\u5206\u949f",
+						"time_need": 360,
+						"point": 7.5,
+						"status": 4
+					},
+					"_8": {
+						"step": 8,
+						"step_desc": "7\u65e5\u6253\u5f00\u770b1\u4e2a\u89c6\u98916\u5206\u949f",
+						"time_need": 360,
+						"point": 7.5,
+						"status": 4
+					}
+				}
+			},
+			"16998": {
+				"description": "Feel\uff0c\u662f\u4e00\u6b3e\u79d1\u5b66\u5730\u6fc0\u52b1\u7528\u6237\u5b9e\u73b0\u5065\u5eb7\u751f\u6d3b\u76ee\u6807\u7684\u5e94\u7528\u3002<br \/>\u60f3\u8981\u51cf\u80a5\uff0c\u5851\u5f62\uff0c\u589e\u9ad8\uff0c\u63d0\u5347\u6d3b\u529b\uff0c\u7761\u4e2a\u597d\u89c9\uff0c\u4ea7\u540e\u6062\u590d\u2026\u2026\uff1f\u9488\u5bf9\u4e0d\u540c\u7684\u76ee\u6807\uff0cFeel\u4e3a\u60a8\u5b9a\u5236\u4e2a\u6027\u5316\u7684\u5065\u5eb7\u751f\u6d3b\u8ba1\u5212\uff0c\u5e76\u901a\u8fc7\u5404\u79cd\u8bb0\u5f55\u5de5\u5177\u548c\u6fc0\u52b1\u624b\u6bb5\u5e2e\u60a8\u5b9e\u73b0\u76ee\u6807\u3002<br \/><br \/>1.\uff3b\u6570\u5343\u8ba1\u5212\uff0c\u4efb\u60a8\u9009\u62e9\uff3d<br \/>\u4e3a\u5b9e\u73b0\u60a8\u5404\u79cd\u5065\u5eb7\u751f\u6d3b\u76ee\u6807\uff0c\u4e0d\u540c\u9886\u57df\u7684\u6743\u5a01\u4e13\u5bb6\u4e3a\u60a8\u5236\u8ba2\u79d1\u5b66\u800c\u4e30\u5bcc\u7684\u5065\u5eb7\u8ba1\u5212\u3002<br \/>\u70ed\u95e8\u8fd0\u52a8\u5065\u8eab\u7c7b\u8ba1\u5212\uff1a\u201c\u8fd0\u52a8\u589e\u9ad8\u8ba1\u5212\u201d\uff0c\u201c\u71c3\u8102\u8ba1\u5212\u201d\uff0c\u201c\u9a6c\u7532\u7ebf\u901f\u6210\u8ba1\u5212\u201d\u7b49\u3002<br \/>\u70ed\u95e8\u751f\u6d3b\u4e60\u60ef\u7c7b\u8ba1\u5212\uff1a\u201c\u8ba4\u771f\u5403\u65e9\u9910\u8ba1\u5212\u201c\uff0c\u201d\u6bcf\u5929\u516b\u676f\u6c34\u8ba1\u5212\u201c\uff0c\u201d\u575a\u6301\u4e0d\u71ac\u591c\u8ba1\u5212\u201c\u7b49\u3002<br \/>\u70ed\u95e8\u7279\u522b\u5173\u7231\u7c7b\u8ba1\u5212\uff1a\u201c\u6539\u5584\u9888\u690e\u75c5\u8ba1\u5212\u201d\uff0c\u201c\u4ea7\u540e\u6062\u590d\u8ba1\u5212\u201d\uff0c\u201c\u8fdc\u79bb\u4e09\u9ad8\u8ba1\u5212\u201d\u7b49\u3002<br \/>\u9009\u5b9a\u8ba1\u5212\u540e\uff0c\u6bcf\u5929\u4f1a\u6709\u5177\u4f53\u7684\u4efb\u52a1\u7b49\u60a8\u5b8c\u6210\u3002<br \/><br \/>2.\uff3b\u7efc\u5408\u6570\u636e\uff0c\u4e00\u76ee\u4e86\u7136\uff3d<br \/>Feel\u901a\u8fc7\u89c6\u9891\u6559\u7a0b\uff0c\u6d3b\u52a8\u65f6\u95f4\uff0c\u8dd1\u6b65\uff0c\u6b65\u884c\uff0c\u5fc3\u7387\u6d4b\u91cf\uff0c\u5361\u8def\u91cc\u6d88\u8017\uff0c\u996e\u98df\uff0c\u559d\u6c34\uff0c\u4f53\u91cd\u4f53\u8102\uff0c\u4eca\u65e5\u5929\u6c14\uff0c\u6253\u5361\u7b49\u5de5\u5177\u4e3a\u60a8\u5168\u9762\u8bb0\u5f55\u5065\u5eb7\u6570\u636e\u3002<br \/>\u4e0d\u4ec5\u662f\u8fd0\u52a8\u624b\u73af\uff0c\u4f53\u91cd\u4f53\u8102\u79e4\u548c\u8fd0\u52a8\u8f6f\u4ef6\uff0cFeel\u8fd8\u5728\u4e0d\u65ad\u63a5\u5165\u65b0\u7684\u667a\u80fd\u786c\u4ef6\u548c\u5e94\u7528\u7a0b\u5e8f\uff0c\u53ea\u4e3a\u8ba9\u60a8\u66f4\u65b9\u4fbf\u66f4\u5168\u9762\u5730\u638c\u63e1\u81ea\u8eab\u7684\u5065\u5eb7\u6570\u636e\u3002<br \/><br \/>3.\uff3b\u79c1\u4eba\u201c\u5927\u767d\u201d\uff0c\u8d34\u5fc3\u6fc0\u52b1\uff3d<br \/>Feel\u6df1\u77e5\uff0c\u6709\u6fc0\u52b1\u624d\u6709\u52a8\u529b\u3002<br \/>Feel\u4f1a\u7ed9\u60a8\u5373\u65f6\u7684\u53cd\u9988\uff0c\u201c\u6253\u5361\u529f\u80fd\u201d\u8ba9\u60a8\u611f\u53d7\u5230\u81ea\u5df1\u7684\u6bcf\u4e00\u70b9\u8fdb\u6b65\uff1b<br \/>Feel\u4f1a\u7ed9\u60a8\u6e29\u99a8\u7684\u7763\u4fc3\uff0c\u201c\u63d0\u9192\u529f\u80fd\u201d\u8ba9\u60a8\u7684\u5065\u5eb7\u8ba1\u5212\u4e0d\u4f1a\u534a\u9014\u800c\u5e9f\uff1b<br \/>Feel\u4f1a\u7ed9\u60a8\u671f\u5f85\u7684\u5956\u52b1\uff0c\u201c\u6210\u5c31\u4f53\u7cfb\u201d\u8ba9\u60a8\u7684\u52aa\u529b\u80fd\u6536\u83b7\u8363\u8a89\u548c\u60ca\u559c\u3002<br \/><br \/>4.\uff3b\u5206\u4eab\u793e\u533a\uff0c\u4e00\u8d77\u8fdb\u6b65\uff3d<br \/>\u5728\u201c\u4e00\u8d77\u201d\u7248\u5757\uff0c\u60a8\u4f1a\u53d1\u73b0\u5e76\u7ed3\u4ea4\u5f88\u591a\u548c\u60a8\u4e00\u6837\u70ed\u7231\u751f\u6d3b\u7684\u670b\u53cb\uff0c\u4f60\u4eec\u53ef\u4ee5\u76f8\u4e92\u6fc0\u52b1\u3001\u5206\u4eab\u5173\u4e8e\u5065\u5eb7\u7684\u4e00\u5207\uff1b<br \/>\u6bcf\u5929\u90fd\u6709\u4e30\u5bcc\u7684\u201c\u4e3b\u9898\u6d3b\u52a8\u201d\uff1b<br \/>\u6bcf\u4f4d\u7528\u6237\u90fd\u53ef\u80fd\u767b\u4e0a\u201c\u70ed\u95e8\u7cbe\u9009\u201d\u3002",
+				"ad_subject": "Feel2z",
+				"ad_summary": "\u4e00\u952e\u5f00\u542f\u4f60\u7684\u8fd0\u52a8\u5065\u5eb7\u751f\u6d3b",
+				"screenshots": ["http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-07\/420e7e3eceff491b5592da821574bc7b.jpg", "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-07\/440473a697fc9c83f1b0bfd752096bba.jpg"],
+				"size": "27.7M",
+				"task": {
+					"_1": {
+						"step": 1,
+						"step_desc": "\u624b\u673a\u6ce8\u518c\u5e76\u5b8c\u6210\u4e00\u6b21\u8bad\u7ec3",
+						"time_need": 240,
+						"point": 24,
+						"status": 3
+					},
+					"_2": {
+						"step": 2,
+						"step_desc": "\u6b21\u65e5\u767b\u5f55\u6652\u4e00\u5f20\u7167\u7247",
+						"time_need": 180,
+						"point": 12,
+						"status": 4
+					},
+					"_3": {
+						"step": 3,
+						"step_desc": "\u7b2c3\u5929\u767b\u5f55\u5b8c\u6210\u4e00\u6b21\u8bad\u7ec3",
+						"time_need": 180,
+						"point": 6,
+						"status": 4
+					},
+					"_4": {
+						"step": 4,
+						"step_desc": "\u7b2c5\u5929\u767b\u5f55\u5b8c\u6210\u4e00\u6b21\u8bad\u7ec3",
+						"time_need": 180,
+						"point": 6,
+						"status": 4
+					},
+					"_5": {
+						"step": 5,
+						"step_desc": "\u7b2c7\u5929\u767b\u5f55\u5b8c\u6210\u4e00\u6b21\u8bad\u7ec3",
+						"time_need": 180,
+						"point": 12,
+						"status": 4
+					}
+				}
+			},
+			"16662": {
+				"description": "\u8c46\u8c46\u8da3\u73a9\u662f\u4e00\u6b3e\u57fa\u4e8e\u624b\u673a\u89e3\u9501\u5c4f\u5e55\u8d5a\u94b1\u7684app\uff0c\u5b89\u88c5\u540e\u53ef\u4ee5\u901a\u8fc7\u4e0b\u8f7d\u4f53\u9a8c\u5e7f\u544a\u3001\u7b54\u9898\u5956\u52b1\u3001\u53d1\u8d77\u9080\u8bf7\u7b49\u65b9\u5f0f\u83b7\u5f97\u5956\u52b1\u6536\u5165\u3002\u9664\u4e86\u8d5a\u94b1\u5916\u8fd8\u63d0\u4f9b\u4e86\u591a\u6837\u5316\u7cbe\u7f8e\u7684\u4e3b\u9898\u58c1\u7eb8\u6765\u88c5\u9970\u4f60\u7684\u624b\u673a\u3002\u5b89\u5353\u7248\u901a\u8fc7\u6bcf\u6b21\u70b9\u4eae\u624b\u673a\u5411\u53f3\u5212\u52a8\uff0c\u89e3\u9501\u8fdb\u5165\u684c\u9762\uff1b\u5411\u5de6\u5212\u52a8\uff0c\u6d4f\u89c8\u5e7f\u544a\u6216\u4e0b\u8f7d\u63a8\u8350\u8f6f\u4ef6\u5747\u80fd\u83b7\u5f97\u5956\u52b1\u3002\u83b7\u5f97\u7684\u5956\u52b1\u91d1\u989d\u5728\u7d2f\u8ba1\u540e\uff0c\u53ef\u5728\u8f6f\u4ef6\u5185\u5151\u6362\u8bdd\u8d39\u3001\u652f\u4ed8\u5b9d\u63d0\u73b0\u7b49\u591a\u79cd\u6536\u76ca\u5151\u6362\u65b9\u5f0f\u3002",
+				"ad_subject": "\u8c46\u8c46\u8da3\u73a9",
+				"ad_summary": "\u9501\u5c4f\u89e3\u9501\u80fd\u8d5a\u94b1\uff0c10\u5143\u8d77\u63d0\u73b0",
+				"screenshots": ["http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-05\/add84315ce5d38d986c5c631f879e37f.jpg", "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-05\/81a7f5c30c4b692de0069062e6411cf9.jpg", "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-05\/2b7dad681e5e14563acee2631f09a2ba.jpg"],
+				"size": "4.0M",
+				"task": {
+					"_1": {
+						"step": 1,
+						"step_desc": "\u6ce8\u518c\u5e76\u5b8c\u6210\u4e24\u4e2a\u4efb\u52a1",
+						"time_need": 360,
+						"point": 24,
+						"status": 3
+					},
+					"_2": {
+						"step": 2,
+						"step_desc": "\u6b21\u65e5\u767b\u5f55\u9080\u8bf71\u4f4d\u597d\u53cb",
+						"time_need": 180,
+						"point": 6,
+						"status": 4
+					},
+					"_3": {
+						"step": 3,
+						"step_desc": "\u7b2c3\u5929\u767b\u5f55\u5b8c\u62102\u4e2a\u4efb\u52a1",
+						"time_need": 180,
+						"point": 6,
+						"status": 4
+					},
+					"_4": {
+						"step": 4,
+						"step_desc": "\u7b2c4\u5929\u767b\u5f55\u9080\u8bf71\u4f4d\u597d\u53cb",
+						"time_need": 180,
+						"point": 6,
+						"status": 4
+					},
+					"_5": {
+						"step": 5,
+						"step_desc": "\u7b2c5\u5929\u767b\u5f55\u5b8c\u62102\u4e2a\u4efb\u52a1",
+						"time_need": 180,
+						"point": 6,
+						"status": 4
+					},
+					"_6": {
+						"step": 6,
+						"step_desc": "\u7b2c6\u5929\u767b\u5f55\u5b8c\u62102\u4e2a\u4efb\u52a1",
+						"time_need": 180,
+						"point": 6,
+						"status": 4
+					},
+					"_7": {
+						"step": 7,
+						"step_desc": "\u7b2c7\u5929\u767b\u5f55\u5b8c\u62102\u4e2a\u4efb\u52a1",
+						"time_need": 180,
+						"point": 6,
+						"status": 4
+					}
+				}
+			},
+			"14582": {
+				"description": "JJ\u6597\u5730\u4e3b,\u624b\u673a\u68cb\u724c\u7b2c\u4e00\u54c1\u724c\uff0c\u53ef\u514d\u8d39\u8d62\u8bdd\u8d39\u3001\u624b\u673a\uff01<br \/>\u56db\u5927\u7279\u70b9\u5b8c\u80dc\u5176\u4ed6\u6597\u5730\u4e3b\uff01<br \/>1.\u6700\u5f3a\u5927\uff1a\u62e5\u6709\u6597\u5730\u4e3b\u3001\u6b22\u6597\u3001\u4e8c\u6597\u3001\u8d56\u5b50\u3001\u5355\u673a\u4e94\u79cd\u73a9\u6cd5\uff01<br \/>2.\u6700\u5b9e\u60e0\uff1a\u5145\u503c\u5361,\u624b\u673a\u7b49\u5343\u79cd\u5b9e\u7269\u5927\u5956\u5929\u5929\u53d1\uff01<br \/>3.\u6700\u706b\u7206\uff1a\u65e0\u9700\u6ce8\u518c\u5373\u53ef\u5bf9\u6218\u5343\u4e07\u771f\u4eba\u73a9\u5bb6\uff01<br \/>4.\u6700\u4e13\u4e1a\uff1a\u51e0\u5341\u79cd\u4e13\u4e1a\u8d5b\u5236\uff0c\u72ec\u6709\u6392\u884c\u699c\u529f\u80fd\uff01",
+				"ad_subject": "JJ\u6597\u5730\u4e3b",
+				"ad_summary": "JJ\u6597\u5730\u4e3b-\u6709\u6280\u672f\u5c31\u80fd\u514d\u8d39\u8d62\u8bdd\u8d39",
+				"screenshots": ["http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-03\/f3eef6c4b6325ed72c7ce22c637c3cb3.jpg", "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-03\/ff93e083c9ca76afff819774b79e90e6.jpg"],
+				"size": "28.3M"
+			},
+			"16823": {
+				"description": "\u6574\u5408\u4e86\u57fa\u91d1\u7406\u8d22\u548c\u80a1\u7968\u884c\u60c5\u7684\u6295\u8d44\u9891\u9053\uff0c\u6bcf\u5929\u4e3a\u60a8\u5949\u4e0a\u6700\u4f18\u8d28\u7684\u7684\u7a33\u5065\u7406\u8d22\u4ea7\u54c1\uff0c\u8ba9\u60a8\u7701\u65f6\u53c8\u7701\u5fc3\uff0c\u81ea\u9009\u7406\u8d22\u3001\u7279\u8272\u7406\u8d22\uff0c\u5168\u9762\u8986\u76d6\u60a8\u7684\u7406\u8d22\u9700\u6c42\uff0c\u63d0\u4f9b\u70ed\u95e8\u6295\u8d44\u57fa\u91d1\u548c\u8d22\u7ecf\u8d44\u8baf\uff0c\u4f18\u5316\u8d44\u4ea7\u914d\u7f6e\uff0c\u7a33\u5065\u7406\u8d22\uff0c\u9ad8\u6536\u6295\u8d44\u4e24\u4e0d\u8bef\u3002",
+				"ad_subject": "\u4eac\u4e1c\u91d1\u878d",
+				"ad_summary": "\u4eac\u4e1c\u7406\u8d22\uff0c\u603b\u6709\u4e00\u6b3e\u9002\u5408\u4f60\uff01\uff01\uff01",
+				"screenshots": ["http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-06\/ff269842b5538ad1846444a7b1f7a421.png", "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-06\/8819c7f387454c917b432f51631b44c0.png"],
+				"size": "9.8M",
+				"task": {
+					"_1": {
+						"step": 1,
+						"step_desc": "\u5b89\u88c5\u624b\u673a\u53f7\u6ce8\u518c\u6253\u5f00\u6d4f\u89c82\u5206\u949f",
+						"time_need": 120,
+						"point": 35.75,
+						"status": 1
+					},
+					"_2": {
+						"step": 2,
+						"step_desc": "\u5f53\u5929\u6253\u5f00\u5f00\u901a\u767d\u6761",
+						"time_need": 120,
+						"point": 9.75,
+						"status": 1
+					},
+					"_3": {
+						"step": 3,
+						"step_desc": "\u6b21\u65e5\u6253\u5f00\u6d4f\u89c82\u5206\u949f",
+						"time_need": 120,
+						"point": 9.75,
+						"status": 2
+					},
+					"_4": {
+						"step": 4,
+						"step_desc": "3\u65e5\u6253\u5f00\u6d4f\u89c82\u5206\u949f",
+						"time_need": 120,
+						"point": 9.75,
+						"status": 3
+					}
+				}
+			},
+			"16767": {
+				"description": "\u5c0a\u8d35\u7684\u57ce\u4e3b\u9601\u4e0b\uff0c\u6b22\u8fce\u6765\u5230\u8fd9\u7247\u8361\u6c14\u56de\u80a0\u7684\u53e4\u6218\u573a\uff0c\u300a\u7f57\u9a6c\u65f6\u4ee3\uff1a\u5e1d\u56fdOL\u300b\u5373\u5c06\u5e26\u7ed9\u60a8\u6700\u70ed\u8840\u6f8e\u6e43\u7684\u53e4\u4ee3\u6218\u4e89\uff0c\u4eab\u53d7\u519b\u65d7\u53f7\u4ee4\u4e4b\u4e0b\u6240\u5411\u62ab\u9761\u3001\u653b\u57ce\u63a0\u5730\u7684\u5feb\u611f\u3002\u6e38\u620f\u529b\u6c42\u7ed9\u73a9\u5bb6\u8fd8\u539f\u53e4\u7f57\u9a6c\u65f6\u4ee3\u738b\u8005\u5f81\u6218\u7684\u4f20\u5947\u53f2\u8bd7\uff0c\u5e76\u62e5\u6709\u591a\u4ebaPVP\u7684\u9635\u8425\u6218\u548c\u519b\u56e2\u6218\u6597\uff0c\u52a0\u5165\u4e86\u53e4\u4ee3\u8457\u540d\u7ecf\u5178\u6218\u5f79\u3001\u653b\u5360\u738b\u57ce\u5750\u4eab\u6c5f\u5c71\u7b49\u4e30\u5bcc\u591a\u5f69\u7684\u73a9\u6cd5\uff0c\u4e16\u754c\u5927\u6218\u3001\u7531\u60a8\u70b9\u71c3\uff01\u53c2\u4e0e\u8005\u5c06\u7edf\u9886\u58eb\u5175\uff0c\u6325\u52a8\u624b\u4e2d\u7684\u94a2\u5200\u5229\u5203\u5bf9\u654c\u4eba\u8fdb\u884c\u81f4\u547d\u7684\u6253\u51fb\uff0c\u540c\u65f6\u5229\u7528\u751f\u4ea7\u548c\u7814\u53d1\u7b49\u4f53\u73b0\u6253\u9020\u81ea\u5df1\u7684\u94c1\u8840\u519b\u56e2\uff0c\u91c7\u7528\u5916\u4ea4\u7684\u624b\u6bb5\u4e0e\u4e16\u754c\u4e0a\u7684\u5176\u4ed6\u57ce\u4e3b\u7ed3\u76df\uff0c\u4e00\u540c\u5efa\u9020\u6587\u660e\u7684\u53e4\u7f57\u9a6c\u5e1d\u56fd\u3002",
+				"ad_subject": "\u7f57\u9a6c\u65f6\u4ee3",
+				"ad_summary": "\u738b\u57ce\u4e89\u9738,\u7b56\u7565\u4e3a\u738b,\u66b4\u529b\u5f81\u6218,\u4e00\u7edf\u5929\u4e0b.",
+				"screenshots": ["http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-06\/9e598dfc373e001e725c8e7febde1e09.jpg", "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-06\/be918c48a3969c3488d6b63c770c7c00.jpg"],
+				"size": "23.2M",
+				"task": {
+					"_1": {
+						"step": 1,
+						"step_desc": "\u6ce8\u518c\u5e76\u73a9\u6e38\u620f3\u5206\u949f",
+						"time_need": 300,
+						"point": 35,
+						"status": 3
+					},
+					"_2": {
+						"step": 2,
+						"step_desc": "\u6b21\u65e5\u767b\u9646\u73a9\u6e38\u620f3\u5206\u949f",
+						"time_need": 180,
+						"point": 25,
+						"status": 4
+					},
+					"_3": {
+						"step": 3,
+						"step_desc": "\u7b2c3\u5929\u73a9\u6e38\u620f3\u5206\u949f",
+						"time_need": 180,
+						"point": 10,
+						"status": 4
+					},
+					"_4": {
+						"step": 4,
+						"step_desc": "\u7b2c4\u5929\u73a9\u6e38\u620f3\u5206\u949f",
+						"time_need": 180,
+						"point": 10,
+						"status": 4
+					},
+					"_5": {
+						"step": 5,
+						"step_desc": "\u7b2c5\u5929\u73a9\u6e38\u620f3\u5206\u949f",
+						"time_need": 180,
+						"point": 10,
+						"status": 4
+					},
+					"_6": {
+						"step": 6,
+						"step_desc": "\u7b2c6\u5929\u73a9\u6e38\u620f3\u5206\u949f",
+						"time_need": 180,
+						"point": 10,
+						"status": 4
+					},
+					"_7": {
+						"step": 7,
+						"step_desc": "\u7b2c7\u5929\u73a9\u6e38\u620f3\u5206\u949f",
+						"time_need": 180,
+						"point": 10,
+						"status": 4
+					}
+				}
+			},
+			"16125": {
+				"description": "\u300a\u8d85\u7ea7\u7fa4\u82f1\u4f20\u300b\uff0c100%\u8fd8\u539f\u7ecf\u5178\u5927\u4f5c\uff0c\u5168\u4f53\u7cfb\u521b\u65b0\u6218\u6cd5\u7684\u6b21\u65f6\u4ee3RSLG\u624b\u673a\u6e38\u620f\uff0c\u4e89\u9738\u4e07\u4eba\u5728\u7ebf\u5f81\u6218\u4e00\u7edf\u4e09\u56fd\u9738\u4e1a\uff01<br \/>\u798f\u5229\uff0c\u7cbe\u5f69\u6d3b\u52a8\uff0c\u6bcf\u5929\u9001\u4e0d\u505c\uff01\u6708\u7b7e\u9001\u5927\u793c\uff1a\u6bcf\u5929\u7b7e\u5230\u5373\u53ef\u83b7\u5f97\u73cd\u7a00\u9053\u5177\u3001\u514d\u8d39\u9001\u91d1\u5e01\uff01\u5347\u7ea7\u4e3b\u57ce\uff0c\u5c06\u9001\u4e0a\u6570\u767e\u4e07\u94f6\u5e01\u4e3a\u4e3b\u516c\u6218\u529b\u589e\u5f3a\uff01\u9996\u5145\u4e09\u500d\u8fd4\u5229\u3001\u9001\u79ef\u5206\u3001\u805a\u5b9d\u76c6\u9650\u65f6\u798f\u5229\uff0c\u8fd8\u6709\u66f4\u591a\u793c\u5305\u5b9a\u65f6\u653e\u9001\uff0c\u7b49\u60a8\u6765\u6218\uff01<br \/>   \u300a\u8d85\u7ea7\u7fa4\u82f1\u4f20\u300b\u5c06\u73a9\u5bb6\u5e26\u5165\u4e86\u4e00\u4e2a\u5145\u6ee1\u91d1\u6208\u94c1\u9a6c\uff0c\u53e4\u8272\u53e4\u9999\u7684\u5e7f\u9614\u4e16\u754c\u4e4b\u4e2d\u3002\u9163\u7545\u6dcb\u6f13\u7684\u6218\u6597\u4f53\u9a8c\uff0c\u6ce2\u6f9c\u58ee\u9614\u7684\u4e09\u56fd\u80cc\u666f\uff0c\u5168\u4f53\u7cfb\u521b\u65b0\u6218\u6cd5\uff0c\u589e\u52a0\u4e86\u5341\u4e8c\u5175\u79cd\u3001\u4e5d\u5927\u9635\u5f62\u548c\u8fc7\u767e\u6b66\u5c06\u6280\u80fd\u7b49\u7efc\u5408\u5c5e\u6027\u7684\u5f71\u54cd\uff1b\u5c55\u73b0\u5f3a\u5927\u7684\u6b66\u5c06\u9635\u5bb9\uff0c\u4f7f\u6b66\u5c06\u771f\u6b63\u6210\u4e3a\u6218\u573a\u4e0a\u7684\u6700\u5927\u80dc\u8d1f\u5173\u952e\u70b9\uff01",
+				"ad_subject": "\u8d85\u7ea7\u7fa4\u82f1\u4f202z",
+				"ad_summary": "\u4e07\u4eba\u5728\u7ebf\u5f81\u6218\u4e00\u7edf\u4e09\u56fd\u9738\u4e1a\uff01",
+				"screenshots": ["http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-03\/a0afd9bc7c0fd4ef9bb833b9a5eda397.jpg", "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-03\/9cab49d26e7020bfcdd8e718b6f31545.jpg"],
+				"size": "24.4M",
+				"task": {
+					"_1": {
+						"step": 1,
+						"step_desc": "\u6ce8\u518c\u5e76\u73a9\u6e38\u620f3\u5206\u949f",
+						"time_need": 180,
+						"point": 50,
+						"status": 3,
+						"nodoing": 5
+					},
+					"_2": {
+						"step": 2,
+						"step_desc": "\u6b21\u65e5\u767b\u5f55\u73a92\u5206\u949f",
+						"time_need": 120,
+						"point": 10,
+						"status": 4
+					},
+					"_3": {
+						"step": 3,
+						"step_desc": "3\u65e5\u767b\u5f55\u73a92\u5206\u949f",
+						"time_need": 120,
+						"point": 10,
+						"status": 4
+					},
+					"_4": {
+						"step": 4,
+						"step_desc": "4\u65e5\u767b\u5f55\u73a92\u5206\u949f",
+						"time_need": 120,
+						"point": 10,
+						"status": 4
+					},
+					"_5": {
+						"step": 5,
+						"step_desc": "5\u65e5\u767b\u5f55\u73a92\u5206\u949f",
+						"time_need": 120,
+						"point": 10,
+						"status": 4
+					},
+					"_6": {
+						"step": 6,
+						"step_desc": "6\u65e5\u767b\u5f55\u73a92\u5206\u949f",
+						"time_need": 120,
+						"point": 5,
+						"status": 4
+					},
+					"_7": {
+						"step": 7,
+						"step_desc": "7\u65e5\u767b\u5f55\u73a93\u5206\u949f",
+						"time_need": 180,
+						"point": 5,
+						"status": 4
+					}
+				}
+			},
+			"16701": {
+				"description": "\u79c0\u5427\u89c6\u9891\u793e\u533a\u7ed3\u5408\u4e86\u5f53\u4e0b\u6700\u70ed\u95e8\u7684\u89c6\u9891\u548c\u793e\u533a\u4ea4\u53cb\u7684\u7406\u5ff5\uff0c\u5c06\u89c6\u9891\u5e94\u7528\u5230\u793e\u533a\u4e2d\uff0c\u96c6\u4e92\u52a8\u5a31\u4e50\u3001\u771f\u4eba\u89c6\u9891\u4e3a\u4e00\u4f53\uff0c\u81f4\u529b\u4e8e\u4ee5\u89c6\u9891\u4e92\u52a8\u6280\u672f\u6c47\u96c6\u4eba\u4eec\u751f\u6d3b\u7684\u65b9\u65b9\u9762\u9762\uff0c\u4e3a\u5e7f\u5927\u7f51\u53cb\u63d0\u4f9b\u4ea4\u53cb\u3001\u5728\u7ebfK\u6b4c\u7b49\u5185\u5bb9\uff0c\u8ba9\u7528\u6237\u6240\u6709\u7684\u7f51\u7edc\u5a31\u4e50\u751f\u6d3b\u90fd\u53ef\u4ee5\u5728\u89c6\u9891\u793e\u533a\u4e2d\u5f97\u5230\u6ee1\u8db3\u3002",
+				"ad_subject": "\u79c0\u5427\u76f4\u64ad",
+				"ad_summary": "\u79c0\u5427,\u56fd\u5185\u6700\u706b\u7206\u7684\u771f\u4eba\u89c6\u9891\u4e92\u52a8\u76f4\u64ad\u793e\u533a",
+				"screenshots": ["http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-05\/0827562521f39bc32d70ec28fc596681.png", "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-05\/b7cbeaa1a519825c50b95f30cfe7edb6.png"],
+				"size": "14.1M",
+				"task": {
+					"_1": {
+						"step": 1,
+						"step_desc": "\u6ce8\u518c\u5e76\u89c2\u770b\u7f8e\u5973\u76f4\u64ad3\u5206\u949f",
+						"time_need": 300,
+						"point": 30,
+						"status": 1
+					},
+					"_2": {
+						"step": 2,
+						"step_desc": "\u6b21\u65e5\u767b\u5f55\u770b\u76f4\u64ad3\u5206\u949f",
+						"time_need": 180,
+						"point": 12,
+						"status": 2
+					},
+					"_3": {
+						"step": 3,
+						"step_desc": "\u7b2c3\u5929\u767b\u5f55\u770b\u76f4\u64ad3\u5206\u949f",
+						"time_need": 180,
+						"point": 6,
+						"status": 2
+					},
+					"_4": {
+						"step": 4,
+						"step_desc": "\u7b2c4\u5929\u767b\u5f55\u770b\u76f4\u64ad3\u5206\u949f",
+						"time_need": 180,
+						"point": 6,
+						"status": 2
+					},
+					"_5": {
+						"step": 5,
+						"step_desc": "\u7b2c5\u5929\u767b\u5f55\u770b\u76f4\u64ad3\u5206\u949f",
+						"time_need": 180,
+						"point": 6,
+						"status": 2
+					}
+				}
+			},
+			"16999": {
+				"description": "1111111111111111111111111111",
+				"ad_subject": "\u91d1\u50a8\u5b9d",
+				"ad_summary": "1011111111111",
+				"screenshots": ["http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-07\/1e544bf3077ee48147e9eb347a9481c5.jpg"],
+				"size": "5.2M",
+				"task": {
+					"_1": {
+						"step": 1,
+						"step_desc": "\u5b89\u88c5\u6fc0\u6d3b",
+						"time_need": 60,
+						"point": 1000,
+						"status": 3
+					}
+				}
+			},
+			"14195": {
+				"description": "\u300a\u6709\u8d5a\u300b\u662f\u4e2d\u56fd\u7b2c\u4e00\u7684\u624b\u673a\u8d5a\u94b1\u5e73\u53f0\uff0c\u6709\u8d5a\u9488\u5bf9\u624b\u673a\u5ba2\u6237\uff0c\u63d0\u4f9b\u4e86\u624b\u673a\u8d5a\u94b1\u7b49\u591a\u79cd\u5f62\u5f0f\u7684\u4efb\u52a1\uff0c\u53ea\u8981\u6309\u7167\u8981\u6c42\u5b8c\u6210\u5b89\u88c5\u3001\u5206\u9879\u3001\u5a31\u4e50\u7b49\u4efb\u52a1\uff0c\u5229\u7528\u96f6\u788e\u7684\u65f6\u95f4\u52a8\u52a8\u624b\u6307\u5c31\u53ef\u4ee5\u8d5a\u5230\u73b0\u91d1\u3002\u8d5a\u6ee110\u5143\u5373\u53ef\u968f\u65f6\u7533\u8bf7\u63d0\u73b0\uff0c\u5145\u503c\u8bdd\u8d39\uff0c\u5151\u6362Q\u5e01\u7b49\uff0c\u8fd9\u4e00\u5207\u90fd\u662f\u514d\u8d39\u7684\u54e6\uff01\u6709\u8d5a\u8fd8\u6709\u8be6\u7ec6\u7684\u4e2a\u4eba\u8d26\u6237\u7ba1\u7406\uff0c\u6e38\u620f\u8bd5\u73a9\uff0c\u6253\u7801\u7eaa\u5f55\u7b49\u968f\u65f6\u67e5\u770b\uff0c\u73b0\u5728\u767b\u5f55\u8fd8\u90015\u5143\u7ea2\u5305\u54e6\uff0c\u5982\u679c\u8fd8\u6ca1\u6709\u6709\u8d5a\uff0c\u90a3\u5c31out\u4e86\uff0c\u5927\u5bb6\u90fd\u5728\u75af\u72c2\u7684\u8d5a\u94b1\uff0c\u8d76\u7d27\u52a0\u5165\u5427\u3002",
+				"ad_subject": "\u6709\u8d5a",
+				"ad_summary": "\u4e2d\u56fd\u7b2c\u4e00\u7684\u624b\u673a\u8d5a\u94b1\u5e73\u53f0\uff01",
+				"screenshots": ["http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-03\/4e7d4b996c764b1ab25356470b6b3421.jpg", "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-03\/e87ac1c2afd40ef297795b9daf4e8cbf.jpg"],
+				"size": "7.1M",
+				"task": {
+					"_1": {
+						"step": 1,
+						"step_desc": "\u6210\u529f\u6ce8\u518c\u5e76\u67e5\u770b2\u5206\u949f",
+						"time_need": 120,
+						"point": 36,
+						"status": 1
+					},
+					"_2": {
+						"step": 2,
+						"step_desc": "\u5f53\u5929\u6253\u5f00\u5b8c\u62102\u4efb\u52a1\u5e76\u63d0\u73b0",
+						"time_need": 60,
+						"point": 8,
+						"status": 1
+					},
+					"_3": {
+						"step": 3,
+						"step_desc": "\u6b21\u65e5\u6253\u5f00\u4f7f\u75282\u5206\u949f",
+						"time_need": 120,
+						"point": 8,
+						"status": 2
+					},
+					"_4": {
+						"step": 4,
+						"step_desc": "3\u65e5\u6253\u5f00\u4f7f\u75282\u5206\u949f",
+						"time_need": 120,
+						"point": 8,
+						"status": 2
+					},
+					"_5": {
+						"step": 5,
+						"step_desc": "4\u65e5\u6253\u5f00\u4f7f\u75282\u5206\u949f",
+						"time_need": 120,
+						"point": 8,
+						"status": 2
+					},
+					"_6": {
+						"step": 6,
+						"step_desc": "5\u65e5\u6253\u5f00\u4f7f\u75282\u5206\u949f",
+						"time_need": 120,
+						"point": 4,
+						"status": 2
+					},
+					"_7": {
+						"step": 7,
+						"step_desc": "6\u65e5\u6253\u5f00\u4f7f\u75282\u5206\u949f",
+						"time_need": 120,
+						"point": 4,
+						"status": 2
+					},
+					"_8": {
+						"step": 8,
+						"step_desc": "7\u65e5\u6253\u5f00\u4f7f\u75282\u5206\u949f",
+						"time_need": 120,
+						"point": 4,
+						"status": 3
+					}
+				}
+			},
+			"15989": {
+				"description": "MOKA\u5373\u6a21\u7279\u5361\uff0c\u662f\u4e00\u79cd\u56fe\u6587\u5e76\u8302\u7684\u4e2a\u4eba\u4ecb\u7ecd\u3002\u662f\u6a21\u7279\u3001\u6444\u5f71\u5e08\u3001\u793c\u4eea\u548c\u5546\u5bb6\u4e92\u76f8\u4e4b\u95f4\u7ea6\u62cd\u6d3b\u52a8\u7684\u5de5\u5177\u3002<br \/>MOKA\u7ed9\u6a21\u7279\u3001\u793c\u4eea\u3001\u827a\u4eba\u3001\u5927\u5b66\u751f\u3001\u6444\u5f71\u5e08\u3001\u6444\u5f71\u7231\u597d\u8005\u3001\u5316\u5986\u5e08\u3001\u5546\u5bb6\u3001\u7ecf\u7eaa\u4eba\u7b49\u63d0\u4f9b\u4e86\u4e00\u4e2a\u4e92\u76f8\u5c55\u793a\u3001\u63a8\u8350\u81ea\u5df1\u7684\u673a\u4f1a\u548c\u9014\u5f84\u3002\u901a\u8fc7\u56fe\u7247\u548c\u6587\u5b57\u5c55\u793a\u81ea\u5df1\u7684\u4f18\u52bf\u548c\u624d\u80fd\uff0c\u63a8\u8350\u81ea\u5df1\uff0c\u589e\u52a0\u517c\u804c\u3001\u7ea6\u62cd\u3001\u63a5\u6d3b\u52a8\u7684\u673a\u4f1a\u3002<br \/>\u201cMOKA\u6d3b\u52a8\u5e7f\u573a\u201d\u7684\u6d3b\u52a8\u53d1\u5e03\uff0c\u6bcf\u5929\u4f1a\u5c06\u5168\u56fd\u5404\u57ce\u5e02\u7684\u6a21\u7279\u6d3b\u52a8\u76f4\u63a5\u63a8\u9001\u5230\u6a21\u7279\u9762\u524d\uff0c\u6a21\u7279\u4eec\u65e0\u9700\u518d\u4e3a\u6d3b\u52a8\u4fe1\u606f\u91cf\u592a\u5c11\u6216\u9519\u8fc7\u800c\u62c5\u5fe7\u3002\u540c\u65f6\uff0cMOKA\u5438\u5f15\u4e86\u5927\u91cf\u7684\u6444\u5f71\u5e08\u5165\u9a7b\uff0c\u6781\u5927\u63d0\u9ad8\u4e86\u6444\u5f71\u5e08\u548c\u6a21\u7279\u4e4b\u95f4\u201c\u7ea6\u62cd\u201d\u7684\u673a\u4f1a\uff0c\u5e76\u901a\u8fc7\u201cMOKA\u79c0\u201d\u7684\u63a8\u9001\u548c\u5c55\u793a\uff0c\u5c06\u7ea6\u62cd\u4ee5\u53ca\u7ea6\u62cd\u540e\u7684\u4f5c\u54c1\u548c\u56fe\u7247\u5c55\u793a\u53d8\u7684\u66f4\u52a0\u751f\u52a8\u6709\u8da3\u3002",
+				"ad_subject": "MOKA",
+				"ad_summary": "MOKA-\u6a21\u7279\u6444\u5f71\u517c\u804c\u8d5a\u94b1\u5e73\u53f0",
+				"screenshots": ["http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-03\/a821dc2903931dcffd20196f68aa7bfa.jpg", "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-03\/b40ab7c3ec85bdc4af79a65f5793f851.jpg"],
+				"size": "16.9M",
+				"task": {
+					"_1": {
+						"step": 1,
+						"step_desc": "\u771f\u5b9e\u624b\u673a\u53f7\u6ce8\u518c\u67e5\u770b1\u5206\u949f",
+						"time_need": 0,
+						"point": 65,
+						"status": 1
+					},
+					"_2": {
+						"step": 2,
+						"step_desc": "\u6b21\u65e5\u6253\u5f00\u67e5\u770b3\u4e2a\u6a21\u72792\u5206\u949f\u5e76\u5173\u6ce8",
+						"time_need": 120,
+						"point": 13,
+						"status": 2
+					},
+					"_3": {
+						"step": 3,
+						"step_desc": "3\u65e5\u6253\u5f00\u67e5\u770b2\u5206\u949f",
+						"time_need": 120,
+						"point": 13,
+						"status": 2
+					},
+					"_4": {
+						"step": 4,
+						"step_desc": "4\u65e5\u6253\u5f00\u6d4f\u89c81\u5206\u949f",
+						"time_need": 60,
+						"point": 13,
+						"status": 1
+					},
+					"_5": {
+						"step": 5,
+						"step_desc": "5\u65e5\u6253\u5f00\u6d4f\u89c81\u5206\u949f",
+						"time_need": 60,
+						"point": 13,
+						"status": 2
+					},
+					"_6": {
+						"step": 6,
+						"step_desc": "6\u65e5\u6253\u5f00\u6d4f\u89c81\u5206\u949f",
+						"time_need": 60,
+						"point": 6.5,
+						"status": 2
+					},
+					"_7": {
+						"step": 7,
+						"step_desc": "7\u65e5\u6253\u5f00\u6d4f\u89c81\u5206\u949f",
+						"time_need": 60,
+						"point": 6.5,
+						"status": 2
+					}
+				}
+			},
+			"16569": {
+				"description": "\u539f\u521b\u897f\u65b9\u9b54\u5e7b\u9898\u6750MMORPG\u56de\u5408\u5236\u5927\u4f5c\u300a\u661f\u8fb0\u5947\u7f18\u300b\u706b\u7206\u4e0a\u7ebf\uff0c\u9163\u7545\u6dcb\u6f13\u7684\u6e38\u620f\u5267\u60c5\uff0c\u5e26\u4f60\u9886\u7565\u9b54\u5e7b\u4e16\u754c\u7684\u98ce\u91c7\uff1b\u5ef6\u7eed\u4e86\u56de\u5408\u5236\u5e94\u6709\u7684\u6218\u6597\u73a9\u6cd5\uff0c\u4ee5\u6e05\u65b0\u840c\u52a8\u7684\u5361\u901a\u98ce\u683c\uff0c\u6d53\u90c1\u7684\u897f\u65b9\u9b54\u5e7b\u98ce\u683c\u7684\u7cbe\u7f8e\u573a\u666f\u4ee5\u53ca\u4e30\u5bcc\u591a\u6837\u7684\u6d3b\u52a8\u5185\u5bb9\u6765\u6293\u4f4f\u60a8\u7684\u773c\u7403\u3002\u642d\u8f7d\u6709\u5f3a\u5927\u4ea4\u4e92\u7cfb\u7edf\u7684\u300a\u661f\u8fb0\u5947\u7f18\u300b\u53ef\u4ee5\u8ba9\u60a8\u968f\u65f6\u968f\u5730\u60f3\u804a\u5c31\u804a\uff0c\u6211\u4eec\u7acb\u5fd7\u5c06\u300a\u661f\u8fb0\u5947\u7f18\u300b\u6253\u9020\u6210\u4e3a\u56fd\u5185\u9996\u5c48\u4e00\u6307\u7684\u4ea4\u4e92\u5f62\u624b\u6e38\uff0c\u8ba9\u60a8\u53ef\u4ee5\u66f4\u52a0\u771f\u5b9e\u7684\u4f53\u9a8c\u8fd9\u4e2a\u9b54\u5e7b\u4e16\u754c\u3002",
+				"ad_subject": "\u661f\u8fb0\u5947\u7f18",
+				"ad_summary": "\u9b54\u5e7b\u4e16\u754c\u7684\u771f\u5b9e\u4f53\u9a8c\u624b\u6e38",
+				"screenshots": ["http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-05\/1ab0b8e7dc26cd0fcfee4cdcf7c2c5d7.jpg", "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-05\/984cf86fc7756fff551c667b3aa6d79f.jpg"],
+				"size": "156.7M",
+				"task": {
+					"_1": {
+						"step": 1,
+						"step_desc": "\u6ce8\u518c\u5e76\u73a9\u6e38\u620f5\u5206\u949f",
+						"time_need": 300,
+						"point": 30,
+						"status": 1
+					},
+					"_2": {
+						"step": 2,
+						"step_desc": "\u6b21\u65e5\u767b\u5f55\u73a9\u6e38\u620f3\u5206\u949f",
+						"time_need": 180,
+						"point": 18,
+						"status": 2
+					},
+					"_3": {
+						"step": 3,
+						"step_desc": "\u7b2c3\u5929\u767b\u5f55\u73a9\u6e38\u620f3\u5206\u949f",
+						"time_need": 180,
+						"point": 12,
+						"status": 2
+					},
+					"_4": {
+						"step": 4,
+						"step_desc": "\u7b2c4\u5929\u767b\u5f55\u73a9\u6e38\u620f3\u5206\u949f",
+						"time_need": 180,
+						"point": 12,
+						"status": 2
+					},
+					"_5": {
+						"step": 5,
+						"step_desc": "\u7b2c5\u5929\u767b\u5f55\u73a9\u6e38\u620f3\u5206\u949f",
+						"time_need": 180,
+						"point": 12,
+						"status": 2
+					},
+					"_6": {
+						"step": 6,
+						"step_desc": "\u7b2c6\u5929\u767b\u5f55\u73a9\u6e38\u620f3\u5206\u949f",
+						"time_need": 180,
+						"point": 12,
+						"status": 2
+					},
+					"_7": {
+						"step": 7,
+						"step_desc": "\u7b2c7\u5929\u767b\u5f55\u73a9\u6e38\u620f3\u5206\u949f",
+						"time_need": 180,
+						"point": 12,
+						"status": 2
+					},
+					"_8": {
+						"step": 8,
+						"step_desc": "\u7b2c8\u5929\u767b\u5f55\u73a9\u6e38\u620f3\u5206\u949f",
+						"time_need": 180,
+						"point": 12,
+						"status": 2
+					}
+				}
+			},
+			"16730": {
+				"description": "\u897f\u5341\u533a-\u6f14\u5531\u4f1a\u3001\u8bdd\u5267\u3001\u6b4c\u5267\u3001\u97f3\u4e50\u4f1a\u3001\u4f53\u80b2\u8d5b\u4e8b\u7b49\u95e8\u7968\u9884\u8ba2\u52a9\u624b<br \/>\u897f\u5341\u533a\u2014\u6f14\u5531\u4f1a\u3001\u8bdd\u5267\u3001\u4f53\u80b2\u8d5b\u4e8b\u7b49\u95e8\u7968\u6298\u6263\u4e70\u5356\u5e73\u53f0<br \/>\u4e09\u5929\u5185\u6f14\u51fa\u5168\u7f51\u7f57\uff0c\u968f\u4e70\u968f\u770b\uff01<br \/>\u60f3\u770b\u6f14\u5531\u4f1a\u6ca1\u6709\u7968\uff0c\u4e0b\u8f7d\u897f\u5341\u533a\uff0c\u8f7b\u677e\u770b\u6f14\u51fa\uff01<br \/>\u770b\u6f14\u5531\u4f1a\uff0c\u900120\u5143\u4f18\u60e0\u5238\uff0c\u4fbf\u5b9c\u770b\u6f14\u51fa\uff01<br \/>\u4e0b\u8f7d\u897f\u5341\u533a\u770b\u6f14\u5531\u4f1a\uff0c\u95e8\u796830\u5143\u8d77\uff01<br \/>\u897f\u5341\u533a\uff0c\u4e00\u7f51\u6253\u5c3d\u5404\u7c7b\u6f14\u51fa\u3001\u4f53\u80b2\u8d5b\u4e8b\u95e8\u7968\uff0c1\u6298\u8d77\uff01<br \/>\u897f\u5341\u533a\u2014\u6f14\u5531\u4f1a\u3001\u8bdd\u5267\u5c3e\u7968\u6298\u6263\u7968\uff0c\u4e00\u6298\u8d77\uff01<br \/>\u897f\u5341\u533a\u2014\u6f14\u5531\u4f1a\u3001\u8bdd\u5267\u5c3e\u7968\u6298\u6263\u7968\uff0c30\u5143\u8d77\uff01",
+				"ad_subject": "\u897f\u5341\u533a",
+				"ad_summary": "\u5c3e\u7968\u6298\u6263\u5929\u5929\u6709\uff0c\u65e0\u897f\u5341\u4e0d\u73b0\u573a\uff01",
+				"screenshots": ["http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-06\/a0c26070ca109f0246cc9bf795d7c63a.jpg", "http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-06\/035f941ff550acccea32e146ae9488d4.jpg"],
+				"size": "16.2M",
+				"task": {
+					"_1": {
+						"step": 1,
+						"step_desc": "\u5b89\u88c5'\u6211\u7684\u201c\u624b\u673a\u53f7\u6ce8\u518c",
+						"time_need": 120,
+						"point": 45,
+						"status": 1
+					},
+					"_2": {
+						"step": 2,
+						"step_desc": "\u5f53\u5929\u518d\u6b21\u6253\u5f00\u9996\u9875\u6d4f\u89c82\u5206\u949f",
+						"time_need": 120,
+						"point": 3.75,
+						"status": 2
+					},
+					"_3": {
+						"step": 3,
+						"step_desc": "\u6b21\u65e5\u6253\u5f00\u6d4f\u89c8\u6536\u85cf\u5e76\u8d2d\u4e70",
+						"time_need": 120,
+						"point": 7.5,
+						"status": 2
+					},
+					"_4": {
+						"step": 4,
+						"step_desc": "3\u65e5\u6253\u5f00\u67e5\u770b\u6d3b\u52a8",
+						"time_need": 60,
+						"point": 3.75,
+						"status": 2
+					},
+					"_5": {
+						"step": 5,
+						"step_desc": "4\u65e5\u6253\u5f00\u6d4f\u89c8\u5e76\u4efb\u610f\u8d2d\u4e70",
+						"time_need": 60,
+						"point": 7.5,
+						"status": 2
+					},
+					"_6": {
+						"step": 6,
+						"step_desc": "5\u65e5\u6253\u5f00\u6d4f\u89c82\u5206\u949f",
+						"time_need": 120,
+						"point": 7.5,
+						"status": 2
+					}
+				}
+			},
+			"16960": {
+				"description": "\u4e00\u8d77\u79c0\u76f4\u64ad-\u4e00\u6b3e\u8d85\u597d\u73a9\u7684\u771f\u4eba\u89c6\u9891\u804a\u5929\u4ea4\u53cb\u624b\u673a\u76f4\u64ad\u793e\u533a<br \/>\u968f\u65f6\u968f\u5730\u4e0e\u5973\u795e\/\u5e05\u54e5\u89c6\u9891\u4e92\u52a8\uff0c\u548c\u5973\u795e\u4ea4\u53cb\u3001\u804a\u5929\uff0c\u542cMM\u5531\u6b4c\u7684\u5fc5\u5907\u795e\u5668\uff01<br \/>. \u8d85\u8fc73000\u4e07\u6ce8\u518c\u7528\u6237\uff0c\u6bcf\u592950\u4e07\u4eba\u540c\u65f6\u5728\u7ebf <br \/>. \u8d85\u706b\u7206\u7684\u89c6\u9891\u5b9e\u65f6\u76f4\u64ad\u5185\u5bb9\uff0c\u968f\u65f6\u968f\u5730\u548c\u4e3b\u64ad\u5728\u7ebf\u89c6\u9891\u804a\u5929\u4e92\u52a8\uff0c\u5404\u79cd\u793c\u7269\uff0c\u8ba9\u4f60\u535a\u5f97\u5973\u795e\u7684\u9752\u7750\uff01",
+				"ad_subject": "\u4e00\u8d77\u79c0\u76f4\u64ad",
+				"ad_summary": "\u8d85\u706b\u7206\u7684\u771f\u4eba\u7f8e\u5973\u89c6\u9891\u624b\u673a\u76f4\u64ad\u8f6f\u4ef6\uff01",
+				"screenshots": ["http:\/\/s248.cache.fightpic.com\/files\/ads\/2016-06\/e8821b90901640c1a29ac50f66c524d9.jpg"],
+				"size": "14.0M",
+				"task": {
+					"_1": {
+						"step": 1,
+						"step_desc": "\u9996\u6b21\u5b89\u88c5\u4efb\u610f\u65b9\u5f0f\u767b\u5f55\u6d4f\u89c83\u5206\u949f",
+						"time_need": 180,
+						"point": 33.75,
+						"status": 1
+					},
+					"_2": {
+						"step": 2,
+						"step_desc": "\u5f53\u5929\u518d\u6b21\u6253\u5f00\u67e5\u770b\u76f4\u64ad2\u5206\u949f",
+						"time_need": 120,
+						"point": 11.25,
+						"status": 1
+					},
+					"_3": {
+						"step": 3,
+						"step_desc": "\u6b21\u65e5\u6253\u5f00\u67e5\u770b\u76f4\u64ad3\u5206\u949f",
+						"time_need": 180,
+						"point": 18.75,
+						"status": 2
+					},
+					"_4": {
+						"step": 4,
+						"step_desc": "3\u65e5\u6253\u5f00\u67e5\u770b\u76f4\u64ad3\u5206\u949f",
+						"time_need": 180,
+						"point": 7.5,
+						"status": 2
+					},
+					"_5": {
+						"step": 5,
+						"step_desc": "5\u65e5\u6253\u5f00\u76f4\u64ad\u67e5\u770b3\u5206\u949f",
+						"time_need": 180,
+						"point": 3.75,
+						"status": 2
+					}
+				}
+			}
+		}
+	}
+}

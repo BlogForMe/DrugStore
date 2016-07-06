@@ -52,7 +52,7 @@ public class ParentFragment extends BaseFragment {
 //			logger.i("requestHandler" + msg.obj.toString());
             BaseBean result = (BaseBean) msg.obj;
 //            if (!TextUtils.isEmpty(data)) {
-//                HashMap<String, Object> map = (HashMap<String, Object>) JsonParser
+//                HashMap<String, Object> map = (HashMap<String, Object>)
 //                        .decode(data);
 //                if (map == null) {
 //                    showMeage("服务器返回格式有误");

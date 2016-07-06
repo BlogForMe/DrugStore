@@ -49,9 +49,6 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".service.FirstService" />
-        <service android:name=".service.MyIntentService" />
-
         <receiver android:name=".BroadCastReceiver.MyReceiver">
             <intent-filter android:priority="20">
                 <action android:name="com.eoe.drugstore.fragment.communityFragment" />
@@ -108,7 +105,17 @@
             android:launchMode="singleTask" />
         <activity android:name=".activity.CActivity" />
         <activity android:name=".activity.LeakageActivity" />
-        <activity android:name=".activity.ServiceActivity"></activity>
+        <activity android:name=".activity.ServiceActivity" />
+
+        <service
+            android:name=".service.ForeService"
+            android:enabled="true"
+            android:exported="true" />
+        <service android:name=".service.FirstService" />
+        <service android:name=".service.MyIntentService" />
+
+        <activity android:name=".activity.SeeProcessActivity" />
+        <activity android:name=".activity.JsonAcitvity"></activity>
     </application>
 
 </manifest>

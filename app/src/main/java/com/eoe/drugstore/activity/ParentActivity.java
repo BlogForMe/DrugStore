@@ -189,25 +189,6 @@ public class ParentActivity extends BaseActivity implements OnClickListener {
 
 
 
-   /* protected Handler requestHandlerlong = new Handler() {
-        public void handleMessage(Message msg) {
-            // logger.i("requestHandler" + msg.obj.toString());
-            String data = msg.obj.toString();
-            if (!TextUtils.isEmpty(data)) {
-                HashMap<String, Object> map = (HashMap<String, Object>) JsonParser
-                        .decode(data);
-                if (map == null) {
-                    showMsg("服务器返回格式有误");
-                    return;
-                }
-                ArrayList<HashMap<String, Object>> result = (ArrayList<HashMap<String, Object>>) map
-                        .get("result");
-
-                setupRequest(msg.arg1, msg.arg2, result);
-            }
-
-        };
-    };*/
 
 
   /*protected void setupTopBaseView(String title, boolean isReturn) {
