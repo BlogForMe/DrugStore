@@ -13,6 +13,7 @@ import com.eoe.drugstore.activity.AActivity;
 import com.eoe.drugstore.activity.HttpIntenetActivity;
 import com.eoe.drugstore.activity.JsonAcitvity;
 import com.eoe.drugstore.activity.LeakageActivity;
+import com.eoe.drugstore.activity.ListViewActivity;
 import com.eoe.drugstore.activity.SeeProcessActivity;
 import com.eoe.drugstore.activity.ServiceActivity;
 import com.eoe.drugstore.utils.JumpSingleton;
@@ -38,7 +39,7 @@ public class HomeFragment extends ParentFragment {
     protected void setupView(View v) {
         super.setupView(v);
         instance = JumpSingleton.getInstance(mContext);
-        String[] arrays = {"HTTP网络请求", "android启动模式", "内存泄漏", "Service", "查看正在运行的进程","json"};
+        String[] arrays = {"HTTP网络请求", "android启动模式", "内存泄漏", "Service", "查看正在运行的进程","json","ListView分析"};
         ListView hListview = (ListView) v.findViewById(R.id.hListview);
         hListview.setAdapter(new ArrayAdapter<String>(mContext, android.R.layout.simple_list_item_1, arrays));
         hListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -62,8 +63,13 @@ public class HomeFragment extends ParentFragment {
                         instance.JumpNextAcitivy(SeeProcessActivity.class, false);
                         break;
                     case 5:
+//                        json
                          instance.JumpNextAcitivy(JsonAcitvity.class,false);
                         break;
+                    case 6: //listview分析
+                          instance.JumpNextAcitivy(ListViewActivity.class,false);
+                        break;
+
                 }
             }
         });
