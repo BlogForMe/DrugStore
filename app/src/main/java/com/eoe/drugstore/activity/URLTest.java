@@ -9,8 +9,12 @@ import android.widget.ImageView;
 
 import com.eoe.drugstore.R;
 
+import java.io.BufferedInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
@@ -44,6 +48,8 @@ public class URLTest extends ParentActivity {
         super.setupView();
         ivUrl = (ImageView) findViewById(R.id.iv_url);
     }
+
+
 
     @Override
     protected void setupData() {

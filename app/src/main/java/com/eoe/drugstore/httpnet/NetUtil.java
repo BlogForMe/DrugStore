@@ -22,9 +22,9 @@ import okhttp3.Request;
  */
 
 public class NetUtil {
-    //    public static String baseUrl = "http://appservicetest.818.com/m.aspx";
+        public static String baseUrl = "http://appservicetest.818.com/m.aspx";
 //    public static String baseUrl = "http://192.168.132.106/m.aspx";
-    public static String baseUrl = "http://appservice.999yaogou.com/m.aspx";
+//    public static String baseUrl = "http://appservice.999yaogou.com/m.aspx";
     public static String meinuoUrl = "http://localhost:8080/web_war_exploded/JsonServlet/";
 
     public static String key = "818Android20150326@$%&*";

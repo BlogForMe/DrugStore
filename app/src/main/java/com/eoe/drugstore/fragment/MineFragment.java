@@ -38,7 +38,7 @@ public class MineFragment extends ParentFragment implements AdapterView.OnItemCl
 
     private TextView tvShow;
     private ListView mListview;
-    private String[] arrString ={"简单例子", "聊天Socket", "URL获取读取网络链接", "在代码中控制UI界面", "自定义控件", "显示Bitmap图片", "绘图"
+    private String[] arrString = {"简单例子", "聊天Socket", "URL获取读取网络链接", "在代码中控制UI界面", "自定义控件", "显示Bitmap图片", "绘图"
             , "Path类", "属性动画", "Data、Type属性与Intent-filter配置", "path绘制"};
     private Intent intent;
     private JumpSingleton jInstance;
@@ -87,7 +87,7 @@ public class MineFragment extends ParentFragment implements AdapterView.OnItemCl
                 startActivity(intent);
                 break;
             case 5:
-                //受用bitmap
+                //显示bitmap
                 JumpSingleton.getInstance(mContext).JumpNextAcitivy(BitmapTest.class, false);
                 break;
             //在绘图
