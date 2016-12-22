@@ -72,6 +72,7 @@ public class GetUrlActivity extends ParentActivity {
         init(R.layout.activity_get_url);
 
         try {
+
             setCertificates(getAssets().open("zhy_server.cer"));
         } catch (IOException e) {
             e.printStackTrace();

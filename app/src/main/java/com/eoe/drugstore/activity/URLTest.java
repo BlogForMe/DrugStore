@@ -26,6 +26,7 @@ import java.security.cert.X509Certificate;
 import javax.net.SocketFactory;
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.SSLSocket;
@@ -86,14 +87,23 @@ public class URLTest extends ParentActivity {
         keyStore.load(null, null);
         keyStore.setCertificateEntry("ca", ca);
 
+
         // Create a TrustManager that trusts the CAs in our KeyStore
         String tmfAlgorithm = TrustManagerFactory.getDefaultAlgorithm();
         TrustManagerFactory tmf = TrustManagerFactory.getInstance(tmfAlgorithm);
         tmf.init(keyStore);
-
         // Create an SSLContext that uses our TrustManager
         sslContext = SSLContext.getInstance("TLS");
-        sslContext.init(null, tmf.getTrustManagers(), null);
+
+        /**
+         * 双向认证
+         */
+        KeyStore clientKeyStore = KeyStore.getInstance(keyStoreType);
+        clientKeyStore.load(mContext.getAssets().open("client.bks"), "123456".toCharArray());
+        KeyManagerFactory keyManagerFactory = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
+        keyManagerFactory.init(clientKeyStore, "123456".toCharArray());
+
+        sslContext.init(keyManagerFactory.getKeyManagers(), tmf.getTrustManagers(), null);
     }
 
     // Create an HostnameVerifier that hardwires the expected hostname.
@@ -133,7 +143,7 @@ public class URLTest extends ParentActivity {
                     }
 //                    String ur = "https://kyfw.12306.cn/otn/";
 
-                    String ur = "https://192.168.0.126:8443/img/pic1.jpg";
+                    String ur = "https://192.168.1.125:8443/img/pic1.jpg";
                     URL url = new URL(ur);
                     //打开该URL对应的资源的输入流
                     HttpsURLConnection urlConnection = (HttpsURLConnection) url.openConnection();
