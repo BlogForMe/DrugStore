@@ -27,8 +27,6 @@ public class MyApplication extends Application {
 
         ImagePipelineConfig config = ImagePipelineConfig.newBuilder(this).setProgressiveJpegConfig(new SimpleProgressiveJpegConfig()).build();
         Fresco.initialize(this, config);
-
-
     }
 
 
