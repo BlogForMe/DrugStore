@@ -196,8 +196,9 @@ public class URLTest extends AppCompatActivity {
         // Load CAs from an InputStream
         // could be from a resource or ByteArrayInputStream or ...)
         CertificateFactory cf = CertificateFactory.getInstance("X.509");
-//        InputStream caInput = new BufferedInputStream(getAssets().open("1__.qumi.com_bundle.crt"));
-        ByteArrayInputStream caInput = new ByteArrayInputStream(qumi_CAs.getBytes("UTF-8"));
+//        InputStream caInput = new BufferedInputStream(getAssets().open("srca.cer"));
+        //
+        ByteArrayInputStream caInput = new ByteArrayInputStream(qumi_CAs.getBytes());
         Certificate ca;
         try {
             ca = cf.generateCertificate(caInput);
@@ -263,7 +264,7 @@ public class URLTest extends AppCompatActivity {
                     URL url = new URL(ur);
                     //打开该URL对应的资源的输入流
                     HttpsURLConnection urlConnection = (HttpsURLConnection) url.openConnection();
-                    urlConnection.setSSLSocketFactory(sslContext.getSocketFactory());
+                    urlConnection.setSSLSocketFactory(sslContext.getSocketFactory()); //前面initCA()方法就是为这里铺垫
 //                    urlConnection.setHostnameVerifier(hostnameVerifier);
                     InputStream in = urlConnection.getInputStream();
                     BufferedReader bf = new BufferedReader(new InputStreamReader(in));
