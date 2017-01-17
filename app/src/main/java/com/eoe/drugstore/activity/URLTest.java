@@ -259,7 +259,9 @@ public class URLTest extends AppCompatActivity {
                 try {
                     initCA();
 //                    String ur = "https://kyfw.12306.cn/otn/";
-                    String ur = "https://img42.qumi.com//files//ads//2016-10//4d59068a80a583c63c1da16b91671f82.jpg";
+//                    String ur = "https://img42.qumi.com//files//ads//2016-10//4d59068a80a583c63c1da16b91671f82.jpg";
+                    String ur = "http://www.hyhy.tech/lamp.gif";
+
 //                    String ur = "https://192.168.0.126:8443/img/pic1.jpg";
                     URL url = new URL(ur);
                     //打开该URL对应的资源的输入流

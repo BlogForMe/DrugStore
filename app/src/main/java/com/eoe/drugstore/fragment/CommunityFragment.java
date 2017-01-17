@@ -11,10 +11,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.eoe.drugstore.R;
-import com.eoe.drugstore.activity.BlastActivity;
-import com.eoe.drugstore.activity.DrawViewAcitivity;
-import com.eoe.drugstore.activity.FrameActivity;
-import com.eoe.drugstore.activity.MyViewActivity;
 import com.eoe.drugstore.activity.PictureProgressActivity;
 import com.eoe.drugstore.utils.JumpSingleton;
 
@@ -24,7 +20,7 @@ import com.eoe.drugstore.utils.JumpSingleton;
  * Created by Administrator on 2016/3/2.
  */
 public class CommunityFragment extends ParentFragment implements AdapterView.OnItemClickListener {
-    private String[] arrays = {"广播消息", "frameView", "指定点爆炸", "图形绘制", "Image方法"};
+    private String[] arrays = {"图形绘制", "Image方法"};
     private ListView listView;
     private Intent intent;
     private JumpSingleton jInstance;
@@ -73,21 +69,6 @@ public class CommunityFragment extends ParentFragment implements AdapterView.OnI
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position) {
-            case 0:
-                intent = new Intent(mContext, MyViewActivity.class);
-                startActivity(intent);
-                break;
-            case 1:
-                intent = new Intent(mContext, FrameActivity.class);
-                startActivity(intent);
-                break;
-            case 2:
-                jInstance.JumpNextAcitivy(BlastActivity.class, false);
-                break;
-            case 3:
-                //图形绘制和动画
-                jInstance.JumpNextAcitivy(DrawViewAcitivity.class, false);
-                break;
             case 4:
                 //图片处理
                 jInstance.JumpNextAcitivy(PictureProgressActivity.class, false);

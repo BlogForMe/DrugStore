@@ -7,12 +7,13 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.ImageView;
 
 /**
  * Created by Administrator on 2016/12/8.
  */
 
-public class RoundImageView extends View {
+public class RoundImageView extends ImageView {
     public RoundImageView(Context context) {
         super(context);
     }
