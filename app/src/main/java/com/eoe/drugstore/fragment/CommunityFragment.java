@@ -38,32 +38,6 @@ public class CommunityFragment extends ParentFragment implements AdapterView.OnI
         listView.setAdapter(new ArrayAdapter<String>(mContext, android.R.layout.simple_list_item_1, arrays));
         listView.setOnItemClickListener(this);
 
-        /**
-         * 广播
-         */
-        TextView tvBroadCast = (TextView) v.findViewById(R.id.tv_broadcast);
-        tvBroadCast.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setAction("com.eoe.drugstore.fragment.communityFragment");
-                intent.putExtra("msg", "简单的消息");
-                mContext.sendBroadcast(intent);
-            }
-        });
-
-        /**
-         * 发送一条有序广播
-         */
-        v.findViewById(R.id.tv_order_broadcast).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setAction("com.eoe.drugstore.fragment.communityFragment");
-                intent.putExtra("msg", "简单的消息");
-                getActivity().sendOrderedBroadcast(intent, null);
-            }
-        });
     }
 
     @Override

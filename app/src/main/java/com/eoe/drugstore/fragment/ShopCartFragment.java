@@ -83,7 +83,7 @@ public class ShopCartFragment extends ParentFragment {
     @Override
     protected void setupData() {
         super.setupData();
-        getcartRequest(mContext, "13917674553", "3c98265f02b13caf5744d0919936844c", 1002, httpOps);
+//        getcartRequest(mContext, "13917674553", "3c98265f02b13caf5744d0919936844c", 1002, httpOps);
 
     }
 

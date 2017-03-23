@@ -63,7 +63,6 @@
         <activity android:name=".activity.MultiThreadClientActivity" />
         <activity android:name=".activity.GetUrlActivity" />
         <activity android:name=".activity.CodeViewActivity" />
-        <activity android:name=".activity.BitmapTest" />
         <activity android:name=".activity.CanvasActivity" />
         <activity android:name=".activity.PathTestActivity" />
         <activity android:name=".activity.ViewAnimatorActivity">
@@ -74,8 +73,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.DataTypeActivity" />
-        <activity android:name=".activity.FrameActivity" />
-        <activity android:name=".activity.MyViewActivity" />
         <activity
             android:name=".activity.SchemeActivity"
             android:label="指定scheme的Activity">
@@ -87,26 +84,13 @@
                 <data android:scheme="lee" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.BlastActivity" />
         <activity android:name=".activity.PathTextActivity" />
-        <activity android:name=".activity.DrawViewAcitivity" />
-        <activity android:name=".activity.HandDrawAcitivy" />
-        <activity android:name=".activity.PinBallActivity" />
         <activity android:name=".activity.PictureProgressActivity" />
-        <activity android:name=".activity.HttpIntenetActivity" />
         <activity android:name=".activity.URLTest" />
-        <activity android:name=".activity.GetPostMain" />
         <activity android:name=".activity.MultiThreadDown" />
         <activity android:name=".activity.OkhttpCacheActivity" />
         <activity android:name=".activity.WebGetActivity" />
-        <activity android:name=".activity.AActivity" />
-        <activity
-            android:name=".activity.BActivity"
-            android:launchMode="singleTask" />
-        <activity android:name=".activity.CActivity" />
         <activity android:name=".activity.LeakageActivity" />
-        <activity android:name=".activity.ServiceActivity" />
-
         <service
             android:name=".service.ForeService"
             android:enabled="true"
@@ -114,9 +98,6 @@
         <service android:name=".service.FirstService" />
         <service android:name=".service.MyIntentService" />
 
-        <activity android:name=".activity.SeeProcessActivity" />
-        <activity android:name=".activity.JsonAcitvity" />
-        <activity android:name=".activity.ListViewActivity"></activity>
     </application>
 
 </manifest>
