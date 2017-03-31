@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.eoe.drugstore.R;
+import com.eoe.drugstore.utils.DeviceInfoUtil;
 import com.eoe.drugstore.utils.Logger;
 
 import java.util.concurrent.Executor;
@@ -30,6 +31,24 @@ public class HomeFragment extends ParentFragment {
         super.setupView(v);
         TextView tvJni = (TextView) v.findViewById(R.id.tv_jni);
         tvJni.setText(getMsgFromJni());
+
+        TextView tvInfo = (TextView) v.findViewById(R.id.tv_info);
+        tvInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DeviceInfoUtil instance = DeviceInfoUtil.getInstance(mContext);
+////        "品牌  : " + instance.getBrand() +
+                ((TextView)v).setText("IMEI ：" + instance.getDeviceId() + " IMSI : " + instance.getImsiId() + "\n "
+                        + " MAC " + instance.getMacAddress() + "\n"
+                        + "  SimSNumber " + instance.getSimSerialNumber() + "\n"
+                        + "  androidID  " + instance.getAndroidId()
+                        + "品牌 " + instance.getBrand());
+
+            }
+        });
+
+
+
     }
 
     static {
