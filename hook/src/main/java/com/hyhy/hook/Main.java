@@ -153,6 +153,8 @@ public class Main {
                         @Override
                         public Object invoked(Object o, Object... args) throws Throwable {
                             int index = readIndex();
+                            Log.i("Main", "修改后" +  index);
+
                             return deviceIds[addIndex()];
                         }
                     }, old);
@@ -243,9 +245,6 @@ public class Main {
         });
 
 
-
-
-
     }
 
 
@@ -257,4 +256,4 @@ public class Main {
     static final String[] brands = Brand.data;
     static final String[] models = Model.data;
 
-    }
+}
