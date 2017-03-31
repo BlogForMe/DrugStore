@@ -23,7 +23,7 @@ model {
         }
         defaultConfig {
             applicationId "com.eoe.drugstore"
-            minSdkVersion.apiLevel 16
+            minSdkVersion.apiLevel 19
             targetSdkVersion.apiLevel 24
             versionCode 1
             versionName "1.0"
@@ -45,12 +45,12 @@ dependencies {
     compile 'com.jiechic.library:xUtils:2.6.14'
     compile 'com.squareup.okhttp3:okhttp:3.5.0'
     compile 'com.facebook.fresco:fresco:0.10.0'
-    //    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha3'
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.mockito:mockito-core:1.10.19'
     compile 'com.android.support:multidex:1.0.1'
     compile 'com.android.support:appcompat-v7:25.1.1'
     compile 'com.android.support:design:25.1.1'
+//    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha5'
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:1.10.19'
 }
 
 

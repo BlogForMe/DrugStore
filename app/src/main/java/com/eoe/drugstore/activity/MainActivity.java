@@ -42,7 +42,6 @@ public class MainActivity extends ParentActivity {
             TabHost.TabSpec tabSpec = mTabhost.newTabSpec(getString(tab.getResName()));
             tabSpec.setIndicator(buildIndicator(tab));
             mTabhost.addTab(tabSpec, tab.getClz(), null);
-
         }
 
         mTabhost.getTabWidget().setShowDividers(LinearLayout.SHOW_DIVIDER_NONE);
