@@ -22,6 +22,18 @@
             android:name="com.saurik.substrate.main"
             android:value=".Main" />
 
+
+        <!-- xposed -->
+        <meta-data
+            android:name="xposedmodule"
+            android:value="true" />
+        <meta-data
+            android:name="xposeddescription"
+            android:value="Hook系统信息" />
+        <meta-data
+            android:name="xposedminversion"
+            android:value="30" />
+
     </application>
 
 </manifest>
