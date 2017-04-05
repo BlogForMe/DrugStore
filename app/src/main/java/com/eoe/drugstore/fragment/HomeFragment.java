@@ -1,5 +1,6 @@
 package com.eoe.drugstore.fragment;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,9 +41,9 @@ public class HomeFragment extends ParentFragment {
 ////        "品牌  : " + instance.getBrand() +
                 ((TextView)v).setText("IMEI ：" + instance.getDeviceId() + " IMSI : " + instance.getImsiId() + "\n "
                         + " MAC " + instance.getMacAddress() + "\n"
-                        + "  SimSNumber " + instance.getSimSerialNumber() + "\n"
-                        + "  androidID  " + instance.getAndroidId()
-                        + "品牌 " + instance.getBrand());
+                        + "  SimSNumber : " + instance.getSimSerialNumber() + "\n"
+                        + "  androidID :  " + instance.getAndroidId()
+                        + "品牌 " + instance.getBrand() + " android版本   "+ Build.VERSION.SDK_INT);
 
             }
         });
