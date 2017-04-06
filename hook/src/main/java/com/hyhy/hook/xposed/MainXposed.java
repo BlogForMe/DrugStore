@@ -190,7 +190,7 @@ public class MainXposed implements IXposedHookLoadPackage {
             String versionName = context.getPackageManager().getPackageInfo(lpparam.packageName, 0).versionName;
 //            log("Found  version:" + versionName + " Context " + context);
             XposedBridge.log("Context 输出  " + context + lpparam.packageName);
-            if ("com.eoe.drugstore".equals(lpparam)) {
+            if ("com.eoe.drugstore".equals(lpparam.packageName)) {
                 mContext = context;
 
                 SharedPreferences settings = mContext.getSharedPreferences("login", Context.MODE_PRIVATE);
