@@ -38,12 +38,11 @@ public class HomeFragment extends ParentFragment {
             @Override
             public void onClick(View v) {
                 DeviceInfoUtil instance = DeviceInfoUtil.getInstance(mContext);
-////        "品牌  : " + instance.getBrand() +
                 ((TextView)v).setText("IMEI ：" + instance.getDeviceId() + " IMSI : " + instance.getImsiId() + "\n "
                         + " MAC " + instance.getMacAddress() + "\n"
                         + "  SimSNumber : " + instance.getSimSerialNumber() + "\n"
-                        + "  androidID :  " + instance.getAndroidId()
-                        + "品牌 " + instance.getBrand() + " android版本   "+ Build.VERSION.SDK_INT);
+                        + "  androidID :  " + instance.getAndroidId() + "\n"
+                        + "品牌 " + instance.getBrand() + " 版本   "+ Build.VERSION.SDK_INT);
 
             }
         });
