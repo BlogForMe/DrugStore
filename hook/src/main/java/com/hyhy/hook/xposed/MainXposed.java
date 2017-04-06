@@ -69,7 +69,7 @@ public class MainXposed implements IXposedHookLoadPackage {
 
     @Override
     public void handleLoadPackage(final XC_LoadPackage.LoadPackageParam lpp) throws Throwable {
-        initVersion(lpp);
+//        initVersion(lpp);
 
         // IMEI
         hook_method("android.telephony.TelephonyManager", lpp.classLoader, "getDeviceId", new XC_MethodHook() {
@@ -183,25 +183,25 @@ public class MainXposed implements IXposedHookLoadPackage {
 
     }
 
-    private void initVersion(XC_LoadPackage.LoadPackageParam lpparam) {
-        try {
-            Context context = (Context) XposedHelpers.callMethod(callStaticMethod(findClass("android.app.ActivityThread", null),
-                    "currentActivityThread", new Object[0]), "getSystemContext", new Object[0]);
-            String versionName = context.getPackageManager().getPackageInfo(lpparam.packageName, 0).versionName;
-//            log("Found  version:" + versionName + " Context " + context);
-            XposedBridge.log("Context 输出  " + context + lpparam.packageName);
-            if ("com.eoe.drugstore".equals(lpparam.packageName)) {
-                mContext = context;
-
-                SharedPreferences settings = mContext.getSharedPreferences("login", Context.MODE_PRIVATE);
-                XposedBridge.log("Context SharedPreferences"+settings.getString("name", ""));
-            }
-        } catch (PackageManager.NameNotFoundException e) {
-
-        }
-
-
-    }
+//    private void initVersion(XC_LoadPackage.LoadPackageParam lpparam) {
+//        try {
+//            Context context = (Context) XposedHelpers.callMethod(callStaticMethod(findClass("android.app.ActivityThread", null),
+//                    "currentActivityThread", new Object[0]), "getSystemContext", new Object[0]);
+//            String versionName = context.getPackageManager().getPackageInfo(lpparam.packageName, 0).versionName;
+////            log("Found  version:" + versionName + " Context " + context);
+//            XposedBridge.log("Context 输出  " + context + lpparam.packageName);
+//            if ("com.eoe.drugstore".equals(lpparam.packageName)) {
+//                mContext = context;
+//
+//                SharedPreferences settings = mContext.getSharedPreferences("login", Context.MODE_PRIVATE);
+//                XposedBridge.log("Context SharedPreferences"+settings.getString("name", ""));
+//            }
+//        } catch (PackageManager.NameNotFoundException e) {
+//
+//        }
+//
+//
+//    }
 
 
 }
