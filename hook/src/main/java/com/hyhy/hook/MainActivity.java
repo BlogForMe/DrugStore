@@ -1,12 +1,15 @@
 package com.hyhy.hook;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.hyhy.hook.utils.Constants;
+import com.hyhy.hook.utils.DbUtil;
 import com.hyhy.hook.xposed.MainXposed;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,12 +18,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        SharedPreferences sp = getSharedPreferences("prefs", Context.MODE_WORLD_READABLE);
+        sp.edit().putString("packages", "jon").commit();
     }
 
 
     public void switchIMEI(View v) {
+        DbUtil.getDbInstance(this);
+        Toast.makeText(this, "弹出", Toast.LENGTH_SHORT).show();
 //        MainXposed.index++;
-       getSharedPreferences(Constants.PREFERENCE, Context.MODE_WORLD_READABLE);
     }
 
 
