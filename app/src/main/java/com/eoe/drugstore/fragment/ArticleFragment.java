@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import com.eoe.drugstore.R;
 import com.eoe.drugstore.service.BindService;
-import com.eoe.drugstore.service.MyIntentService;
 
 /**
  * Created by Jon on 2016/4/17.
@@ -63,12 +62,12 @@ public class ArticleFragment extends BaseFragment implements View.OnClickListene
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.tv_intent_service:
-                Intent intent1 = new Intent(getActivity(), MyIntentService.class);
-                getActivity().startActivity(intent1);
-                break;
-        }
+//        switch (v.getId()) {
+//            case R.id.tv_intent_service:
+//                Intent intent1 = new Intent(getActivity(), MyIntentService.class);
+//                getActivity().startActivity(intent1);
+//                break;
+//        }
     }
 
 

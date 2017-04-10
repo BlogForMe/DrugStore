@@ -1,6 +1,7 @@
 package com.hyhy.hook;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.hyhy.hook.activity.BindingActivity;
 import com.hyhy.hook.utils.Constants;
 import com.hyhy.hook.utils.DbUtil;
 import com.hyhy.hook.xposed.MainXposed;
@@ -29,6 +31,11 @@ public class MainActivity extends AppCompatActivity {
         DbUtil.getDbInstance(this);
         Toast.makeText(this, "弹出", Toast.LENGTH_SHORT).show();
 //        MainXposed.index++;
+    }
+
+    public void bt_message(View v) {
+        Intent intent = new Intent(this, BindingActivity.class);
+        startActivity(intent);
     }
 
 

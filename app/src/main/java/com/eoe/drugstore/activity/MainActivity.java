@@ -1,6 +1,9 @@
 package com.eoe.drugstore.activity;
 
+import android.content.ComponentName;
+import android.content.ServiceConnection;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.support.v4.app.FragmentTabHost;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +14,7 @@ import android.widget.TextView;
 
 import com.eoe.drugstore.R;
 import com.eoe.drugstore.bean.MainTab;
+import com.eoe.drugstore.service.LocalService;
 
 
 /**
@@ -59,6 +63,5 @@ public class MainActivity extends ParentActivity {
 
         return view;
     }
-
 
 }

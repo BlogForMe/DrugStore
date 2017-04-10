@@ -60,7 +60,6 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".activity.MultiThreadClientActivity" />
         <activity android:name=".activity.GetUrlActivity" />
         <activity android:name=".activity.CodeViewActivity" />
         <activity android:name=".activity.CanvasActivity" />
@@ -92,17 +91,21 @@
         <activity android:name=".activity.WebGetActivity" />
         <activity android:name=".activity.LeakageActivity" />
 
-        <service
-            android:name=".service.ForeService"
-            android:enabled="true"
-            android:exported="true" />
-        <service android:name=".service.FirstService" />
-        <service android:name=".service.MyIntentService" />
 
         <activity
             android:name=".activity.LoginActivity"
             android:label="@string/title_activity_login"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <service
+            android:name=".service.LocalService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".service.MessengerService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote" />
     </application>
 
 </manifest>

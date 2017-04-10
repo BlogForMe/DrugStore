@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
-    <ListView
-        android:id="@+id/listView"
+    <Button
+        android:id="@+id/fragment_basic"
+        android:name="com.eoe.drugstore.fragment.BinderBasicFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:text="hhe"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/bt_messsge"
+        android:text="传输数据"
+        android:name="com.eoe.drugstore.fragment.BinderMessgeFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+
+</LinearLayout>

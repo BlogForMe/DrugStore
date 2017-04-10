@@ -17,5 +17,10 @@
         android:layout_height="wrap_content"
         android:onClick="switchIMEI"
         android:text="切换imei" />
+     <Button
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:onClick="bt_message"
+         android:text="消息传输"/>
 
 </LinearLayout>
