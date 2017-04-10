@@ -21,9 +21,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         SharedPreferences sp = getSharedPreferences("prefs", Context.MODE_WORLD_READABLE);
-        sp.edit().putString("packages", "jon").commit();
+        sp.edit().putString("packages", "hehe").commit();
     }
 
 

@@ -1,5 +1,7 @@
 package com.eoe.drugstore.fragment;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -30,6 +32,7 @@ public class HomeFragment extends ParentFragment {
     @Override
     protected void setupView(View v) {
         super.setupView(v);
+
         TextView tvJni = (TextView) v.findViewById(R.id.tv_jni);
         tvJni.setText(getMsgFromJni());
 
@@ -38,15 +41,14 @@ public class HomeFragment extends ParentFragment {
             @Override
             public void onClick(View v) {
                 DeviceInfoUtil instance = DeviceInfoUtil.getInstance(mContext);
-                ((TextView)v).setText("IMEI ：" + instance.getDeviceId() + " IMSI : " + instance.getImsiId() + "\n "
+                ((TextView) v).setText("IMEI ：" + instance.getDeviceId() + " IMSI : " + instance.getImsiId() + "\n "
                         + " MAC " + instance.getMacAddress() + "\n"
                         + "  SimSNumber : " + instance.getSimSerialNumber() + "\n"
                         + "  androidID :  " + instance.getAndroidId() + "\n"
-                        + "品牌 " + instance.getBrand() + " 版本   "+ Build.VERSION.SDK_INT);
+                        + "品牌 " + instance.getBrand() + " 版本   " + Build.VERSION.SDK_INT);
 
             }
         });
-
 
 
     }

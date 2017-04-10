@@ -11,12 +11,17 @@ import android.os.ParcelUuid;
 import android.os.RemoteException;
 import android.support.annotation.BoolRes;
 import android.support.design.widget.CoordinatorLayout;
+import android.util.Log;
 import android.widget.Toast;
 
 /**
  * 使用 Messenger  进行 进程间的通信
  */
 public class MessengerService extends Service {
+    final String TAG = getClass().getName();
+    private Messenger clientＭessenger;
+    static int i;
+
     public MessengerService() {
     }
 
@@ -30,19 +35,26 @@ public class MessengerService extends Service {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case MSG_SAY_HELLO:
-                    String txt = msg.getData().getString("msg");
-                    Toast.makeText(getApplicationContext(), "客户端说 :"+txt, Toast.LENGTH_SHORT).show();
-
+                    Bundle data = msg.getData();
+                    if (data != null) {
+                        String txt = data.getString("msg");
+                        Toast.makeText(getApplicationContext(), "客户端说 :" + txt, Toast.LENGTH_SHORT).show();
+                    }
+                    Log.i(TAG, "有没有回应 "+ i);
                     //添加如下
-                    Messenger client = msg.replyTo;
-                    Message replyMessage = Message.obtain(null, MSG_SAY_HELLO);
-                    Bundle bundle = new Bundle();
-                    bundle.putString("reply", "客户你好 我是服务端");
-                    replyMessage.setData(bundle);
-                    try {
-                        client.send(replyMessage);
-                    } catch (RemoteException e) {
-                        e.printStackTrace();
+                    clientＭessenger = msg.replyTo;  //这个message是在客户端中创建的
+                    if (clientＭessenger != null) {
+                        Log.i(TAG, "有没有回应 + 2  " + i);
+                        Message replyMessage = Message.obtain();
+                        replyMessage.what = MSG_SAY_HELLO;
+                        Bundle bundle = new Bundle();
+                        bundle.putString("reply", "客户你好 我是服务端   " + ++i);
+                        replyMessage.setData(bundle);
+                        try {
+                            clientＭessenger.send(replyMessage);
+                        } catch (RemoteException e) {
+                            e.printStackTrace();
+                        }
                     }
                     break;
                 default:
@@ -62,5 +74,11 @@ public class MessengerService extends Service {
         // TODO: Return the communication channel to the service.
 //        Toast.makeText(getApplicationContext(), "binding", Toast.LENGTH_SHORT).show();
         return serverMessenger.getBinder();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        clientＭessenger = null;
     }
 }

@@ -46,17 +46,20 @@ public class BindingActivity extends AppCompatActivity {
             mServuce = new Messenger(service);
             mBound = true;
 
+
+            sayHello();
             //添加如下
-            Message msg = Message.obtain(null, 1);
+//            Message msg = Message.obtain();
+//            msg.what = MSG_SAY_HELLO;
 //            Bundle bundle = new Bundle();
-//            bundle.putString("msg", "客户端： 连上了");
+//            bundle.putString("msg", "你好　服务端");
 //            msg.setData(bundle);
-            msg.replyTo = replyMessenger;
-            try {
-                mServuce.send(msg);
-            } catch (RemoteException e) {
-                e.printStackTrace();
-            }
+//            msg.replyTo = replyMessenger;
+//            try {
+//                mServuce.send(msg);
+//            } catch (RemoteException e) {
+//                e.printStackTrace();
+//            }
         }
 
         @Override
@@ -88,6 +91,7 @@ public class BindingActivity extends AppCompatActivity {
             Bundle bundle = new Bundle();
             bundle.putString("msg", "jon message");
             msg.setData(bundle);
+            msg.replyTo = replyMessenger;
             mServuce.send(msg);
             Log.i(TAG, "sayHello ---");
         } catch (RemoteException e) {
