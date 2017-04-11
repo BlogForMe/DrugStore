@@ -2,6 +2,7 @@ package com.eoe.drugstore.service;
 
 import android.app.Service;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
@@ -38,9 +39,16 @@ public class MessengerService extends Service {
                     Bundle data = msg.getData();
                     if (data != null) {
                         String txt = data.getString("msg");
-                        Toast.makeText(getApplicationContext(), "客户端说 :" + txt, Toast.LENGTH_SHORT).show();
+                        SharedPreferences setting = getSharedPreferences("package", 0);
+                        setting.edit().putString("txt", "你好").commit();
+
+                        String txtt = setting.getString("txt", "");
+                        Toast.makeText(getApplicationContext(), "客户端说 :" + txtt, Toast.LENGTH_SHORT).show();
+
+
+
                     }
-                    Log.i(TAG, "有没有回应 "+ i);
+                    Log.i(TAG, "有没有回应 " + i);
                     //添加如下
                     clientＭessenger = msg.replyTo;  //这个message是在客户端中创建的
                     if (clientＭessenger != null) {
