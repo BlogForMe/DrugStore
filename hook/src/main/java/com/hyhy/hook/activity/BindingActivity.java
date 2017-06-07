@@ -21,7 +21,7 @@ import com.hyhy.hook.R;
 public class BindingActivity extends AppCompatActivity {
     String TAG = getClass().getName();
     boolean mBound = false;
-    Messenger mServuce = null;
+    Messenger mService = null;
     private int MSG_SAY_HELLO = 1;
 
     @Override
@@ -43,28 +43,16 @@ public class BindingActivity extends AppCompatActivity {
             // This is called when the connection with the service has been   established, giving us the object we can use to
             // interact with the service.  We are communicating with the  service using a Messenger, so here we get a client-side
             // representation of that from the raw IBinder object.
-            mServuce = new Messenger(service);
+            mService = new Messenger(service);
             mBound = true;
 
 
             sayHello();
-            //添加如下
-//            Message msg = Message.obtain();
-//            msg.what = MSG_SAY_HELLO;
-//            Bundle bundle = new Bundle();
-//            bundle.putString("msg", "你好　服务端");
-//            msg.setData(bundle);
-//            msg.replyTo = replyMessenger;
-//            try {
-//                mServuce.send(msg);
-//            } catch (RemoteException e) {
-//                e.printStackTrace();
-//            }
         }
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
-            mServuce = null;
+            mService = null;
             mBound = false;
         }
     };
@@ -92,7 +80,7 @@ public class BindingActivity extends AppCompatActivity {
             bundle.putString("msg", "jon message");
             msg.setData(bundle);
             msg.replyTo = replyMessenger;
-            mServuce.send(msg);
+            mService.send(msg);
             Log.i(TAG, "sayHello ---");
         } catch (RemoteException e) {
             e.printStackTrace();

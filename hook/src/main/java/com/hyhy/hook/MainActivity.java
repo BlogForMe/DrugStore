@@ -3,8 +3,11 @@ package com.hyhy.hook;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,6 +18,7 @@ import com.hyhy.hook.utils.DbUtil;
 import com.hyhy.hook.xposed.MainXposed;
 
 public class MainActivity extends AppCompatActivity {
+    final String uriParam = "content://com.hyhy.googleplay.utils.DeviceProvider/Device";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +39,15 @@ public class MainActivity extends AppCompatActivity {
     public void bt_message(View v) {
         Intent intent = new Intent(this, BindingActivity.class);
         startActivity(intent);
+    }
+
+
+    public void bt_query_provider(View v) {
+        Cursor cursor = getContentResolver().query(Uri.parse(uriParam)
+                , new String[]{"imei", "imsi", "mac", "simserial"}, null, null, null);
+        while (cursor.moveToNext()) {
+            Log.i("query", cursor.getString(cursor.getColumnIndex("imei")) + " " + cursor.getString(cursor.getColumnIndex("imsi")));
+        }
     }
 
 
