@@ -10,12 +10,8 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
-import android.os.ParcelUuid;
 import android.os.RemoteException;
-import android.support.annotation.BoolRes;
-import android.support.design.widget.CoordinatorLayout;
 import android.util.Log;
-import android.widget.Toast;
 
 /**
  * 使用 Messenger  进行 进程间的通信

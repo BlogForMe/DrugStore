@@ -1,9 +1,6 @@
 package com.eoe.drugstore.activity;
 
-import android.content.ComponentName;
-import android.content.ServiceConnection;
 import android.os.Bundle;
-import android.os.IBinder;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -15,7 +12,6 @@ import android.widget.TextView;
 
 import com.eoe.drugstore.R;
 import com.eoe.drugstore.bean.MainTab;
-import com.eoe.drugstore.service.LocalService;
 
 
 /**

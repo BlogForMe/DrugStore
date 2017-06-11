@@ -14,10 +14,8 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <!-- 在SDCard中创建与删除文件权限 -->
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
-
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <!-- if you want to load images from a file OR from the internet -->
@@ -52,13 +50,7 @@
                 <action android:name="com.eoe.drugstore.fragment.communityFragment" />
             </intent-filter>
         </receiver>
-
-        <activity android:name=".activity.PathTestActivity" />
-        <activity android:name=".activity.PathTextActivity" />
-        <activity android:name=".activity.PictureProgressActivity" />
-        <activity android:name=".activity.MultiThreadDown" />
         <activity android:name=".activity.OkhttpCacheActivity" />
-        <activity android:name=".activity.WebGetActivity" />
 
 
         <service

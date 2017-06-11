@@ -24,8 +24,6 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-import static com.google.android.gms.plus.PlusOneDummyView.TAG;
-
 
 /**
  * 首页
@@ -44,7 +42,6 @@ public class HomeFragment extends ParentFragment {
     @Override
     protected void setupView(View v) {
         super.setupView(v);
-
 
 
         TextView tvOkcach = (TextView) v.findViewById(R.id.tv_okcach);
