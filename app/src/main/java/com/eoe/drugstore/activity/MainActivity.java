@@ -5,6 +5,7 @@ import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v4.app.FragmentTabHost;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -20,7 +21,7 @@ import com.eoe.drugstore.service.LocalService;
 /**
  * 首页
  */
-public class MainActivity extends ParentActivity {
+public class MainActivity extends AppCompatActivity {
 
     private LayoutInflater mInflater;
 
@@ -31,7 +32,7 @@ public class MainActivity extends ParentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-        init(R.layout.activity_main);
+        setContentView(R.layout.activity_main);
         initTab();
     }
 

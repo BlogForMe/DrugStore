@@ -41,13 +41,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.FragmentExerciseActivity">
-            <intent-filter>
-                <action android:name="dian.wo.ba" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
 
         <receiver android:name=".BroadCastReceiver.MyReceiver">
             <intent-filter android:priority="20">
@@ -60,42 +53,13 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".activity.GetUrlActivity" />
-        <activity android:name=".activity.CodeViewActivity" />
-        <activity android:name=".activity.CanvasActivity" />
         <activity android:name=".activity.PathTestActivity" />
-        <activity android:name=".activity.ViewAnimatorActivity">
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data android:scheme="lee" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".activity.DataTypeActivity" />
-        <activity
-            android:name=".activity.SchemeActivity"
-            android:label="指定scheme的Activity">
-            <intent-filter>
-                <action android:name="xx" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <!-- 只要Intent的Data属性的scheme是lee，即可启动该Activity -->
-                <data android:scheme="lee" />
-            </intent-filter>
-        </activity>
         <activity android:name=".activity.PathTextActivity" />
         <activity android:name=".activity.PictureProgressActivity" />
-        <activity android:name=".activity.URLTest" />
         <activity android:name=".activity.MultiThreadDown" />
         <activity android:name=".activity.OkhttpCacheActivity" />
         <activity android:name=".activity.WebGetActivity" />
-        <activity android:name=".activity.LeakageActivity" />
 
-
-        <activity
-            android:name=".activity.LoginActivity"
-            android:label="@string/title_activity_login"
-            android:theme="@style/AppTheme.NoActionBar" />
 
         <service
             android:name=".service.LocalService"

@@ -11,7 +11,6 @@ model {
 //            try {
 //                storeFile file("./keystore/release.keystore")
 //                storePassword "testres"
-//                keyAlias "testres"
 //                keyPassword "testres"
 //            } catch (ex) {
 //                throw new InvalidUserDataException(ex.toString())

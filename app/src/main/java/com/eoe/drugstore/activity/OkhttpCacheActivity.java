@@ -1,6 +1,7 @@
 package com.eoe.drugstore.activity;
 
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.eoe.drugstore.R;
 import com.eoe.drugstore.utils.PostExample;
@@ -17,14 +18,14 @@ import okhttp3.Response;
  * Okhttp缓存
  */
 
-public class OkhttpCacheActivity extends ParentActivity {
+public class OkhttpCacheActivity extends AppCompatActivity {
 
     OkHttpClient yOkHttpClient = new OkHttpClient();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        init(R.layout.activity_okhttp_cache);
+        setContentView(R.layout.activity_okhttp_cache);
 
 
         new Thread(new Runnable() {

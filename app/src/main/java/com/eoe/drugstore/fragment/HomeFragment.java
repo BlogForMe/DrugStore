@@ -45,22 +45,6 @@ public class HomeFragment extends ParentFragment {
     protected void setupView(View v) {
         super.setupView(v);
 
-        TextView tvJni = (TextView) v.findViewById(R.id.tv_jni);
-        tvJni.setText(getMsgFromJni());
-
-        TextView tvInfo = (TextView) v.findViewById(R.id.tv_info);
-        tvInfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DeviceInfoUtil instance = DeviceInfoUtil.getInstance(mContext);
-                ((TextView) v).setText("IMEI ：" + instance.getDeviceId() + " IMSI : " + instance.getImsiId() + "\n "
-                        + " MAC " + instance.getMacAddress() + "\n"
-                        + "  SimSNumber : " + instance.getSimSerialNumber() + "\n"
-                        + "  androidID :  " + instance.getAndroidId() + "\n"
-                        + "品牌 " + instance.getBrand() + " 版本   " + Build.VERSION.SDK_INT);
-
-            }
-        });
 
 
         TextView tvOkcach = (TextView) v.findViewById(R.id.tv_okcach);
@@ -84,7 +68,7 @@ public class HomeFragment extends ParentFragment {
             public void run() {
                 OkHttpClient client = new OkHttpClient.Builder().cache(cache).build();
 
-                String url = "http://publicobject.com/helloworld.txt";
+                String url = "http://192.168.1.105:8080/Demo/myServlet";
                 Request request = new Request.Builder()
                         .url(url)
                         .build();
