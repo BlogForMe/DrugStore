@@ -6,20 +6,10 @@
 
 
     <Button
-        android:id="@+id/fragment_basic"
-        android:name="com.eoe.drugstore.fragment.BinderBasicFragment"
+        android:id="@+id/bt_rx1"
         android:layout_width="match_parent"
-        android:text="hhe"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-
-    <Button
-        android:id="@+id/bt_messsge"
-        android:text="传输数据"
-        android:name="com.eoe.drugstore.fragment.BinderMessgeFragment"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_height="wrap_content"
+        android:text="Observable管道" />
 
 
 </LinearLayout>
