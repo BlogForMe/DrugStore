@@ -14,25 +14,14 @@ import com.eoe.drugstore.R;
  * 我
  * Created by Administrator on 2016/3/2.
  */
-public class MineFragment extends ParentFragment {
+public class MineFragment extends BaseFragment {
 
 
-    private Intent intent;
     private SharedPreferences settings;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return initView(R.layout.fragment_mine, container);
-    }
-
-    @Override
-    protected void setupData() {
-        super.setupData();
-    }
-
-
-    @Override
-    protected void setupView(View v) {
+        return inflater.inflate(R.layout.fragment_mine, null);
     }
 
 

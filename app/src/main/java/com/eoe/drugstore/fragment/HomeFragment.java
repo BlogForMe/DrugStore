@@ -1,7 +1,5 @@
 package com.eoe.drugstore.fragment;
 
-import android.app.DownloadManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.eoe.drugstore.R;
-import com.eoe.drugstore.utils.DeviceInfoUtil;
 import com.eoe.drugstore.utils.Logger;
 
 import java.io.File;
@@ -29,31 +26,24 @@ import okhttp3.Response;
  * 首页
  * Created by Administrator on 2016/3/2.
  */
-public class HomeFragment extends ParentFragment {
+public class HomeFragment extends BaseFragment {
     public static final String TAG = "HomeFragment";
     ExecutorService exec = Executors.newCachedThreadPool();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Logger.d("onCreateView---");
-        return initView(R.layout.fragment_home, container);
+        return inflater.inflate(R.layout.fragment_home, null);
     }
 
-    @Override
-    protected void setupView(View v) {
-        super.setupView(v);
 
-
-        TextView tvOkcach = (TextView) v.findViewById(R.id.tv_okcach);
-        tvOkcach.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                testCache();
-            }
-        });
-
-
-    }
+//    TextView tvOkcach = (TextView) v.findViewById(R.id.tv_okcach);
+//        tvOkcach.setOnClickListener(new View.OnClickListener() {
+//        @Override
+//        public void onClick(View v) {
+//            testCache();
+//        }
+//    });
 
     protected void testCache() {
         //缓存文件
@@ -95,9 +85,4 @@ public class HomeFragment extends ParentFragment {
         });
     }
 
-    static {
-        System.loadLibrary("DrugStore");
-    }
-
-    public native String getMsgFromJni();
 }
