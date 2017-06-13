@@ -17,30 +17,10 @@ public abstract class BaseFragment extends Fragment {
     protected Context mContext;
     private LayoutInflater inflate;
 
-    protected View initView(int resId, ViewGroup parent) {
-        mContext = this.getActivity();
-        inflate = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View mContainerView = inflate.inflate(resId, parent, false);
-        ViewUtils.inject(this, mContainerView);
 
-        setupView(mContainerView);
-        setupData();
-        sendRequest();
-        return mContainerView;
-    }
-
-    protected abstract void setupView(View mContainerView);
-
-    protected abstract void setupData();
-
-    protected  void sendRequest(){
-
-    }
-
-    protected  void setupRequest(int requestId, int dataType,
-                                         BaseBean result){
-
-    }
+//    protected abstract void setupView(View mContainerView);
+//
+//    protected abstract void setupData();
 
 
 }
