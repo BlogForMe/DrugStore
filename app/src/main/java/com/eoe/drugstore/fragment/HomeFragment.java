@@ -5,7 +5,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.eoe.drugstore.R;
 import com.eoe.drugstore.utils.Logger;
@@ -28,7 +27,6 @@ import okhttp3.Response;
  */
 public class HomeFragment extends BaseFragment {
     public static final String TAG = "HomeFragment";
-    ExecutorService exec = Executors.newCachedThreadPool();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -36,53 +34,5 @@ public class HomeFragment extends BaseFragment {
         return inflater.inflate(R.layout.fragment_home, null);
     }
 
-
-//    TextView tvOkcach = (TextView) v.findViewById(R.id.tv_okcach);
-//        tvOkcach.setOnClickListener(new View.OnClickListener() {
-//        @Override
-//        public void onClick(View v) {
-//            testCache();
-//        }
-//    });
-
-    protected void testCache() {
-        //缓存文件
-        File cacheFile = new File(mContext.getExternalCacheDir().toString(), "cache");
-        int cacheSize = 10 * 1024 * 1024;
-        final Cache cache = new Cache(cacheFile, cacheSize);
-        exec.execute(new Runnable() {
-            @Override
-            public void run() {
-                OkHttpClient client = new OkHttpClient.Builder().cache(cache).build();
-
-                String url = "http://192.168.1.105:8080/Demo/myServlet";
-                Request request = new Request.Builder()
-                        .url(url)
-                        .build();
-                Call call1 = client.newCall(request);
-                Response response1 = null;
-                try {
-                    response1 = call1.execute();
-                    Log.i(TAG, "testCache : response1 :" + response1.body().string());
-                    Log.i(TAG, "testCache : response1 cache:" + response1.cacheResponse());
-                    Log.i(TAG, "testCache : response1 network:" + response1.networkResponse());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                Call call2 = client.newCall(request);
-                Response response2 = null;
-                try {
-                    response2 = call2.execute();
-                    Log.i(TAG, "testCache : response2 :" + response2.body().string());
-                    Log.i(TAG, "testCache : response2 cache:" + response2.cacheResponse());
-                    Log.i(TAG, "testCache : response2 network:" + response2.networkResponse());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-            }
-        });
-    }
 
 }
