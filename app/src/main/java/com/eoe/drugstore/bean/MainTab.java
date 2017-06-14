@@ -7,6 +7,9 @@ import com.eoe.drugstore.fragment.HomeFragment;
 import com.eoe.drugstore.fragment.MineFragment;
 import com.eoe.drugstore.fragment.ShopCartFragment;
 
+/**
+ * Tab设置
+ */
 public enum MainTab {
 
     NEWS(0, R.string.main_tab_name_home, R.drawable.tab_home,

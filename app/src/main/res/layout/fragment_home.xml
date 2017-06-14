@@ -5,12 +5,11 @@
     android:orientation="vertical">
 
 
-
     <Button
-        android:id="@+id/tv_okcach"
+        android:id="@+id/bt_get_weather"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="okhttp缓存" />
+        android:text="天气" />
 
 </LinearLayout>

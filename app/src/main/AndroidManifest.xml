@@ -23,17 +23,6 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".BroadCastReceiver.MyReceiver">
-            <intent-filter android:priority="20">
-                <action android:name="com.eoe.drugstore.fragment.communityFragment" />
-            </intent-filter>
-        </receiver>
-        <receiver android:name=".BroadCastReceiver.MyReceiver2">
-            <intent-filter>
-                <action android:name="com.eoe.drugstore.fragment.communityFragment" />
-            </intent-filter>
-        </receiver>
-
 
     </application>
 
