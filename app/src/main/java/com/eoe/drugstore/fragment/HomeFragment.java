@@ -28,7 +28,7 @@ public class HomeFragment extends Fragment implements TaskConstract.View {
         root.findViewById(R.id.bt_get_weather).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                homePresenter.start();
+                homePresenter.loadWerather();
             }
         });
 
