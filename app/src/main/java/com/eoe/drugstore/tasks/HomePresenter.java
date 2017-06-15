@@ -18,7 +18,6 @@ public class HomePresenter implements TaskConstract.Presenter {
 
     @Override
     public void start() {
-
     }
 
     @Override
@@ -26,7 +25,10 @@ public class HomePresenter implements TaskConstract.Presenter {
         fragmentView.requestTask();
     }
 
-    void loadWerather(String from_where) {
+    @Override
+    public void loadWerather() {
+
     }
+
 
 }
