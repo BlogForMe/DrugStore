@@ -27,7 +27,7 @@ public class HomePresenter implements TaskConstract.Presenter {
 
     @Override
     public void loadWerather() {
-
+//       mSubscription =
     }
 
 
