@@ -14,7 +14,7 @@ public interface TaskConstract {
     interface Presenter extends BasePresenter {
         void getTask();
 
-        void loadWerather();
+        void loadWeather();
     }
 
 }

@@ -1,20 +1,37 @@
 package com.eoe.drugstore.tasks;
 
-import com.eoe.drugstore.bean.WeatherPojo;
+
+import com.eoe.drugstore.bean.WeatherModel;
 
 import io.reactivex.Observable;
-
-import static com.lidroid.xutils.http.client.HttpRequest.HttpMethod.GET;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.http.GET;
+import retrofit2.http.Path;
 
 /**
  * Created by Administrator on 2017/6/15.
  */
 
-public class APIService {
+public interface APIService {
+    String API_SERVER_URL = "http://192.168.0.126:8080/Demo/";
 
-    String ENDPOINT = "http://api.openweathermap.org/";
-    String API_KEY = "aa9af8d39d6519b1d47dec305bd253a4";
+    @GET("adat/sk/{cityId}.html")
+    Observable<WeatherModel> loadDataByRetrofitRxJava(@Path("cityId") String cityId);
+
+    /**
+     * testGet1
+     *
+     * @return
+     */
+    @GET("https://publicobject.com/helloworld.txt")
+    Observable<String> testGet1();
 
 
+    @GET("http://192.168.0.126:8080/Demo/DemoServlet")
+    Observable<String> testGet3();
+
+    @GET("{action}")  //也可以不用参数
+    Observable<String> getData(@Path("action") String action);
 
 }
