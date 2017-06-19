@@ -1,12 +1,17 @@
 package com.eoe.drugstore.tasks;
 
 
+import com.eoe.drugstore.bean.BaseEntity;
+import com.eoe.drugstore.bean.User;
 import com.eoe.drugstore.bean.WeatherModel;
 
+import java.util.Map;
+
 import io.reactivex.Observable;
-import okhttp3.ResponseBody;
-import retrofit2.Call;
+import retrofit2.http.FieldMap;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 
 /**
@@ -14,7 +19,7 @@ import retrofit2.http.Path;
  */
 
 public interface APIService {
-    String API_SERVER_URL = "http://192.168.0.126:8080/Demo/";
+    String postUrl = "http://192.168.0.126:8080/Demo/";
 
     @GET("adat/sk/{cityId}.html")
     Observable<WeatherModel> loadDataByRetrofitRxJava(@Path("cityId") String cityId);
@@ -31,7 +36,12 @@ public interface APIService {
     @GET("http://192.168.0.126:8080/Demo/DemoServlet")
     Observable<String> testGet3();
 
-    @GET("{action}")  //也可以不用参数
+    @GET("{action}")
+        //也可以不用参数
     Observable<String> getData(@Path("action") String action);
+
+    @FormUrlEncoded
+    @POST("getUser")
+    Observable<BaseEntity<User>> getUser(@FieldMap Map<String, String> map);
 
 }

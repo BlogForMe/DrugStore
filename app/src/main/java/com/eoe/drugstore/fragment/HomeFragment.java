@@ -5,7 +5,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.eoe.drugstore.R;
 import com.eoe.drugstore.tasks.HomePresenter;
 import com.eoe.drugstore.tasks.TaskConstract;
@@ -31,7 +30,6 @@ public class HomeFragment extends Fragment implements TaskConstract.View {
                 homePresenter.loadWeather();
             }
         });
-
         return root;
     }
 
