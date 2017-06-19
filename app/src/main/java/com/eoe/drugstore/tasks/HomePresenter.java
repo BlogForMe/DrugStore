@@ -8,7 +8,9 @@ import com.eoe.drugstore.bean.HeWeather;
 import com.eoe.drugstore.bean.User;
 import com.eoe.drugstore.retrofit.RetrofitFactory;
 
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import io.reactivex.Observable;
@@ -20,6 +22,7 @@ import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
+import okhttp3.ResponseBody;
 
 /**
  * Created by Administrator on 2017/6/14.
@@ -49,17 +52,17 @@ public class HomePresenter implements TaskConstract.Presenter {
         map.put("id", "123");
         map.put("name", "gesanri");
 
-//        Observable observable = RetrofitFactory.getInstance().getUser(map);
-        Observable observable = RetrofitFactory.getInstance().getFieldUser("123", "zh");
-        observable.compose(composeFunction).subscribe(new Observer<BaseEntity<User>>() {
+        Observable observable = RetrofitFactory.getInstance().getUser(map);
+//        Observable observable = RetrofitFactory.getInstance().getFieldUser("123", "zh");
+        observable.compose(composeFunction).subscribe(new Observer<BaseEntity<List<User>>>() {
 
             @Override
             public void onSubscribe(Disposable d) {
             }
 
             @Override
-            public void onNext(BaseEntity<User> value) {
-                User user = value.getData();
+            public void onNext(BaseEntity<List<User>> value) {
+                User user = value.getData().get(1);
                 Log.i(TAG, "数据" + user.getName() + "  " + user.getName());
             }
 
@@ -76,12 +79,13 @@ public class HomePresenter implements TaskConstract.Presenter {
 
     @Override
     public void getfield() {
-        Observable observable = RetrofitFactory.getInstance().getHeWeather("CN101210101", "87417128802d429091782a8bc733ac5d");
+        Observable observable = RetrofitFactory.getInstance().getHeWeather();
         observable.compose(composeFunction).subscribe(new Observer<HeWeather>() {
             @Override
             public void onSubscribe(@NonNull Disposable d) {
 
             }
+
 
             @Override
             public void onNext(@NonNull HeWeather heWeather) {
@@ -91,7 +95,7 @@ public class HomePresenter implements TaskConstract.Presenter {
 
             @Override
             public void onError(@NonNull Throwable e) {
-
+                e.printStackTrace();
             }
 
             @Override
