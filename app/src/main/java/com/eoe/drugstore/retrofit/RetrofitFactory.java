@@ -5,6 +5,8 @@ import com.eoe.drugstore.tasks.APIService;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.jackson.JacksonConverterFactory;
+
+import static com.eoe.drugstore.tasks.APIService.HeUrl;
 import static com.eoe.drugstore.tasks.APIService.postUrl;
 
 /**

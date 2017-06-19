@@ -15,6 +15,8 @@ public interface TaskConstract {
         void getTask();
 
         void loadWeather();
+
+        void getfield();
     }
 
 }

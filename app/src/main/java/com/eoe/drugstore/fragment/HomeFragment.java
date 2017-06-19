@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import com.eoe.drugstore.R;
 import com.eoe.drugstore.tasks.HomePresenter;
 import com.eoe.drugstore.tasks.TaskConstract;
@@ -24,12 +25,20 @@ public class HomeFragment extends Fragment implements TaskConstract.View {
         homePresenter = new HomePresenter(this);
 
         View root = inflater.inflate(R.layout.fragment_home, null);
-        root.findViewById(R.id.bt_get_weather).setOnClickListener(new View.OnClickListener() {
+        root.findViewById(R.id.bt_post_weather).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 homePresenter.loadWeather();
             }
         });
+        root.findViewById(R.id.bt_get_field).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               homePresenter.getfield();
+            }
+        });
+
+
         return root;
     }
 

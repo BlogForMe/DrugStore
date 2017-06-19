@@ -6,10 +6,17 @@
 
 
     <Button
-        android:id="@+id/bt_get_weather"
+        android:id="@+id/bt_post_weather"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="天气" />
+        android:text="PostMap" />
+
+    <Button
+        android:id="@+id/bt_get_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="GetField" />
 
 </LinearLayout>

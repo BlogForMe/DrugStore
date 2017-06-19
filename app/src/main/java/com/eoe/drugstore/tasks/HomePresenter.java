@@ -4,6 +4,7 @@ package com.eoe.drugstore.tasks;
 import android.util.Log;
 
 import com.eoe.drugstore.bean.BaseEntity;
+import com.eoe.drugstore.bean.HeWeather;
 import com.eoe.drugstore.bean.User;
 import com.eoe.drugstore.retrofit.RetrofitFactory;
 
@@ -48,7 +49,8 @@ public class HomePresenter implements TaskConstract.Presenter {
         map.put("id", "123");
         map.put("name", "gesanri");
 
-        Observable observable = RetrofitFactory.getInstance().getUser(map);
+//        Observable observable = RetrofitFactory.getInstance().getUser(map);
+        Observable observable = RetrofitFactory.getInstance().getFieldUser("123", "zh");
         observable.compose(composeFunction).subscribe(new Observer<BaseEntity<User>>() {
 
             @Override
@@ -58,18 +60,12 @@ public class HomePresenter implements TaskConstract.Presenter {
             @Override
             public void onNext(BaseEntity<User> value) {
                 User user = value.getData();
-                Log.i(TAG, "ss" + user.getName() + "  " + user.getName());
-//                name.setText("姓名：" + user.getName());
-//                age.setText("年龄：" + user.getAge());
-
+                Log.i(TAG, "数据" + user.getName() + "  " + user.getName());
             }
-
-//            @Override
-//            public void onNext(BaseEntity<User> value) {
-//            }
 
             @Override
             public void onError(Throwable e) {
+                e.printStackTrace();
             }
 
             @Override
@@ -78,6 +74,32 @@ public class HomePresenter implements TaskConstract.Presenter {
         });
     }
 
+    @Override
+    public void getfield() {
+        Observable observable = RetrofitFactory.getInstance().getHeWeather("CN101210101", "87417128802d429091782a8bc733ac5d");
+        observable.compose(composeFunction).subscribe(new Observer<HeWeather>() {
+            @Override
+            public void onSubscribe(@NonNull Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(@NonNull HeWeather heWeather) {
+                Log.i(TAG, "ss" + heWeather.getHeWeather5().get(0).getAqi().getCity() + "城市  ");
+
+            }
+
+            @Override
+            public void onError(@NonNull Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+    }
 
     ObservableTransformer<Observable, ObservableSource> composeFunction = new ObservableTransformer<Observable, ObservableSource>() {
         @Override
