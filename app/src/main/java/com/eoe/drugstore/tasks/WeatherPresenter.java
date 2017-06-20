@@ -1,9 +1,10 @@
 package com.eoe.drugstore.tasks;
 
 
-import com.eoe.drugstore.bean.LoginB;
+import com.eoe.drugstore.bean.HeWeather;
 import com.eoe.drugstore.net.GsonResponseHandler;
 import com.eoe.drugstore.net.OkHttpHelper;
+import com.eoe.drugstore.utils.Constants;
 import com.eoe.drugstore.utils.MLog;
 
 import java.util.HashMap;
@@ -14,12 +15,11 @@ import java.util.Map;
  * Created by Administrator on 2017/6/14.
  */
 
-public class HomePresenter implements TaskConstract.Presenter {
+public class WeatherPresenter implements WeatherContract.Presenter {
     public static final String TAG = "HomePresenter";
-    String url = "http://192.168.0.126:8080/Demo/LoginServlet";
-    TaskConstract.View fragmentView;
+    WeatherContract.View fragmentView;
 
-    public HomePresenter(TaskConstract.View fragment) {
+    public WeatherPresenter(WeatherContract.View fragment) {
         this.fragmentView = fragment;
         fragment.setPresenter(this);
     }
@@ -28,20 +28,19 @@ public class HomePresenter implements TaskConstract.Presenter {
     public void start() {
     }
 
-    @Override
-    public void getTask() {
-        fragmentView.requestTask();
-    }
 
     @Override
-    public void okhttpGet() {
+    public void okHttpGet() {
         Map<String, String> map = new HashMap<>();
-        map.put("un", "zh");
-        map.put("pwd", "123456");
-        OkHttpHelper.getIntance().get(url, map, new GsonResponseHandler<LoginB>() {
+//        map.put("un", "zh");
+//        map.put("pwd", "123456");
+        map.put("city", "CN101210101");
+        map.put("key", "87417128802d429091782a8bc733ac5d");
+        OkHttpHelper.getIntance().get(Constants.URL, map, new GsonResponseHandler<HeWeather>() {
             @Override
-            public void onSuccess(int statusCode, LoginB response) {
-                MLog.i(TAG,response.getData().get(0).getName()+"名字  得到");
+            public void onSuccess(int statusCode, HeWeather response) {
+                MLog.i(TAG, "名字  得到");
+                fragmentView.showWeather(response);
             }
 
             @Override

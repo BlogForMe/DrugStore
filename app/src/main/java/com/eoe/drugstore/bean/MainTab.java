@@ -3,9 +3,9 @@ package com.eoe.drugstore.bean;
 
 import com.eoe.drugstore.R;
 import com.eoe.drugstore.fragment.ServiceFragment;
-import com.eoe.drugstore.fragment.HomeFragment;
 import com.eoe.drugstore.fragment.MineFragment;
 import com.eoe.drugstore.fragment.ShopCartFragment;
+import com.eoe.drugstore.fragment.WeatherFragment;
 
 /**
  * Tab设置
@@ -13,7 +13,7 @@ import com.eoe.drugstore.fragment.ShopCartFragment;
 public enum MainTab {
 
     NEWS(0, R.string.main_tab_name_home, R.drawable.tab_home,
-            HomeFragment.class),
+            WeatherFragment.class),
     COMMUNITY(1, R.string.main_tab_name_community, R.drawable.tab_community, ServiceFragment.class),
     SHOP(0, R.string.main_tab_name_shop, R.drawable.tab_shop, ShopCartFragment.class),
     MINE(0, R.string.main_tab_name_mine, R.drawable.tab_mine, MineFragment.class);

@@ -22,3 +22,12 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext{
+    //Sdk and tools
+
+
+    //App dependencies
+    supportLibraryVersion = "26.0.0-alpha1"
+
+}
