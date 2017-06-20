@@ -13,7 +13,7 @@ public abstract class GsonResponseHandler<T> implements IResponseHandler {
     Type mType;
 
     public GsonResponseHandler() {
-        Type myClass = getClass().getGenericSuperclass();
+        Type myClass = getClass().getGenericSuperclass();//获取父类的class对象
         if (myClass instanceof Class) {
             throw new RuntimeException("Missing type parameter");
         }
