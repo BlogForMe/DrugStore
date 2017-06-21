@@ -66,8 +66,8 @@ public class RecyclerWeatherAdapter extends RecyclerView.Adapter<RecyclerWeather
         MLog.d("RecyclerWeatherAdapter", "Element " + position + "set.");
         viewHolder.getTextData().setText(dailyList.get(position).getDate());
         viewHolder.getTextd().setText(dailyList.get(position).getCond().getTxt_d());
-        viewHolder.getTextn().setText(dailyList.get(position).getCond().getCode_n());
-        viewHolder.getTextn().setText(dailyList.get(position).getTmp().getMin() + " ~~~ " + dailyList.get(position).getTmp().getMax());
+        viewHolder.getTextn().setText(dailyList.get(position).getCond().getTxt_n());
+        viewHolder.getTexttmp().setText(dailyList.get(position).getTmp().getMin() + " ~~~ " + dailyList.get(position).getTmp().getMax());
 
     }
 
