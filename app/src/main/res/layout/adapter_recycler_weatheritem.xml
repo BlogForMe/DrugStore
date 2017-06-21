@@ -2,12 +2,36 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="10dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="10dp">
 
     <TextView
-        android:id="@+id/tv_text"
-        android:layout_width="wrap_content"
+        android:id="@+id/tv_date"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="数据"/>
+        android:text="日期" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_txt_d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="天气" />
+
+        <TextView
+            android:id="@+id/tv_txt_n"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="天气" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_tmp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="日期" />
 </LinearLayout>

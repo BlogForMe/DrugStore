@@ -2,6 +2,7 @@ package com.eoe.drugstore.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -15,6 +16,7 @@ import com.eoe.drugstore.bean.HeWeather;
 import com.eoe.drugstore.tasks.WeatherContract;
 import com.eoe.drugstore.tasks.WeatherPresenter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -22,13 +24,21 @@ import java.util.List;
  * 首页
  * Created by Administrator on 2016/3/2.
  * <p>
+ * 官网demo
  * https://github.com/googlesamples/android-RecyclerView
+ * <p>
+ * blog :
+ * http://blog.csdn.net/leejizhou/article/details/51179233
  */
 public class WeatherFragment extends Fragment implements WeatherContract.View {
     WeatherContract.Presenter homePresenter;
     public final String TAG = getClass().getSimpleName();
     private RecyclerView recyclerView;
     protected RecyclerView.LayoutManager mLayoutManager;
+    private List<HeWeather.HeWeather5Bean.DailyForecastBean> dailyList = new ArrayList<>();//recyclerView上的数据
+    private RecyclerWeatherAdapter mRecyclerAdapter;
+
+    private static final int SPAN_COUNT = 2, DATASET_COUNT = 60;
 
     private enum LayoutManagerType {
         GRID_LAYOUT_MANAGER,
@@ -46,18 +56,27 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
     }
 
     protected void setupView(View v) {
-//        v.findViewById(R.id.bt_post_weather).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                homePresenter.okHttpGet();
-//            }
-//        });
-
         homePresenter.okHttpGet();
+
+        //样式选择按钮
+        v.findViewById(R.id.linear_layout_rb).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setRecyclerViewLayoutManager(LayoutManagerType.LINEAR_LAYOUT_MANAGER);
+            }
+        });
+        v.findViewById(R.id.grid_layout_rb).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setRecyclerViewLayoutManager(LayoutManagerType.GRID_LAYOUT_MANAGER);
+            }
+        });
+
         recyclerView = (RecyclerView) v.findViewById(R.id.recycler_view);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mCurrentLayoutManagerType = LayoutManagerType.LINEAR_LAYOUT_MANAGER;
         setRecyclerViewLayoutManager(mCurrentLayoutManagerType);
+
     }
 
     private void setRecyclerViewLayoutManager(LayoutManagerType layoutMangerType) {
@@ -66,10 +85,12 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
             scrollPosition = ((LinearLayoutManager) recyclerView.getLayoutManager()).findFirstCompletelyVisibleItemPosition();
         }
         switch (layoutMangerType) {
-            case LINEAR_LAYOUT_MANAGER:
-                mLayoutManager = new LinearLayoutManager(getActivity());
+            case GRID_LAYOUT_MANAGER:
+                mLayoutManager = new GridLayoutManager(getActivity(), SPAN_COUNT);
                 mCurrentLayoutManagerType = LayoutManagerType.LINEAR_LAYOUT_MANAGER;
                 break;
+            case LINEAR_LAYOUT_MANAGER:
+                mLayoutManager = new LinearLayoutManager(getActivity());
             default:
                 mLayoutManager = new LinearLayoutManager(getActivity());
                 mCurrentLayoutManagerType = LayoutManagerType.LINEAR_LAYOUT_MANAGER;
@@ -87,8 +108,10 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
     @Override
     public void showWeather(HeWeather reponseHe) {
         Log.i(TAG, reponseHe.getHeWeather5().get(0).getBasic().getCity());
+        dailyList = reponseHe.getHeWeather5().get(0).getDaily_forecast();
+//        mRecyclerAdapter.notifyDataSetChanged();
+        recyclerView.setAdapter(mRecyclerAdapter = new RecyclerWeatherAdapter(dailyList));
 
-        List<HeWeather.HeWeather5Bean.DailyForecastBean> dailyList = reponseHe.getHeWeather5().get(0).getDaily_forecast();
-        recyclerView.setAdapter(new RecyclerWeatherAdapter(dailyList));
+
     }
 }

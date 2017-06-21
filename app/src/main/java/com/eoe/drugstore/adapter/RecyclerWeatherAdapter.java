@@ -25,16 +25,32 @@ public class RecyclerWeatherAdapter extends RecyclerView.Adapter<RecyclerWeather
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private final TextView textView;
+        private final TextView textData, tv_txtd, tv_txtn, tv_tmp;
 
         public ViewHolder(View v) {
             super(v);
-            textView = v.findViewById(R.id.tv_text);
+            textData = v.findViewById(R.id.tv_date);
+            tv_txtd = v.findViewById(R.id.tv_txt_d);
+            tv_txtn = v.findViewById(R.id.tv_txt_n);
+            tv_tmp = v.findViewById(R.id.tv_tmp);
         }
 
-        public TextView getTextView() {
-            return textView;
+        public TextView getTextData() {
+            return textData;
         }
+
+        public TextView getTextd() {
+            return tv_txtd;
+        }
+
+        public TextView getTextn() {
+            return tv_txtn;
+        }
+
+        public TextView getTexttmp() {
+            return tv_tmp;
+        }
+
 
     }
 
@@ -48,7 +64,11 @@ public class RecyclerWeatherAdapter extends RecyclerView.Adapter<RecyclerWeather
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
         MLog.d("RecyclerWeatherAdapter", "Element " + position + "set.");
-        viewHolder.getTextView().setText(dailyList.get(position).getCond().getTxt_n());
+        viewHolder.getTextData().setText(dailyList.get(position).getDate());
+        viewHolder.getTextd().setText(dailyList.get(position).getCond().getTxt_d());
+        viewHolder.getTextn().setText(dailyList.get(position).getCond().getCode_n());
+        viewHolder.getTextn().setText(dailyList.get(position).getTmp().getMin() + " ~~~ " + dailyList.get(position).getTmp().getMax());
+
     }
 
     @Override
