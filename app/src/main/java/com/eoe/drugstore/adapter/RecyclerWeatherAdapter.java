@@ -1,5 +1,6 @@
 package com.eoe.drugstore.adapter;
 
+import android.support.v4.util.Preconditions;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,13 +16,28 @@ import java.util.List;
 
 /**
  * Created by Administrator on 2017/6/21.
+ * 和风天气  数据适配
  */
 
 public class RecyclerWeatherAdapter extends RecyclerView.Adapter<RecyclerWeatherAdapter.ViewHolder> {
     List<HeWeather.HeWeather5Bean.DailyForecastBean> dailyList;
 
     public RecyclerWeatherAdapter(List<HeWeather.HeWeather5Bean.DailyForecastBean> dailyList) {
-        this.dailyList = dailyList;
+        setList(dailyList);
+    }
+
+    /**
+     * 更新数据
+     *
+     * @param dList
+     */
+    public void replaceData(List<HeWeather.HeWeather5Bean.DailyForecastBean> dList) {
+        setList(dList);
+        notifyDataSetChanged();
+    }
+
+    private void setList(List<HeWeather.HeWeather5Bean.DailyForecastBean> dList) {
+        this.dailyList = Preconditions.checkNotNull(dList);
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -68,7 +84,6 @@ public class RecyclerWeatherAdapter extends RecyclerView.Adapter<RecyclerWeather
         viewHolder.getTextd().setText(dailyList.get(position).getCond().getTxt_d());
         viewHolder.getTextn().setText(dailyList.get(position).getCond().getTxt_n());
         viewHolder.getTexttmp().setText(dailyList.get(position).getTmp().getMin() + " ~~~ " + dailyList.get(position).getTmp().getMax());
-
     }
 
     @Override

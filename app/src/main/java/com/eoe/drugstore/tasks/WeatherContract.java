@@ -15,6 +15,8 @@ public interface WeatherContract {
 
     interface Presenter extends BasePresenter {
         void okHttpGet();
+
+        void getOpenWeather();
     }
 
 }

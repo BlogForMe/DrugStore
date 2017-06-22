@@ -5,18 +5,16 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.eoe.drugstore.R;
 import com.eoe.drugstore.adapter.RecyclerWeatherAdapter;
 import com.eoe.drugstore.bean.HeWeather;
 import com.eoe.drugstore.tasks.WeatherContract;
 import com.eoe.drugstore.tasks.WeatherPresenter;
-
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 
@@ -35,7 +33,7 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
     public final String TAG = getClass().getSimpleName();
     private RecyclerView recyclerView;
     protected RecyclerView.LayoutManager mLayoutManager;
-    private List<HeWeather.HeWeather5Bean.DailyForecastBean> dailyList = new ArrayList<>();//recyclerView上的数据
+    private List<HeWeather.HeWeather5Bean.DailyForecastBean> dailyList = new ArrayList<>(0);//recyclerView上的数据
     private RecyclerWeatherAdapter mRecyclerAdapter;
 
     private static final int SPAN_COUNT = 2, DATASET_COUNT = 60;
@@ -47,6 +45,8 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
 
     protected LayoutManagerType mCurrentLayoutManagerType;
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, null);
@@ -56,8 +56,6 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
     }
 
     protected void setupView(View v) {
-        homePresenter.okHttpGet();
-
         //样式选择按钮
         v.findViewById(R.id.linear_layout_rb).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,10 +74,12 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
         mLayoutManager = new LinearLayoutManager(getActivity());
         mCurrentLayoutManagerType = LayoutManagerType.LINEAR_LAYOUT_MANAGER;
         setRecyclerViewLayoutManager(mCurrentLayoutManagerType);
-
+        mRecyclerAdapter = new RecyclerWeatherAdapter(dailyList);
+        recyclerView.setAdapter(mRecyclerAdapter);
     }
 
     private void setRecyclerViewLayoutManager(LayoutManagerType layoutMangerType) {
+        homePresenter.okHttpGet();
         int scrollPosition = 0;
         if (recyclerView.getLayoutManager() != null) {
             scrollPosition = ((LinearLayoutManager) recyclerView.getLayoutManager()).findFirstCompletelyVisibleItemPosition();
@@ -107,11 +107,7 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
 
     @Override
     public void showWeather(HeWeather reponseHe) {
-        Log.i(TAG, reponseHe.getHeWeather5().get(0).getBasic().getCity());
         dailyList = reponseHe.getHeWeather5().get(0).getDaily_forecast();
-//        mRecyclerAdapter.notifyDataSetChanged();
-        recyclerView.setAdapter(mRecyclerAdapter = new RecyclerWeatherAdapter(dailyList));
-
-
+        mRecyclerAdapter.replaceData(dailyList);
     }
 }

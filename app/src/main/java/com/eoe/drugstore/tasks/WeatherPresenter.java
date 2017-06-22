@@ -55,6 +55,13 @@ public class WeatherPresenter implements WeatherContract.Presenter {
         });
     }
 
+    @Override
+    public void getOpenWeather() {
+//        OkHttpHelper.getIntance().get(Constants.URL, map, new GsonResponseHandler<>() {
+//        })
+
+    }
+
 
 }
 
