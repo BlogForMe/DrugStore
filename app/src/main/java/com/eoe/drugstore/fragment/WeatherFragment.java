@@ -67,6 +67,7 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
             @Override
             public void onClick(View view) {
                 setRecyclerViewLayoutManager(LayoutManagerType.GRID_LAYOUT_MANAGER);
+                homePresenter.getOpenWeather();
             }
         });
 
@@ -79,7 +80,8 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
     }
 
     private void setRecyclerViewLayoutManager(LayoutManagerType layoutMangerType) {
-        homePresenter.okHttpGet();
+//        homePresenter.okHttpGet();
+
         int scrollPosition = 0;
         if (recyclerView.getLayoutManager() != null) {
             scrollPosition = ((LinearLayoutManager) recyclerView.getLayoutManager()).findFirstCompletelyVisibleItemPosition();
