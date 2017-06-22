@@ -1,6 +1,7 @@
 package com.eoe.drugstore.tasks;
 
 import com.eoe.drugstore.bean.HeWeather;
+import com.eoe.drugstore.bean.OpenWeather;
 
 /**
  * Created by Administrator on 2017/6/14.
@@ -10,6 +11,8 @@ import com.eoe.drugstore.bean.HeWeather;
 public interface WeatherContract {
     interface View extends BaseView<Presenter> {
         void showWeather(HeWeather responseHe);
+
+        void showOpenWeather(OpenWeather reponseOpen);
     }
 
 

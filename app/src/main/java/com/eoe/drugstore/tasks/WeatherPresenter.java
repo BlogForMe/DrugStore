@@ -2,6 +2,7 @@ package com.eoe.drugstore.tasks;
 
 
 import com.eoe.drugstore.bean.HeWeather;
+import com.eoe.drugstore.bean.OpenWeather;
 import com.eoe.drugstore.net.GsonResponseHandler;
 import com.eoe.drugstore.net.OkHttpHelper;
 import com.eoe.drugstore.utils.Constants;
@@ -21,7 +22,7 @@ public class WeatherPresenter implements WeatherContract.Presenter {
 
     public WeatherPresenter(WeatherContract.View fragment) {
         this.fragmentView = fragment;
-        fragment.setPresenter(this);
+//        fragment.setPresenter(this);
     }
 
     @Override
@@ -39,7 +40,6 @@ public class WeatherPresenter implements WeatherContract.Presenter {
         OkHttpHelper.getIntance().get(Constants.URL, map, new GsonResponseHandler<HeWeather>() {
             @Override
             public void onSuccess(int statusCode, HeWeather response) {
-                MLog.i(TAG, "名字  得到");
                 fragmentView.showWeather(response);
             }
 
@@ -57,8 +57,26 @@ public class WeatherPresenter implements WeatherContract.Presenter {
 
     @Override
     public void getOpenWeather() {
-//        OkHttpHelper.getIntance().get(Constants.URL, map, new GsonResponseHandler<>() {
-//        })
+        Map<String, String> map = new HashMap<>();
+        map.put("id", Constants.id);
+        map.put("APPID", Constants.KeyOpenWeather);
+        OkHttpHelper.getIntance().get(Constants.OPENURL, map, new GsonResponseHandler<OpenWeather>() {
+            @Override
+            public void onSuccess(int statusCode, OpenWeather response) {
+                MLog.i(TAG, "名字  得到");
+                fragmentView.showOpenWeather(response);
+            }
+
+            @Override
+            public void onFailure(int statusCode, String error_msg) {
+
+            }
+
+            @Override
+            public void onProgress(long currentBytes, long totalBytes) {
+
+            }
+        });
 
     }
 
