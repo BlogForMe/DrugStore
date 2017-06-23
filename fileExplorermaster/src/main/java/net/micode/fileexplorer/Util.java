@@ -384,8 +384,8 @@ public class Util {
             intent = new Intent(context, FileViewActivity.class);
         }
         PendingIntent contentIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_ONE_SHOT);
-        notification.setLatestEventInfo(context, title, body, contentIntent);
-        manager.notify(drawableId, notification);
+//  报错注释      notification.setLatestEventInfo(context, title, body, contentIntent);
+//        manager.notify(drawableId, notification);
     }
 
     public static String formatDateString(Context context, long time) {
