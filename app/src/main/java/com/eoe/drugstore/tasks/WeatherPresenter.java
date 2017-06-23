@@ -20,10 +20,9 @@ public class WeatherPresenter implements WeatherContract.Presenter {
     public static final String TAG = "HomePresenter";
     WeatherContract.View fragmentView;
 
-
     public WeatherPresenter(WeatherContract.View fragment) {
         this.fragmentView = fragment;
-        fragment.setPresenter(this);
+//        fragment.setPresenter(this);
     }
 
     @Override
@@ -36,7 +35,8 @@ public class WeatherPresenter implements WeatherContract.Presenter {
         Map<String, String> map = new HashMap<>();
 //        map.put("un", "zh");
 //        map.put("pwd", "123456");
-
+        map.put("city", "CN101210101");
+        map.put("key", "87417128802d429091782a8bc733ac5d");
         OkHttpHelper.getIntance().get(Constants.URL, map, new GsonResponseHandler<HeWeather>() {
             @Override
             public void onSuccess(int statusCode, HeWeather response) {
@@ -58,12 +58,13 @@ public class WeatherPresenter implements WeatherContract.Presenter {
     @Override
     public void getOpenWeather() {
         Map<String, String> map = new HashMap<>();
-        map.put("id", Constants.OpenCityId);
+        map.put("id", Constants.id);
         map.put("APPID", Constants.KeyOpenWeather);
-        OkHttpHelper.getIntance().get(Constants.HEURL, map, new GsonResponseHandler<OpenWeather>() {
+        OkHttpHelper.getIntance().get(Constants.OPENURL, map, new GsonResponseHandler<OpenWeather>() {
             @Override
             public void onSuccess(int statusCode, OpenWeather response) {
                 MLog.i(TAG, "名字  得到");
+                fragmentView.showOpenWeather(response);
             }
 
             @Override

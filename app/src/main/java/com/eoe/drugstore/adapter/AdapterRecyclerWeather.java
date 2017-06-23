@@ -19,10 +19,10 @@ import java.util.List;
  * 和风天气  数据适配
  */
 
-public class RecyclerWeatherAdapter extends RecyclerView.Adapter<RecyclerWeatherAdapter.ViewHolder> {
+public class AdapterRecyclerWeather extends RecyclerView.Adapter<AdapterRecyclerWeather.ViewHolder> {
     List<HeWeather.HeWeather5Bean.DailyForecastBean> dailyList;
 
-    public RecyclerWeatherAdapter(List<HeWeather.HeWeather5Bean.DailyForecastBean> dailyList) {
+    public AdapterRecyclerWeather(List<HeWeather.HeWeather5Bean.DailyForecastBean> dailyList) {
         setList(dailyList);
     }
 
