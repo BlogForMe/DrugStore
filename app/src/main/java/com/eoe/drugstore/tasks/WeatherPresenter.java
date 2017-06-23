@@ -58,9 +58,9 @@ public class WeatherPresenter implements WeatherContract.Presenter {
     @Override
     public void getOpenWeather() {
         Map<String, String> map = new HashMap<>();
-        map.put("id", Constants.id);
+        map.put("id", Constants.OpenCityId);
         map.put("APPID", Constants.KeyOpenWeather);
-        OkHttpHelper.getIntance().get(Constants.OPENURL, map, new GsonResponseHandler<OpenWeather>() {
+        OkHttpHelper.getIntance().get(Constants.OpenURL, map, new GsonResponseHandler<OpenWeather>() {
             @Override
             public void onSuccess(int statusCode, OpenWeather response) {
                 MLog.i(TAG, "名字  得到");

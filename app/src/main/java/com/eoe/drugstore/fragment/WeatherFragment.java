@@ -16,7 +16,6 @@ import com.eoe.drugstore.bean.HeWeather;
 import com.eoe.drugstore.bean.OpenWeather;
 import com.eoe.drugstore.tasks.WeatherContract;
 import com.eoe.drugstore.tasks.WeatherPresenter;
-import com.eoe.drugstore.utils.MLog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +39,7 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
     private List<HeWeather.HeWeather5Bean.DailyForecastBean> dailyList = new ArrayList<>(0);//recyclerView上的数据
     private List<OpenWeather.ListBean> openList = new ArrayList<>(0);
     private AdapterRecyclerWeather mRecyclerAdapter;
-    private AdapterRecyclerOpenWeather<List<OpenWeather.ListBean>> openReclerAdapter;
+    private AdapterRecyclerOpenWeather<List<OpenWeather.ListBean>> openRecyclerAdapter;
 
     private static final int SPAN_COUNT = 2, DATASET_COUNT = 60;
 
@@ -80,8 +79,10 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
         mLayoutManager = new LinearLayoutManager(getActivity());
         mCurrentLayoutManagerType = LayoutManagerType.LINEAR_LAYOUT_MANAGER;
         setRecyclerViewLayoutManager(mCurrentLayoutManagerType);
-        recyclerView.setAdapter(mRecyclerAdapter = new AdapterRecyclerWeather(dailyList));
-        recyclerView.setAdapter(openReclerAdapter = new AdapterRecyclerOpenWeather<>(openList));
+//        recyclerView.setAdapter(mRecyclerAdapter = new AdapterRecyclerWeather(dailyList));
+        recyclerView.setAdapter(openRecyclerAdapter = new AdapterRecyclerOpenWeather<>(openList));
+
+
     }
 
     private void setRecyclerViewLayoutManager(LayoutManagerType layoutMangerType) {
@@ -118,9 +119,8 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
     }
 
     @Override
-    public void showOpenWeather(OpenWeather reponseOpen) {
-        MLog.i("ttt", "dddd");
-        openList = reponseOpen.getList();
-        openReclerAdapter.replaceData(openList);
+    public void showOpenWeather(OpenWeather responseOpen) {
+        openList = responseOpen.getList();
+        openRecyclerAdapter.replaceData(openList);
     }
 }
