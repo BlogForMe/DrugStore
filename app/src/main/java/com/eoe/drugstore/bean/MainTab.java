@@ -11,12 +11,12 @@ import com.eoe.drugstore.fragment.WeatherFragment;
  * Tab设置
  */
 public enum MainTab {
+    COMMUNITY(0, R.string.main_tab_name_community, R.drawable.tab_community, ServiceFragment.class),
 
-    NEWS(0, R.string.main_tab_name_home, R.drawable.tab_home,
+    NEWS(1, R.string.main_tab_name_home, R.drawable.tab_home,
             WeatherFragment.class),
-    COMMUNITY(1, R.string.main_tab_name_community, R.drawable.tab_community, ServiceFragment.class),
-    SHOP(0, R.string.main_tab_name_shop, R.drawable.tab_shop, ShopCartFragment.class),
-    MINE(0, R.string.main_tab_name_mine, R.drawable.tab_mine, MineFragment.class);
+    SHOP(2, R.string.main_tab_name_shop, R.drawable.tab_shop, ShopCartFragment.class),
+    MINE(3, R.string.main_tab_name_mine, R.drawable.tab_mine, MineFragment.class);
 
     private int idx;
     private int resName;

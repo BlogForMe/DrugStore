@@ -4,12 +4,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <VideoView
+        android:id="@+id/sf_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
 
     <Button
-        android:id="@+id/bt_rx1"
+        android:id="@+id/bt_vedio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Observable管道" />
+        android:text="播放" />
 
 
 </LinearLayout>
