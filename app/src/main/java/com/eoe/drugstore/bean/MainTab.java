@@ -2,16 +2,16 @@ package com.eoe.drugstore.bean;
 
 
 import com.eoe.drugstore.R;
-import com.eoe.drugstore.fragment.ServiceFragment;
 import com.eoe.drugstore.fragment.MineFragment;
 import com.eoe.drugstore.fragment.ShopCartFragment;
+import com.eoe.drugstore.fragment.VideoFragment;
 import com.eoe.drugstore.fragment.WeatherFragment;
 
 /**
  * Tab设置
  */
 public enum MainTab {
-    COMMUNITY(0, R.string.main_tab_name_community, R.drawable.tab_community, ServiceFragment.class),
+    COMMUNITY(0, R.string.main_tab_name_community, R.drawable.tab_community, VideoFragment.class),
 
     NEWS(1, R.string.main_tab_name_home, R.drawable.tab_home,
             WeatherFragment.class),
