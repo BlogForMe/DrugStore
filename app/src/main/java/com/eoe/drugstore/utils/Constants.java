@@ -10,4 +10,7 @@ public class Constants {
     public static String OpenURL = "http://api.openweathermap.org/data/2.5/forecast";
     public static String KeyOpenWeather = "a8a38aa788d08a4fe3256b6c8dfded88";
     public static String OpenCityId = "1808926";
+
+
+    public final static int WRITE_EXTERNAL_STORAGE_REQUEST_CODE = 01;
 }

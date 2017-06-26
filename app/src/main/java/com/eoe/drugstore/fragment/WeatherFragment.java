@@ -60,11 +60,12 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
     }
 
     protected void setupView(View v) {
+        homePresenter.getOpenWeather();
+
         //样式选择按钮
         v.findViewById(R.id.linear_layout_rb).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                homePresenter.getOpenWeather();
                 setRecyclerViewLayoutManager(LayoutManagerType.LINEAR_LAYOUT_MANAGER);
             }
         });
