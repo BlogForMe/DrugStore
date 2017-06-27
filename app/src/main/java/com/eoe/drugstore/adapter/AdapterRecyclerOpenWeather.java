@@ -35,6 +35,7 @@ public class AdapterRecyclerOpenWeather<T extends List<OpenWeather.ListBean>> ex
 
     /**
      * 更新数据
+     *
      * @param openList
      */
     public void replaceData(T openList) {
@@ -68,9 +69,9 @@ public class AdapterRecyclerOpenWeather<T extends List<OpenWeather.ListBean>> ex
 
         public OpenHolder(View v) {
             super(v);
-            tvDtTxt = v.findViewById(R.id.tv_dt_txt);
-            tvWDescription = v.findViewById(R.id.tv_w_description);
-            tvTemp = v.findViewById(R.id.tv_temp);
+            tvDtTxt = (TextView) v.findViewById(R.id.tv_dt_txt);
+            tvWDescription = (TextView) v.findViewById(R.id.tv_w_description);
+            tvTemp = (TextView) v.findViewById(R.id.tv_temp);
         }
 
         public TextView getDtTxt() {
@@ -113,6 +114,6 @@ public class AdapterRecyclerOpenWeather<T extends List<OpenWeather.ListBean>> ex
 
     @Override
     public int getItemCount() {
-        return openList.size()+ITEM_TYPE_HEADER;
+        return openList.size() + ITEM_TYPE_HEADER;
     }
 }

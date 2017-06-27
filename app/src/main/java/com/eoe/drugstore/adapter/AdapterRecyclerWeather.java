@@ -41,14 +41,14 @@ public class AdapterRecyclerWeather extends RecyclerView.Adapter<AdapterRecycler
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private final TextView textData, tv_txtd, tv_txtn, tv_tmp;
+        private  TextView textData, tv_txtd, tv_txtn, tv_tmp;
 
         public ViewHolder(View v) {
             super(v);
-            textData = v.findViewById(R.id.tv_date);
-            tv_txtd = v.findViewById(R.id.tv_txt_d);
-            tv_txtn = v.findViewById(R.id.tv_txt_n);
-            tv_tmp = v.findViewById(R.id.tv_tmp);
+            textData = (TextView) v.findViewById(R.id.tv_date);
+            tv_txtd = (TextView) v.findViewById(R.id.tv_txt_d);
+            tv_txtn = (TextView) v.findViewById(R.id.tv_txt_n);
+            tv_tmp = (TextView) v.findViewById(R.id.tv_tmp);
         }
 
         public TextView getTextData() {
