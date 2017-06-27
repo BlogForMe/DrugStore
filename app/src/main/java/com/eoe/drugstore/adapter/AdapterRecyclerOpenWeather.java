@@ -1,5 +1,6 @@
 package com.eoe.drugstore.adapter;
 
+import android.graphics.Path;
 import android.support.v4.util.Preconditions;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -19,18 +20,21 @@ import java.util.List;
  * OpenWeather适配器
  */
 
-public class AdapterRecyclerOpenWeather<T extends List<OpenWeather.ListBean>> extends RecyclerView.Adapter<AdapterRecyclerOpenWeather.ViewHolder> {
+public class AdapterRecyclerOpenWeather<T extends List<OpenWeather.ListBean>> extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private T openList;
+    public static final int ITEM_TYPE_HEADER = 0;
+    public static final int ITEM_TYPE_CONTENT = 1;
+
+
+    private int mHeaderCount = 1; //头部View个数
 
     public AdapterRecyclerOpenWeather(T openList) {
         setList(openList);
     }
 
-
     /**
      * 更新数据
-     *
      * @param openList
      */
     public void replaceData(T openList) {
@@ -42,10 +46,27 @@ public class AdapterRecyclerOpenWeather<T extends List<OpenWeather.ListBean>> ex
         this.openList = Preconditions.checkNotNull(dList);
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    @Override
+    public int getItemViewType(int position) {
+        if (mHeaderCount != 0 && position < mHeaderCount)
+            return ITEM_TYPE_HEADER;
+        else
+            return ITEM_TYPE_CONTENT;
+    }
+
+    public static class HeHolder extends RecyclerView.ViewHolder {
+
+        public HeHolder(View itemView) {
+            super(itemView);
+        }
+    }
+
+
+    //openWeather
+    public static class OpenHolder extends RecyclerView.ViewHolder {
         private TextView tvDtTxt, tvWDescription, tvTemp;
 
-        public ViewHolder(View v) {
+        public OpenHolder(View v) {
             super(v);
             tvDtTxt = v.findViewById(R.id.tv_dt_txt);
             tvWDescription = v.findViewById(R.id.tv_w_description);
@@ -67,17 +88,22 @@ public class AdapterRecyclerOpenWeather<T extends List<OpenWeather.ListBean>> ex
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_recycler_openw_item, parent, false);
-        return new ViewHolder(v);
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        if (viewType == ITEM_TYPE_HEADER)
+            return new HeHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_header, parent, false));
+        else if (viewType == ITEM_TYPE_CONTENT)
+            return new OpenHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_recycler_openw_item, parent, false));
+        return null;
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         OpenWeather.ListBean opemHolder = openList.get(position);
-        holder.getDtTxt().setText(opemHolder.getDt_txt());
-        holder.getTvTemp().setText(opemHolder.getWeather().get(0).getDescription());
-        holder.getTvWDescription().setText("温度 " + convertTmp(opemHolder.getMain().getTemp_min()));
+        if (holder instanceof OpenHolder) {
+            ((OpenHolder) holder).getDtTxt().setText(opemHolder.getDt_txt());
+            ((OpenHolder) holder).getTvTemp().setText(opemHolder.getWeather().get(0).getDescription());
+            ((OpenHolder) holder).getTvWDescription().setText("温度 " + convertTmp(opemHolder.getMain().getTemp_min()));
+        }
     }
 
     private double convertTmp(double temp_min) {
@@ -87,6 +113,6 @@ public class AdapterRecyclerOpenWeather<T extends List<OpenWeather.ListBean>> ex
 
     @Override
     public int getItemCount() {
-        return openList.size();
+        return openList.size()+ITEM_TYPE_HEADER;
     }
 }

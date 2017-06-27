@@ -3,40 +3,68 @@ package com.eoe.drugstore.fragment;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.MediaController;
-import android.widget.VideoView;
 
 import com.eoe.drugstore.R;
+import com.google.android.exoplayer2.ExoPlayerFactory;
+import com.google.android.exoplayer2.SimpleExoPlayer;
+import com.google.android.exoplayer2.trackselection.AdaptiveTrackSelection;
+import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
+import com.google.android.exoplayer2.trackselection.TrackSelection;
+import com.google.android.exoplayer2.ui.SimpleExoPlayerView;
+import com.google.android.exoplayer2.upstream.BandwidthMeter;
+import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
 
 
 import static com.eoe.drugstore.utils.Constants.WRITE_EXTERNAL_STORAGE_REQUEST_CODE;
 
 /**
  * Created by Administrator on 2016/3/2.
+ * Video play
  */
 public class VideoFragment extends Fragment {
-
-
-    private VideoView vView;
+    Handler mainHandler;
+    private static final DefaultBandwidthMeter BANDWIDTH_METER = new DefaultBandwidthMeter();
+    private SimpleExoPlayer player;
+    private DefaultTrackSelector trackSelector;
+    String vUrl = Environment.getExternalStorageDirectory().getPath() + "/mv.mp4";
+    private SimpleExoPlayerView simpleExoPlayerView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_community, container, false);
-        initView(v);
-        initcheck();
+
+        simpleExoPlayerView= (SimpleExoPlayerView) v.findViewById(R.id.player_view);
+
+        mainHandler = new Handler();
+        permissionCheck();
+        initializePlayer();
         return v;
     }
 
-    private void initcheck() {
+    private void initializePlayer() {
+        boolean needNewPlayer = player == null;
+        if (needNewPlayer) {
+            TrackSelection.Factory adaptiveTrackSelectionFactory = new AdaptiveTrackSelection.Factory(BANDWIDTH_METER);
+            trackSelector = new DefaultTrackSelector(adaptiveTrackSelectionFactory);
+            player = ExoPlayerFactory.newSimpleInstance(getActivity(), trackSelector);
+        }
+
+    }
+
+
+
+    private void permissionCheck() {
+
         if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             // Should we show an explanation?
             if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
@@ -47,30 +75,5 @@ public class VideoFragment extends Fragment {
             }
         }
     }
-
-    private void initView(View v) {
-        final String vUrl = Environment.getExternalStoragePublicDirectory(Environment.MEDIA_MOUNTED_READ_ONLY).getPath() + "/VID_20170529_205108.mp4";
-
-        vView = (VideoView) v.findViewById(R.id.sf_view);
-        vView.setMediaController(new MediaController(getActivity()));
-        vView.setVideoPath(vUrl);
-        vView.setOnCompletionListener(new MyPlayerOnCompletionListener());
-        v.findViewById(R.id.bt_vedio).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                vView.start();
-            }
-
-        });
-    }
-
-    class MyPlayerOnCompletionListener implements MediaPlayer.OnCompletionListener {
-
-        @Override
-        public void onCompletion(MediaPlayer mediaPlayer) {
-
-        }
-    }
-
 
 }

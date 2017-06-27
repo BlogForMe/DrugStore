@@ -4,12 +4,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <VideoView
-        android:id="@+id/sf_view"
+    <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+        android:id="@+id/player_view"
         android:layout_width="match_parent"
-        android:layout_height="200dp" />
+        android:layout_height="match_parent" />
 
-    <Button
+
+    <FrameLayout
         android:id="@+id/bt_vedio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

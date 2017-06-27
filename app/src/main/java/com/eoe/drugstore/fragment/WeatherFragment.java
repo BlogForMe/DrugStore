@@ -35,7 +35,7 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
     WeatherContract.Presenter homePresenter;
     public final String TAG = getClass().getSimpleName();
     private RecyclerView recyclerView;
-    protected RecyclerView.LayoutManager mLayoutManager;
+    protected LinearLayoutManager mLayoutManager;
     private List<HeWeather.HeWeather5Bean.DailyForecastBean> dailyList = new ArrayList<>(0);//recyclerView上的数据
     private List<OpenWeather.ListBean> openList = new ArrayList<>(0);
     private AdapterRecyclerWeather mRecyclerAdapter;
@@ -99,9 +99,12 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
                 break;
             case LINEAR_LAYOUT_MANAGER:
                 mLayoutManager = new LinearLayoutManager(getActivity());
+                mCurrentLayoutManagerType = LayoutManagerType.LINEAR_LAYOUT_MANAGER;
+                break;
             default:
                 mLayoutManager = new LinearLayoutManager(getActivity());
                 mCurrentLayoutManagerType = LayoutManagerType.LINEAR_LAYOUT_MANAGER;
+                break;
         }
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.scrollToPosition(scrollPosition);
