@@ -10,7 +10,6 @@ import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,32 +39,47 @@ import static com.eoe.drugstore.utils.Constants.WRITE_EXTERNAL_STORAGE_REQUEST_C
  * Created by Administrator on 2016/3/2.
  * Video play
  */
-public class VideoFragment extends Fragment {
+public class VideoFragment extends BaseFragment {
+    public static final DefaultBandwidthMeter bandwidthMeter = new DefaultBandwidthMeter();
     Handler mainHandler;
     private SimpleExoPlayer player;
     private DefaultTrackSelector trackSelector;
-    String vUrl = Environment.getExternalStorageDirectory().getPath()  /*+"/mv.mp4"*/+"/xmy.flv";
+//    String vUrl = Environment.getExternalStorageDirectory().getPath()  /*+"/mv.mp4"*/ + "/xmy.flv";
+    String vUrl = "http://107.173.10.164/Demo/evedio/XMYP37.flv";
     private SimpleExoPlayerView simpleExoPlayerView;
-//    Uri mp4VideoUri = Uri.parse("https://storage.googleapis.com/android-tv/Sample%20videos/Demo%20Slam/Google%20Demo%20Slam_%20Hangin'%20with%20the%20Google%20Search%20Bar.mp4");
+    //    Uri mp4VideoUri = Uri.parse("https://storage.googleapis.com/android-tv/Sample%20videos/Demo%20Slam/Google%20Demo%20Slam_%20Hangin'%20with%20the%20Google%20Search%20Bar.mp4");
     Uri mp4VideoUri = Uri.parse(vUrl);
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_community, container, false);
-
         simpleExoPlayerView = (SimpleExoPlayerView) v.findViewById(R.id.player_view);
-
         mainHandler = new Handler();
-        permissionCheck();
-        initializePlayer();
-        playVideo();
+//        permissionCheck();
         return v;
     }
 
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        initializePlayer();
+        playVideo();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        releasePlayer();
+    }
+
+    private void releasePlayer() {
+        player.release();
+    }
+
     private void initializePlayer() {
         //1. 创建一个默认的 TrackSelector
-        DefaultBandwidthMeter bandwidthMeter = new DefaultBandwidthMeter();
+
 
 //        boolean needNewPlayer = player == null;
 //        if (needNewPlayer) {
@@ -84,7 +98,7 @@ public class VideoFragment extends Fragment {
 
     private void playVideo() {
         //测量播放过程中的带宽。 如果不需要，可以为null。
-        DefaultBandwidthMeter bandwidthMeter = new DefaultBandwidthMeter();
+//        DefaultBandwidthMeter bandwidthMeter = new DefaultBandwidthMeter();
         // 生成加载媒体数据的DataSource实例。
         DataSource.Factory dataSourceFactory = new DefaultDataSourceFactory(getActivity()
                 , Util.getUserAgent(getActivity(), "yourApplicatioName"), bandwidthMeter);
