@@ -16,24 +16,26 @@ import com.eoe.drugstore.MyApplication;
 import com.eoe.drugstore.R;
 import com.eoe.drugstore.exoplayer2.EventLogger;
 import com.google.android.exoplayer2.C;
-import com.google.android.exoplayer2.ExoPlaybackException;
-import com.google.android.exoplayer2.ExoPlayer;
+import com.google.android.exoplayer2.DefaultLoadControl;
+import com.google.android.exoplayer2.DefaultRenderersFactory;
 import com.google.android.exoplayer2.ExoPlayerFactory;
-import com.google.android.exoplayer2.PlaybackParameters;
 import com.google.android.exoplayer2.SimpleExoPlayer;
-import com.google.android.exoplayer2.Timeline;
 import com.google.android.exoplayer2.extractor.DefaultExtractorsFactory;
 import com.google.android.exoplayer2.source.ExtractorMediaSource;
 import com.google.android.exoplayer2.source.MediaSource;
-import com.google.android.exoplayer2.source.TrackGroupArray;
+import com.google.android.exoplayer2.source.dash.DashChunkSource;
+import com.google.android.exoplayer2.source.dash.DashMediaSource;
+import com.google.android.exoplayer2.source.dash.DefaultDashChunkSource;
+import com.google.android.exoplayer2.trackselection.AdaptiveTrackSelection;
 import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
-import com.google.android.exoplayer2.trackselection.TrackSelectionArray;
-import com.google.android.exoplayer2.ui.PlaybackControlView;
+import com.google.android.exoplayer2.trackselection.TrackSelection;
 import com.google.android.exoplayer2.ui.SimpleExoPlayerView;
 import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
+import com.google.android.exoplayer2.upstream.DefaultDataSource;
+import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
+import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
 import com.google.android.exoplayer2.util.Util;
-
 
 import static com.eoe.drugstore.utils.Constants.WRITE_EXTERNAL_STORAGE_REQUEST_CODE;
 
@@ -41,8 +43,8 @@ import static com.eoe.drugstore.utils.Constants.WRITE_EXTERNAL_STORAGE_REQUEST_C
  * Created by Administrator on 2016/3/2.
  * Video play
  */
-public class VideoFragment extends BaseFragment implements ExoPlayer.EventListener, PlaybackControlView.VisibilityListener {
-    public static final DefaultBandwidthMeter bandwidthMeter = new DefaultBandwidthMeter();
+public class VideoFragment extends BaseFragment {
+    public static final DefaultBandwidthMeter BANDWIDTH_METER = new DefaultBandwidthMeter();
     private SimpleExoPlayer player;
     //    String vUrl = Environment.getExternalStorageDirectory().getPath()  /*+"/mv.mp4"*/ + "/xmy.flv";
     String vUrl = "http://107.173.10.164/Demo/evedio/XMYP37.flv";
@@ -109,18 +111,32 @@ public class VideoFragment extends BaseFragment implements ExoPlayer.EventListen
     DefaultTrackSelector trackSelector = new DefaultTrackSelector();
 
     private void initializePlayer() {
+        TrackSelection.Factory adaptiveTrackSectionFactory =
+                new AdaptiveTrackSelection.Factory(BANDWIDTH_METER);
+
         //2.创建ExoPlayer
-        player = ExoPlayerFactory.newSimpleInstance(getActivity(), trackSelector);
-        eventLogger = new EventLogger(trackSelector);
+        player = ExoPlayerFactory.newSimpleInstance(
+                new DefaultRenderersFactory(getActivity()),
+                new DefaultTrackSelector(adaptiveTrackSectionFactory),
+                new DefaultLoadControl());
+//        eventLogger = new EventLogger(trackSelector);
         simpleExoPlayerView.setPlayer(player);
-        MediaSource mediaSource = new ExtractorMediaSource(mp4VideoUri, mediaDataSourceFactory, new DefaultExtractorsFactory(),
-                mainHandler, eventLogger);
         player.setPlayWhenReady(true);
-        boolean haveResumePosition = resumePosition != C.INDEX_UNSET;
+//        MediaSource mediaSource = new ExtractorMediaSource(mp4VideoUri, mediaDataSourceFactory, new DefaultExtractorsFactory(),
+//                mainHandler, eventLogger);
+        MediaSource mediaSource = buildMediaSource(mp4VideoUri);
+
+//        boolean haveResumePosition = resumePosition != C.INDEX_UNSET;
 //        if (haveResumePosition) {
 //            player.seekTo(resumeWindow, resumePosition);
 //        }
-        player.prepare(mediaSource, !haveResumePosition, false);
+        player.prepare(mediaSource, false, false);
+    }
+
+    private MediaSource buildMediaSource(Uri uri) {
+        DataSource.Factory dataSourceFactory = new DefaultHttpDataSourceFactory("ua", BANDWIDTH_METER);
+        DashChunkSource.Factory dashChunkSourceFactory = new DefaultDashChunkSource.Factory(dataSourceFactory);
+        return new DashMediaSource(uri, dataSourceFactory, dashChunkSourceFactory, null, null);
     }
 
 
@@ -132,7 +148,7 @@ public class VideoFragment extends BaseFragment implements ExoPlayer.EventListen
      */
     private DataSource.Factory buildDataSourceFactory(boolean useBandwidthMeter) {
         return ((MyApplication) getActivity().getApplication())
-                .buildDataSourceFactory(useBandwidthMeter ? bandwidthMeter : null);
+                .buildDataSourceFactory(useBandwidthMeter ? BANDWIDTH_METER : null);
     }
 
 
@@ -153,50 +169,10 @@ public class VideoFragment extends BaseFragment implements ExoPlayer.EventListen
         }
     }
 
-    @Override
-    public void onTimelineChanged(Timeline timeline, Object manifest) {
-
-    }
-
-    @Override
-    public void onTracksChanged(TrackGroupArray trackGroups, TrackSelectionArray trackSelections) {
-
-    }
-
-    @Override
-    public void onLoadingChanged(boolean isLoading) {
-
-    }
-
-    @Override
-    public void onPlayerStateChanged(boolean playWhenReady, int playbackState) {
-
-    }
-
-    @Override
-    public void onPlayerError(ExoPlaybackException error) {
-
-    }
-
-    @Override
-    public void onPositionDiscontinuity() {
-        updateResumePosition();
-    }
-
-    @Override
-    public void onPlaybackParametersChanged(PlaybackParameters playbackParameters) {
-
-    }
-
     private void updateResumePosition() {
         resumeWindow = player.getCurrentWindowIndex();
         resumePosition = player.isCurrentWindowSeekable() ? Math.max(0, player.getCurrentPosition())
                 : C.TIME_UNSET;
-
     }
 
-    @Override
-    public void onVisibilityChange(int visibility) {
-
-    }
 }

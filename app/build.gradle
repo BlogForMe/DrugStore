@@ -50,9 +50,10 @@ dependencies {
     compile 'com.android.support:cardview-v7:' + supportLibraryVersion
     compile 'com.android.support:recyclerview-v7:' + supportLibraryVersion
 
-    compile 'com.google.android.exoplayer:exoplayer-core:' + exoplayerVersion
-    compile 'com.google.android.exoplayer:exoplayer-dash:' + exoplayerVersion
-    compile 'com.google.android.exoplayer:exoplayer-ui:' + exoplayerVersion
+//    compile 'com.google.android.exoplayer:exoplayer-core:' + exoplayerVersion
+//    compile 'com.google.android.exoplayer:exoplayer-dash:' + exoplayerVersion
+//    compile 'com.google.android.exoplayer:exoplayer-ui:' + exoplayerVersion
+    compile 'com.google.android.exoplayer:exoplayer:' + exoplayerVersion
 
 
     compile fileTree(include: ['*.jar'], dir: 'libs')
