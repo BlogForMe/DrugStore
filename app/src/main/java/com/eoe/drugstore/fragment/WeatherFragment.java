@@ -82,8 +82,6 @@ public class WeatherFragment extends Fragment implements WeatherContract.View {
         setRecyclerViewLayoutManager(mCurrentLayoutManagerType);
 //        recyclerView.setAdapter(mRecyclerAdapter = new AdapterRecyclerWeather(dailyList));
         recyclerView.setAdapter(openRecyclerAdapter = new AdapterRecyclerOpenWeather<>(openList));
-
-
     }
 
     private void setRecyclerViewLayoutManager(LayoutManagerType layoutMangerType) {

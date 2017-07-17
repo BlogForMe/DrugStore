@@ -1,6 +1,5 @@
 package com.eoe.drugstore.adapter;
 
-import android.graphics.Path;
 import android.support.v4.util.Preconditions;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

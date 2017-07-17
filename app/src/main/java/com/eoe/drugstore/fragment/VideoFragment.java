@@ -5,6 +5,7 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -40,10 +41,12 @@ import static com.eoe.drugstore.utils.Constants.WRITE_EXTERNAL_STORAGE_REQUEST_C
 public class VideoFragment extends BaseFragment {
     public static final DefaultBandwidthMeter BANDWIDTH_METER = new DefaultBandwidthMeter();
     private SimpleExoPlayer player;
-    //    String vUrl = "http://107.173.10.164/Demo/evedio/XMYP37.flv";
-    String vUrl = "https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4";
+    String vUrl = "http://covertness.qiniudn.com/android_zaixianyingyinbofangqi_test_baseline.mp4";
+    //    String vUrl = "https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4";
+    private String url = Environment.getExternalStorageDirectory().getPath() + "/xmy60" + "/0037-37.flv";
+
     private SimpleExoPlayerView simpleExoPlayerView;
-    Uri mp4VideoUri = Uri.parse(vUrl);
+    Uri mp4VideoUri = Uri.parse(url);
     String extenstion;
     private DataSource.Factory mediaDataSourceFactory;
     private Handler mainHandler;
@@ -108,14 +111,12 @@ public class VideoFragment extends BaseFragment {
         DefaultTrackSelector trackSelector = new DefaultTrackSelector(videoTrackSectionFactory);
         LoadControl loadControl = new DefaultLoadControl();
         DataSource.Factory dataSourceFactory = buildDataSourceFactory(true);
-
-
         //2.创建ExoPlayer
         MediaSource videoSource = new ExtractorMediaSource(mp4VideoUri,
                 dataSourceFactory, new DefaultExtractorsFactory(), null, null);
 
         player = ExoPlayerFactory.newSimpleInstance(getActivity(), trackSelector, loadControl);
-        eventLogger = new EventLogger(trackSelector);
+//        eventLogger = new EventLogger(trackSelector);
         simpleExoPlayerView.setPlayer(player);
         player.prepare(videoSource);
     }
