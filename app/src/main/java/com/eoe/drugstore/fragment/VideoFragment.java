@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,7 +39,7 @@ import static com.eoe.drugstore.utils.Constants.WRITE_EXTERNAL_STORAGE_REQUEST_C
  * Created by Administrator on 2016/3/2.
  * Video play
  */
-public class VideoFragment extends BaseFragment {
+public class VideoFragment extends Fragment {
     public static final DefaultBandwidthMeter BANDWIDTH_METER = new DefaultBandwidthMeter();
     private SimpleExoPlayer player;
     String vUrl = "http://covertness.qiniudn.com/android_zaixianyingyinbofangqi_test_baseline.mp4";
