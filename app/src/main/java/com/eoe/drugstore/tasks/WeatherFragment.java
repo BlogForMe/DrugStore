@@ -1,4 +1,4 @@
-package com.eoe.drugstore.fragment;
+package com.eoe.drugstore.tasks;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

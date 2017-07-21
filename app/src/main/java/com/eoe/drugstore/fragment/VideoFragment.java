@@ -39,7 +39,7 @@ import static com.eoe.drugstore.utils.Constants.WRITE_EXTERNAL_STORAGE_REQUEST_C
  * Created by Administrator on 2016/3/2.
  * Video play
  */
-public class VideoFragment extends Fragment {
+public class VideoFragment extends Fragment  {
     public static final DefaultBandwidthMeter BANDWIDTH_METER = new DefaultBandwidthMeter();
     private SimpleExoPlayer player;
     String vUrl = "http://covertness.qiniudn.com/android_zaixianyingyinbofangqi_test_baseline.mp4";
@@ -65,6 +65,8 @@ public class VideoFragment extends Fragment {
         clearResumePosition();
         return v;
     }
+
+
 
     private void clearResumePosition() {
         resumeWindow = C.INDEX_UNSET;

@@ -2,10 +2,10 @@ package com.eoe.drugstore.bean;
 
 
 import com.eoe.drugstore.R;
-import com.eoe.drugstore.fragment.BeautyFragment;
+import com.eoe.drugstore.home.BeautyFragment;
 import com.eoe.drugstore.fragment.MineFragment;
 import com.eoe.drugstore.fragment.ShopCartFragment;
-import com.eoe.drugstore.fragment.WeatherFragment;
+import com.eoe.drugstore.tasks.WeatherFragment;
 
 /**
  * Tab设置

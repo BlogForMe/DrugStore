@@ -25,28 +25,39 @@ import okhttp3.Response;
 public class OkHttpHelper {
     private OkHttpClient client;
     private static OkHttpHelper instance;
+    private Context ctx;
 
     public OkHttpHelper() {
         client = new OkHttpClient();
     }
 
-    public static OkHttpHelper getIntance() {
+    public static OkHttpHelper getInstance() {
         if (instance == null)
             instance = new OkHttpHelper();
         return instance;
     }
 
-    /**
-     * get请求
-     *
-     * @param url
-     * @param params
-     * @param responseHandler
-     */
+    public void setContext(Context context) {
+        this.ctx = context;
+    }
+
+    public void get(String url, IResponseHandler responseHandler) {
+        get(url, null, responseHandler);
+    }
+
+
     public void get(final String url, final Map<String, String> params, IResponseHandler responseHandler) {
         get(null, url, params, responseHandler);
     }
 
+    /**
+     * get请求
+     *
+     * @param context
+     * @param url             请求地址
+     * @param params          请求参数
+     * @param responseHandler
+     */
     public void get(Context context, String url, Map<String, String> params, IResponseHandler responseHandler) {
         StringBuilder sbUrl = null;
         if (params != null && params.size() > 0) {
@@ -61,15 +72,20 @@ public class OkHttpHelper {
         }
         Request request;
         //发起request
-        if (context == null && sbUrl != null) {
-            request = new Request.Builder()
-                    .url(sbUrl.toString()).build();
+        if (context == null) {
+            if (sbUrl != null) {
+                request = new Request.Builder()
+                        .url(sbUrl.toString()).build();
+            } else {
+                request = new Request.Builder()
+                        .url(url).build();
+            }
         } else {
             request = new Request.Builder()
                     .url(url)
                     .tag(context).build();
         }
-        client.newCall(request).enqueue(new MyCallback(new Handler(),responseHandler));
+        client.newCall(request).enqueue(new MyCallback(new Handler(), responseHandler));
 
     }
 

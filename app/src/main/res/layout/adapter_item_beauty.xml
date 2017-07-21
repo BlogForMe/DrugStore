@@ -11,20 +11,20 @@
         android:orientation="vertical">
 
         <ImageView
+            android:id="@+id/iv_img_hb"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_k" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/tv_title"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="极限挑战3 独家揭秘" />
+            android:layout_height="wrap_content" />
 
         <TextView
+            android:id="@+id/tv_describe"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="我的前半生" />
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 </FrameLayout>
