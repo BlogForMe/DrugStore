@@ -2,6 +2,7 @@ package com.eoe.drugstore.net;
 
 
 import android.content.Context;
+import android.nfc.Tag;
 import android.os.Handler;
 
 import com.eoe.drugstore.utils.MLog;
@@ -23,6 +24,7 @@ import okhttp3.Response;
  */
 
 public class OkHttpHelper {
+
     private OkHttpClient client;
     private static OkHttpHelper instance;
     private Context ctx;
@@ -86,7 +88,6 @@ public class OkHttpHelper {
                     .tag(context).build();
         }
         client.newCall(request).enqueue(new MyCallback(new Handler(), responseHandler));
-
     }
 
     private class MyCallback implements Callback {

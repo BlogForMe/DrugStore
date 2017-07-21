@@ -11,7 +11,7 @@ import com.eoe.drugstore.utils.MLog;
  */
 
 public class BeautyPresenter implements BeautyContract.Presenter {
-    private String Tag = "HvPresenter";
+    private String TAG = "BeautyPresenter";
     private BeautyContract.View bView;
 
     public BeautyPresenter(BeautyContract.View bView) {
@@ -20,13 +20,13 @@ public class BeautyPresenter implements BeautyContract.Presenter {
 
     @Override
     public void getHvData() {
-        String url = Constants.vmUrl + "HomeRecycler";
+        String url = Constants.vmUrl + "/HomeRecycler";
         OkHttpHelper.getInstance().
                 get(url, new GsonResponseHandler<BeautyRecycler>() {
 
                     @Override
                     public void onSuccess(int statusCode, BeautyRecycler response) {
-                        MLog.i(Tag, "输出  " + statusCode);
+                        MLog.i(TAG, "输出  " + statusCode);
                         if (response.isState()){
                             bView.showRecycler(response.getHmList());
                         }
