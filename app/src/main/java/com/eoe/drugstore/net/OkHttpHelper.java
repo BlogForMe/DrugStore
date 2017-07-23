@@ -24,7 +24,7 @@ import okhttp3.Response;
  */
 
 public class OkHttpHelper {
-
+    private String TAG = "OkHttpHelper";
     private OkHttpClient client;
     private static OkHttpHelper instance;
     private Context ctx;
@@ -87,6 +87,7 @@ public class OkHttpHelper {
                     .url(url)
                     .tag(context).build();
         }
+        MLog.i(TAG, "请求url  " + url);
         client.newCall(request).enqueue(new MyCallback(new Handler(), responseHandler));
     }
 

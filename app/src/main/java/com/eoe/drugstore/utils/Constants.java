@@ -6,7 +6,7 @@ package com.eoe.drugstore.utils;
 
 public class Constants {
     //    String url = "http://192.168.0.126:8080/Demo/LoginServlet";
-    static String ip ="http://192.168.0.126:8080";
+    static String ip ="http://192.168.0.106:8080";
     public static String URL = "https://free-api.heweather.com/v5/forecast";
     public static String OpenURL = "http://api.openweathermap.org/data/2.5/forecast";
     public static String vmUrl= ip+"/VideoServer";
