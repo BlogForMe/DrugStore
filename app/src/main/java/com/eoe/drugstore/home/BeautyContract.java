@@ -12,10 +12,12 @@ import java.util.List;
 
 public class BeautyContract {
     interface View extends BaseView<Presenter> {
+        void setLoadingIndicator(boolean active);
+
         void showRecycler(List<BeautyRecycler.HmListBean> bList);
     }
 
     interface Presenter extends BasePresenter {
-        void getHvData();
+        void loadTasks();
     }
 }

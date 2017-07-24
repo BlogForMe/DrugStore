@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.eoe.drugstore.R;
 import com.eoe.drugstore.bean.BeautyRecycler;
 import com.eoe.drugstore.utils.ImageLoader;
+import com.eoe.drugstore.utils.LoadDialog;
 
 import java.util.List;
 
@@ -33,13 +34,24 @@ public class BeautyFragment extends Fragment implements BeautyContract.View {
     private AdapterBeauty mAapter;
     private BeautyContract.Presenter hvPresenter;
     private RecyclerView mRecycleView;
+    LoadDialog dialog;
+
 
     @Override
     public void setPresenter(BeautyContract.Presenter presenter) {
     }
 
     @Override
+    public void setLoadingIndicator(boolean active) {
+        if (getView() == null) {
+            return;
+        }
+        dialog.show();
+    }
+
+    @Override
     public void showRecycler(List<BeautyRecycler.HmListBean> bList) {
+        dialog.dismiss();
         Log.i("BeautyFragment", "faf" + bList.get(0).getH_describe());
         // LinearLayoutManager is used here, this will layout the elements in a similar fashion
         // to the way ListView would layout elements. The RecyclerView.LayoutManager defines how
@@ -62,6 +74,7 @@ public class BeautyFragment extends Fragment implements BeautyContract.View {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_beauty, null);
         mRecycleView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
+        dialog = new LoadDialog(getActivity(), R.style.LoadDialog);
         return rootView;
     }
 
@@ -73,8 +86,9 @@ public class BeautyFragment extends Fragment implements BeautyContract.View {
 
     protected void initPresenter() {
         hvPresenter = new BeautyPresenter(this);
-        hvPresenter.getHvData();
+        hvPresenter.start();
     }
+
 
     /**
      * Recycler适配器
