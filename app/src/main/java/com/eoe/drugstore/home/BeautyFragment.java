@@ -52,7 +52,6 @@ public class BeautyFragment extends Fragment implements BeautyContract.View {
     @Override
     public void showRecycler(List<BeautyRecycler.HmListBean> bList) {
         dialog.dismiss();
-        Log.i("BeautyFragment", "faf" + bList.get(0).getH_describe());
         // LinearLayoutManager is used here, this will layout the elements in a similar fashion
         // to the way ListView would layout elements. The RecyclerView.LayoutManager defines how
         // elements are laid out.

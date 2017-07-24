@@ -45,7 +45,7 @@ public class BeautyPresenter implements BeautyContract.Presenter {
 
                     @Override
                     public void onSuccess(int statusCode, BeautyRecycler response) {
-                        MLog.i(TAG, "输出  " + statusCode);
+                        MLog.i(TAG, "请求成功  " + statusCode);
                         if (response.isState()) {
                             bTaskView.showRecycler(response.getHmList());
                         }

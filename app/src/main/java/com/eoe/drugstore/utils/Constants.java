@@ -5,7 +5,7 @@ package com.eoe.drugstore.utils;
  */
 
 public class Constants {
-    public static String ip = "http://192.168.0.126:8080/";
+    public static String ip = "http://107.173.10.164:8080/";
     //    static String ip ="http://192.168.0.106:8080";
 //    static String ip ="http://10.0.0.2:8080";
     public static String URL = "https://free-api.heweather.com/v5/forecast";
