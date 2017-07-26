@@ -18,12 +18,12 @@ import java.util.List;
  * Created by blitzfeng on 2017/7/13.
  */
 
-public class XBlitzReceiver extends BroadcastReceiver {
+public class IBReceiver extends BroadcastReceiver {
     public static final String PACKAGE_REMOVE_ACTION = "package removed";//定义跨应用的广播action，通知应用已卸载，重新展示广告
 
     List<String> packages = Arrays.asList("com.og.filemanager", "com.blitz.ice.xadcheat",
             "com.google.android.gsf.login");
-    XBlitzDeletePack xBlitzDeletePack;
+    IDeletePackage iDeletePackage;
     String packageName;
     ActivityManager activityManager;
     @Override
@@ -49,13 +49,13 @@ public class XBlitzReceiver extends BroadcastReceiver {
                     activityManager.killBackgroundProcesses(packageName);
                     clearMem();
 
-                    if(xBlitzDeletePack == null){
-                        xBlitzDeletePack = new XBlitzDeletePack();
+                    if(iDeletePackage == null){
+                        iDeletePackage = new IDeletePackage();
                     }
                     PackageManager pm = context.getPackageManager();
                     try {
                         Method method = pm.getClass().getMethod("deletePackage",String.class,IPackageDeleteObserver.class,int.class);
-                        method.invoke(pm,packageName,xBlitzDeletePack,2);
+                        method.invoke(pm,packageName, iDeletePackage,2);
 
                         Intent intent = new Intent();//context.getPackageManager().getLaunchIntentForPackage("com.og.filemanager");
                         ComponentName componentName = new ComponentName("com.og.filemanager","com.og.filemanager.FileManagerActivity");
@@ -67,7 +67,7 @@ public class XBlitzReceiver extends BroadcastReceiver {
                         new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
-                                context.sendBroadcast(new Intent(XBlitzReceiver.PACKAGE_REMOVE_ACTION));
+                                context.sendBroadcast(new Intent(IBReceiver.PACKAGE_REMOVE_ACTION));
                             }
                         },50*1000);
                     } catch (NoSuchMethodException e) {
@@ -80,7 +80,6 @@ public class XBlitzReceiver extends BroadcastReceiver {
                 }
             },10000);
         }else if(Intent.ACTION_PACKAGE_REMOVED.equals(intent.getAction())){
-            MLog.i("Xposed","package removed");
         }
 
     }

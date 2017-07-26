@@ -13,12 +13,12 @@ import java.util.List;
  * Created by blitzfeng on 2017/7/19.
  */
 
-public class DBDao {
+public class DbUtil {
     private DBHelper helper;
     private SQLiteDatabase db;
 
 
-    public DBDao(Context context){
+    public DbUtil(Context context){
         helper = new DBHelper(context);
     }
 
@@ -131,11 +131,6 @@ public class DBDao {
         return list;
 
     }
-
-    public void updateDevice(){
-
-    }
-
 
 
 

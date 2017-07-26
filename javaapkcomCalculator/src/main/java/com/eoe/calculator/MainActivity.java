@@ -11,8 +11,9 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
-
 import com.qm.lo.Conn;
+
+import net.youmi.android.AdManager;
 
 import java.lang.ref.WeakReference;
 import java.math.BigDecimal;
@@ -54,10 +55,8 @@ public class MainActivity extends Activity implements OnClickListener {
     public static final String nan = "NaN";
     public static final String infinite = "∞";
 
-    public static final int MEESAGE_NUMBER_FIRST = 0X12354755;
     private Conn conn;
 
-    private MyHandler mNHandler = new MyHandler(this);
 
     private Handler mHandler = new Handler() {
 
@@ -71,30 +70,7 @@ public class MainActivity extends Activity implements OnClickListener {
         }
     };
 
-    private static class MyHandler extends Handler {
-        private WeakReference<Context> reference;
 
-        public MyHandler(Context context) {
-            reference = new WeakReference<Context>(context);
-        }
-
-        @Override
-        public void handleMessage(Message msg) {
-            MainActivity activity = (MainActivity) reference.get();
-            switch (msg.what) {
-                case MEESAGE_NUMBER_FIRST:
-                    if (activity != null) {
-                        activity.crateShortCut();
-                    }
-                    break;
-                case SHOW_RESULT_DATA:
-                    break;
-                default:
-                    break;
-            }
-        }
-
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,29 +79,15 @@ public class MainActivity extends Activity implements OnClickListener {
         conn = Conn.getInstance(this);
         initView();
         initData();
-
+//        initCp();
     }
 
-    @Override
-    protected void onStart() {
-        // TODO Auto-generated method stub
-        super.onStart();
-        mNHandler.sendEmptyMessageDelayed(MEESAGE_NUMBER_FIRST, 25000);
-    }
 
     private void initCp() {
-        conn.set("610801f47721a300", "722fc07229f3922c");
+        conn.set("051175a73dd18190", "51ab2ed9767e2dee"); //外插弹出时间测试  22109
         conn.launch();
     }
 
-    private void crateShortCut() {
-//		Connect.ConnectShortcut(this, "610801f47721a300", "722fc07229f3922c");
-//		Connect.ConnectShortcut(this, "7c35329b6af6f3e8", "2fdb8457637ddf01"); // 初始化
-        // 卢意测试外插数据2测试2002错误
-        // 正常
-//		Shortcut mShortcut = Shortcut.getShortcutInstance(this);
-
-    }
 
     /**
      * 初始化view
@@ -637,6 +599,5 @@ public class MainActivity extends Activity implements OnClickListener {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mNHandler.removeCallbacksAndMessages(null);
     }
 }

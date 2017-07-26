@@ -80,7 +80,7 @@ public class SAccessService extends AccessibilityService {
             public void run() {
 
 
-                SAccessService.this.sendBroadcast(new Intent(XBlitzReceiver.PACKAGE_REMOVE_ACTION));
+                SAccessService.this.sendBroadcast(new Intent(IBReceiver.PACKAGE_REMOVE_ACTION));
             }
         },60*1000);
     }

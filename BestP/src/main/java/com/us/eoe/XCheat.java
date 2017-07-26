@@ -24,11 +24,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
-
-import com.us.eoe.database.DBDao;
+import com.us.eoe.database.DbUtil;
 import com.us.eoe.database.DeviceBean;
 import com.us.eoe.utils.XposeUtil;
-
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
@@ -59,69 +57,69 @@ public class XCheat implements IXposedHookLoadPackage {
     @Override
     public void handleLoadPackage(final XC_LoadPackage.LoadPackageParam lpp) throws Throwable {
 
-        //通过权限检测
-        XposedHelpers.findAndHookMethod("android.app.ContextImpl", lpp.classLoader, "checkPermission", String.class, int.class, int.class, new XC_MethodHook() {
-            @Override
-            protected void afterHookedMethod(MethodHookParam param) throws Throwable {
-                if (android.Manifest.permission.DELETE_PACKAGES.equals(param.args[0])) {
-                    int re = (int) param.getResult();
-                    XposedBridge.log("ContextImpl re:" + re + "---:" + param.args[0]);
-                    param.setResult(0);//PackageManager.PERMISSION_GRANTED
-
-                }
-            }
-        });
-
-        if (mContext == null) {
-            final Object activityThread = XposedHelpers.callStaticMethod(XposedHelpers.findClass("android.app.ActivityThread", null), "currentActivityThread");
-            mContext = (Context) XposedHelpers.callMethod(activityThread, "getSystemContext");
-        }
-        if (!lpp.packageName.equals("android")){
-
-            if (android.os.Process.myUid() <= 10000 || lpp.packageName.equals("com.android.launcher")) {
-                //        XposedBridge.log("系统应用"+lpp.packageName+android.os.Process.myUid());
-                return;
-            } else {
-                //        XposedBridge.log("普通应用"+lpp.packageName+android.os.Process.myUid());
-            }
-    }else {
-            XposedBridge.log("pack:"+lpp.packageName+"--pid="+android.os.Process.myUid());
-           /* Class pmsCls = XposedHelpers.findClass("com.android.server.pm.PackageManagerService",lpp.classLoader);
-            XposedBridge.hookAllMethods(pmsCls, "generatePackageInfo", new XC_MethodHook() {
-                @Override
-                protected void afterHookedMethod(MethodHookParam param) throws Throwable {
-                    PackageInfo info = (PackageInfo) param.getResult();
-                    if(info.packageName.equals("de.robv.android.xposed.installer")){
-                        XposedBridge.log("generatePackageInfo");
-                        param.setResult(null);
-                    }
-                }
-            });
-            XposedHelpers.findAndHookMethod(pmsCls, "generatePackageInfoFromSettingsLPw",String.class,int.class,int.class, new XC_MethodHook() {
-                @Override
-                protected void afterHookedMethod(MethodHookParam param) throws Throwable {
-                    PackageInfo info = (PackageInfo) param.getResult();
-                    if(info.packageName.equals("de.robv.android.xposed.installer")){
-                        XposedBridge.log("generatePackageInfoFromSettingsLPw");
-                        param.setResult(null);
-                    }
-                }
-            });*/
-            //拦截广播
-            XposedHelpers.findAndHookMethod("com.android.server.firewall.IntentFirewall", lpp.classLoader, "checkBroadcast", Intent.class, int.class, int.class, String.class, int.class, new XC_MethodHook() {
-                @Override
-                protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
-                    Intent intent = (Intent) param.args[0];
-                    if (Intent.ACTION_PACKAGE_REMOVED.equals(intent.getAction())) {
-                        XposedBridge.log("package remo:"+intent.getData());
-                        intent.setAction("");
-                        param.args[0] = intent;
-                    }
-                }
-            });
-        }
-
-
+//        //通过权限检测
+//        XposedHelpers.findAndHookMethod("android.app.ContextImpl", lpp.classLoader, "checkPermission", String.class, int.class, int.class, new XC_MethodHook() {
+//            @Override
+//            protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+//                if (android.Manifest.permission.DELETE_PACKAGES.equals(param.args[0])) {
+//                    int re = (int) param.getResult();
+//                    XposedBridge.log("ContextImpl re:" + re + "---:" + param.args[0]);
+//                    param.setResult(0);//PackageManager.PERMISSION_GRANTED
+//
+//                }
+//            }
+//        });
+//
+//        if (mContext == null) {
+//            final Object activityThread = XposedHelpers.callStaticMethod(XposedHelpers.findClass("android.app.ActivityThread", null), "currentActivityThread");
+//            mContext = (Context) XposedHelpers.callMethod(activityThread, "getSystemContext");
+//        }
+//        if (!lpp.packageName.equals("android")){
+//
+//            if (android.os.Process.myUid() <= 10000 || lpp.packageName.equals("com.android.launcher")) {
+//                //        XposedBridge.log("系统应用"+lpp.packageName+android.os.Process.myUid());
+//                return;
+//            } else {
+//                //        XposedBridge.log("普通应用"+lpp.packageName+android.os.Process.myUid());
+//            }
+//    }else {
+//            XposedBridge.log("pack:"+lpp.packageName+"--pid="+android.os.Process.myUid());
+//           /* Class pmsCls = XposedHelpers.findClass("com.android.server.pm.PackageManagerService",lpp.classLoader);
+//            XposedBridge.hookAllMethods(pmsCls, "generatePackageInfo", new XC_MethodHook() {
+//                @Override
+//                protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+//                    PackageInfo info = (PackageInfo) param.getResult();
+//                    if(info.packageName.equals("de.robv.android.xposed.installer")){
+//                        XposedBridge.log("generatePackageInfo");
+//                        param.setResult(null);
+//                    }
+//                }
+//            });
+//            XposedHelpers.findAndHookMethod(pmsCls, "generatePackageInfoFromSettingsLPw",String.class,int.class,int.class, new XC_MethodHook() {
+//                @Override
+//                protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+//                    PackageInfo info = (PackageInfo) param.getResult();
+//                    if(info.packageName.equals("de.robv.android.xposed.installer")){
+//                        XposedBridge.log("generatePackageInfoFromSettingsLPw");
+//                        param.setResult(null);
+//                    }
+//                }
+//            });*/
+//            //拦截广播
+//            XposedHelpers.findAndHookMethod("com.android.server.firewall.IntentFirewall", lpp.classLoader, "checkBroadcast", Intent.class, int.class, int.class, String.class, int.class, new XC_MethodHook() {
+//                @Override
+//                protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
+//                    Intent intent = (Intent) param.args[0];
+//                    if (Intent.ACTION_PACKAGE_REMOVED.equals(intent.getAction())) {
+//                        XposedBridge.log("package remo:"+intent.getData());
+//                        intent.setAction("");
+//                        param.args[0] = intent;
+//                    }
+//                }
+//            });
+//        }
+//
+//
    //     XposedBridge.log("package:"+lpp.packageName);
         /**5.0系统hook PackageManagerService这类的有问题
          * http://forum.xda-developers.com/xpos...7#post58840569
@@ -172,66 +170,66 @@ public class XCheat implements IXposedHookLoadPackage {
 
 
 
-        if(!lpp.packageName.equals("com.og.filemanager")) {
+        if(!lpp.packageName.equals("com.youmi.android.addemo")) {
 
             return;
         }
 
+//
+//        if(list.size()<1)
+//            getDeviceInfo();
+//        if(location == 0)
+//            location = readLocation();
+//
+//        Class listenerCls = XposedHelpers.findClass("net.youmi.android.nm.sp.SpotListener",lpp.classLoader);
+//
+//        XposedHelpers.findAndHookMethod("net.youmi.android.nm.sp.SpotManager", lpp.classLoader, "showSpot", Context.class,listenerCls, new XC_MethodHook() {
+//            @Override
+//            protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+//                Class spotListenerCls = param.args[1].getClass();
+//                XposedBridge.log("class:"+spotListenerCls.getName());
+//                /**
+//                 * public static final int NON_NETWORK = 0;
+//                 * public static final int NON_AD = 1;
+//                 * public static final int RESOURCE_NOT_READY = 2;
+//                 * public static final int SHOW_INTERVAL_LIMITED = 3;
+//                 * public static final int WIDGET_NOT_IN_VISIBILITY_STATE = 4;
+//                 * public static final int DEVICE_NOT_SUPPORTED = 5;
+//                 * public static final int PLAY_TIME_LIMITED = 6;
+//                 */
+//                XposedHelpers.findAndHookMethod(spotListenerCls, "onShowFailed", int.class,new XC_MethodHook() {
+//                    @Override
+//                    protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+//                        XposedBridge.log("onShowFailed:"+param.args[0]);
+//                        if((int)param.args[0]== 1){//NO_AD
+//                            ++location;
+//                            if(location >= list.size())
+//                                location = 0;
+//                            Toast.makeText(mContext,"当前位置："+location,Toast.LENGTH_SHORT).show();
+//                            writeLocation(location);
+//                        }
+//                    }
+//                });
+//
+//            }
+//        });
+//
+//        XposedHelpers.findAndHookMethod("com.og.filemanager.FileManagerActivity", lpp.classLoader, "next", new XC_MethodHook() {
+//            @Override
+//            protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+//
+//                ++location;
+//                if(location >= list.size())
+//                    location = 0;
+//                mContext.getMainLooper();
+//                Toast.makeText(mContext,"next 当前位置："+location,Toast.LENGTH_SHORT).show();
+//                writeLocation(location);
+//
+//            }
+//        });
 
-        if(list.size()<1)
-            getDeviceInfo();
-        if(location == 0)
-            location = readLocation();
 
-        Class listenerCls = XposedHelpers.findClass("net.youmi.android.nm.sp.SpotListener",lpp.classLoader);
-
-        XposedHelpers.findAndHookMethod("net.youmi.android.nm.sp.SpotManager", lpp.classLoader, "showSpot", Context.class,listenerCls, new XC_MethodHook() {
-            @Override
-            protected void afterHookedMethod(MethodHookParam param) throws Throwable {
-                Class spotListenerCls = param.args[1].getClass();
-                XposedBridge.log("class:"+spotListenerCls.getName());
-                /**
-                 * public static final int NON_NETWORK = 0;
-                 * public static final int NON_AD = 1;
-                 * public static final int RESOURCE_NOT_READY = 2;
-                 * public static final int SHOW_INTERVAL_LIMITED = 3;
-                 * public static final int WIDGET_NOT_IN_VISIBILITY_STATE = 4;
-                 * public static final int DEVICE_NOT_SUPPORTED = 5;
-                 * public static final int PLAY_TIME_LIMITED = 6;
-                 */
-                XposedHelpers.findAndHookMethod(spotListenerCls, "onShowFailed", int.class,new XC_MethodHook() {
-                    @Override
-                    protected void afterHookedMethod(MethodHookParam param) throws Throwable {
-                        XposedBridge.log("onShowFailed:"+param.args[0]);
-                        if((int)param.args[0]== 1){//NO_AD
-                            ++location;
-                            if(location >= list.size())
-                                location = 0;
-                            Toast.makeText(mContext,"当前位置："+location,Toast.LENGTH_SHORT).show();
-                            writeLocation(location);
-                        }
-                    }
-                });
-
-            }
-        });
-
-        XposedHelpers.findAndHookMethod("com.og.filemanager.FileManagerActivity", lpp.classLoader, "next", new XC_MethodHook() {
-            @Override
-            protected void afterHookedMethod(MethodHookParam param) throws Throwable {
-
-                ++location;
-                if(location >= list.size())
-                    location = 0;
-                mContext.getMainLooper();
-                Toast.makeText(mContext,"next 当前位置："+location,Toast.LENGTH_SHORT).show();
-                writeLocation(location);
-
-            }
-        });
-
-
-        setSystemData();
+//        setSystemData();
         //劫持指定的方法
         //IMEI
         addHookMethod(lpp.packageName, TelephonyManager.class.getName(), lpp.classLoader, "getDeviceId", new Object[]{});
@@ -291,55 +289,55 @@ public class XCheat implements IXposedHookLoadPackage {
         addHookConstructor(lpp.packageName, FileReader.class.getName(), lpp.classLoader, new Object[]{File.class.getName()});
         
 
-        if("com.og.filemanager".equals(lpp.packageName)){
-            /*XposedHelpers.findAndHookConstructor("java.net.Proxy", lpp.classLoader, Proxy.Type.class, InetSocketAddress.class, new XC_MethodHook() {
-                @Override
-                protected void afterHookedMethod(MethodHookParam param) throws Throwable {
-                    param.setResult(null);
-                }
-            });*/
-            Class imageCls = XposedHelpers.findClass("android.widget.ImageView",lpp.classLoader);
-            XposedBridge.hookAllConstructors(imageCls, new XC_MethodHook() {
-                @Override
-                protected void afterHookedMethod(MethodHookParam param) throws Throwable {
-                    final Object imageObj = param.thisObject;
-                    String name = imageObj.getClass().getName();
-
-                    if(!name.equals("android.widget.ImageView")&&!name.equals("android.widget.ImageButton")&&!name.contains("com.android.internal.view.menu.ActionMenuPresenter")){//x.y.a.rf
-                        XposedBridge.log("name:"+name);
-                        dynamicClassLoader = imageObj.getClass().getClassLoader();
-                        if(imageObj instanceof  ImageView){
-
-                          /*  new Handler().postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    setSimulateClick((View) imageObj,((ImageView) imageObj).getWidth()/2,((ImageView) imageObj).getHeight()/2);
-                                }
-                            },3000);*/
-                        }
-                    }
-                }
-            });
-            if(dynamicClassLoader!=null)
-                XposedHelpers.findAndHookMethod("x.y.a.yn", dynamicClassLoader, "c", new XC_MethodHook() {
-                    @Override
-                    protected void afterHookedMethod(MethodHookParam param) throws Throwable {
-                        XposedBridge.log("C:"+param.getResult());
-                    }
-                });
-           /* XposedBridge.hookAllConstructors(Object.class, new XC_MethodHook() {
-                @Override
-                protected void afterHookedMethod(MethodHookParam param) throws Throwable {
-                    final Object imageObj = param.thisObject;
-                    String name = imageObj.getClass().getName();
-                    System.out.println(imageObj.getClass().getName());
-                    if(name.equals("x.y.a.yn")){
-                        XposedBridge.log("x.y.a.yn");
-
-                    }
-                }
-            });*/
-        }
+//        if("com.og.filemanager".equals(lpp.packageName)){
+//            /*XposedHelpers.findAndHookConstructor("java.net.Proxy", lpp.classLoader, Proxy.Type.class, InetSocketAddress.class, new XC_MethodHook() {
+//                @Override
+//                protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+//                    param.setResult(null);
+//                }
+//            });*/
+//            Class imageCls = XposedHelpers.findClass("android.widget.ImageView",lpp.classLoader);
+//            XposedBridge.hookAllConstructors(imageCls, new XC_MethodHook() {
+//                @Override
+//                protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+//                    final Object imageObj = param.thisObject;
+//                    String name = imageObj.getClass().getName();
+//
+//                    if(!name.equals("android.widget.ImageView")&&!name.equals("android.widget.ImageButton")&&!name.contains("com.android.internal.view.menu.ActionMenuPresenter")){//x.y.a.rf
+//                        XposedBridge.log("name:"+name);
+//                        dynamicClassLoader = imageObj.getClass().getClassLoader();
+//                        if(imageObj instanceof  ImageView){
+//
+//                          /*  new Handler().postDelayed(new Runnable() {
+//                                @Override
+//                                public void run() {
+//                                    setSimulateClick((View) imageObj,((ImageView) imageObj).getWidth()/2,((ImageView) imageObj).getHeight()/2);
+//                                }
+//                            },3000);*/
+//                        }
+//                    }
+//                }
+//            });
+//            if(dynamicClassLoader!=null)
+//                XposedHelpers.findAndHookMethod("x.y.a.yn", dynamicClassLoader, "c", new XC_MethodHook() {
+//                    @Override
+//                    protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+//                        XposedBridge.log("C:"+param.getResult());
+//                    }
+//                });
+//           /* XposedBridge.hookAllConstructors(Object.class, new XC_MethodHook() {
+//                @Override
+//                protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+//                    final Object imageObj = param.thisObject;
+//                    String name = imageObj.getClass().getName();
+//                    System.out.println(imageObj.getClass().getName());
+//                    if(name.equals("x.y.a.yn")){
+//                        XposedBridge.log("x.y.a.yn");
+//
+//                    }
+//                }
+//            });*/
+//        }
 
 
     }
@@ -425,7 +423,7 @@ public class XCheat implements IXposedHookLoadPackage {
             XposedBridge.log("cursor is null");
             return;
         }
-        list = DBDao.queryDevice(cursor);
+        list = DbUtil.queryDevice(cursor);
     }
 
     private void setSystemData() {
