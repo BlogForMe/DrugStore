@@ -1,2 +1,1 @@
-include ':app', ':weatherjon', ':BestP'
-include ':javaapkcomCalculator'
+include ':app', ':weatherjon'

@@ -40,6 +40,7 @@ public class BeautyPresenter implements BeautyContract.Presenter {
         }
 
         String url = Constants.vmUrl + "/HomeRecycler";
+//        String url = "https://www.qumi.com/api/vendor/android/transfer?app=%2060b16a926906a09e&ad=18775&imei=866818029419767&clientip=39.176.2.133&callback=http%3a%2f%2fwww.tuiaso.com%2fApp%2f100028.aspx%3fadname%3d%E5%88%A9%E5%BE%97%E5%AE%89%E5%8D%93%26imei%3d866818029419767%26source%3d%E8%B6%A3%E7%B1%B3";
         OkHttpHelper.getInstance().
                 get(url, new GsonResponseHandler<BeautyRecycler>() {
 
