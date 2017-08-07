@@ -33,22 +33,22 @@ public class WeatherPresenter implements WeatherContract.Presenter {
 //        map.put("pwd", "123456");
         map.put("city", "CN101210101");
         map.put("key", "87417128802d429091782a8bc733ac5d");
-        OkHttpHelper.getInstance().get(Constants.URL, map, new GsonResponseHandler<HeWeather>() {
-            @Override
-            public void onSuccess(int statusCode, HeWeather response) {
-                fragmentView.showWeather(response);
-            }
-
-            @Override
-            public void onFailure(int statusCode, String error_msg) {
-
-            }
-
-            @Override
-            public void onProgress(long currentBytes, long totalBytes) {
-
-            }
-        });
+//        OkHttpHelper.getInstance().get(Constants.URL, map, new GsonResponseHandler<HeWeather>() {
+//            @Override
+//            public void onSuccess(int statusCode, HeWeather response) {
+//                fragmentView.showWeather(response);
+//            }
+//
+//            @Override
+//            public void onFailure(int statusCode, String error_msg) {
+//
+//            }
+//
+//            @Override
+//            public void onProgress(long currentBytes, long totalBytes) {
+//
+//            }
+//        });
     }
 
     @Override
@@ -56,23 +56,23 @@ public class WeatherPresenter implements WeatherContract.Presenter {
         Map<String, String> map = new HashMap<>();
         map.put("id", Constants.OpenCityId);
         map.put("APPID", Constants.KeyOpenWeather);
-        OkHttpHelper.getInstance().get(Constants.OpenURL, map, new GsonResponseHandler<OpenWeather>() {
-            @Override
-            public void onSuccess(int statusCode, OpenWeather response) {
-                MLog.i(TAG, "名字  得到");
-                fragmentView.showOpenWeather(response);
-            }
-
-            @Override
-            public void onFailure(int statusCode, String error_msg) {
-
-            }
-
-            @Override
-            public void onProgress(long currentBytes, long totalBytes) {
-
-            }
-        });
+//        OkHttpHelper.getInstance().get(Constants.OpenURL, map, new GsonResponseHandler<OpenWeather>() {
+//            @Override
+//            public void onSuccess(int statusCode, OpenWeather response) {
+//                MLog.i(TAG, "名字  得到");
+//                fragmentView.showOpenWeather(response);
+//            }
+//
+//            @Override
+//            public void onFailure(int statusCode, String error_msg) {
+//
+//            }
+//
+//            @Override
+//            public void onProgress(long currentBytes, long totalBytes) {
+//
+//            }
+//        });
 
     }
 

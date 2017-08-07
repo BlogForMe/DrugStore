@@ -10,7 +10,7 @@ public class Constants {
 //    static String ip ="http://10.0.0.2:8080";
     public static String URL = "https://free-api.heweather.com/v5/forecast";
     public static String OpenURL = "http://api.openweathermap.org/data/2.5/forecast";
-    public static String vmUrl = ip + "/VideoServer";
+    public static String vmUrl = ip + "VideoServer";
     public static String KeyOpenWeather = "a8a38aa788d08a4fe3256b6c8dfded88";
     public static String OpenCityId = "1808926";
 

@@ -7,7 +7,6 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +19,7 @@ import com.eoe.drugstore.utils.ImageLoader;
 import com.eoe.drugstore.utils.LoadDialog;
 
 import java.util.List;
+
 
 /**
  * Created by Administrator on 2017/7/17.
@@ -58,7 +58,6 @@ public class BeautyFragment extends Fragment implements BeautyContract.View {
         mLayoutManager = new GridLayoutManager(getActivity(), SPAN_COUNT);
         mCurrentLayoutManagerType = LayoutManagerType.GRDI_LAYOUT_MANAGER;
         mAapter = new AdapterBeauty(getActivity(), bList);
-
         mRecycleView.setLayoutManager(mLayoutManager);
         mRecycleView.setAdapter(mAapter);
     }
@@ -87,7 +86,6 @@ public class BeautyFragment extends Fragment implements BeautyContract.View {
         hvPresenter = new BeautyPresenter(this);
         hvPresenter.start();
     }
-
 
     /**
      * Recycler适配器
@@ -124,8 +122,6 @@ public class BeautyFragment extends Fragment implements BeautyContract.View {
             public ImageView getImage() {
                 return ivImgHb;
             }
-
-
         }
 
         @Override
