@@ -4,9 +4,11 @@ package com.eoe.drugstore.net;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.nfc.Tag;
 import android.os.Handler;
 
+import com.eoe.drugstore.net.builder.GetBuilder;
+import com.eoe.drugstore.net.callback.ICallback;
+import com.eoe.drugstore.net.request.RequestCall;
 import com.eoe.drugstore.utils.MLog;
 import com.google.gson.Gson;
 
@@ -19,10 +21,11 @@ import okhttp3.Cache;
 import okhttp3.CacheControl;
 import okhttp3.Call;
 import okhttp3.Callback;
-import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+
+import static com.eoe.drugstore.net.callback.ICallback.CALLBACK_DEFAULT;
 
 /**
  * Created by Administrator on 2017/6/20.
@@ -35,6 +38,8 @@ public class OkHttpHelper {
     private OkHttpClient client;
     private static OkHttpHelper instance;
     private Context ctx;
+    public static final long DEFAULT_MILLISECONDS = 10_1000L;
+
     public OkHttpHelper(Context context) {
         this.ctx = context;
         //缓存文件夹
@@ -46,9 +51,32 @@ public class OkHttpHelper {
                 .build();
     }
 
-    public static OkHttpHelper getInstance(Context ctx) {
-        if (instance == null)
-            instance = new OkHttpHelper(ctx);
+    public static OkHttpHelper getInstance() {
+        return initClient(null);
+    }
+
+    public OkHttpClient getOkHttpClient() {
+        return mOkHttpClient;
+    }
+
+    private OkHttpClient mOkHttpClient;
+
+    public OkHttpHelper(OkHttpClient okHttpClient) {
+        if (okHttpClient == null) {
+            mOkHttpClient = new OkHttpClient();
+        } else {
+            mOkHttpClient = okHttpClient;
+        }
+
+    }
+
+    public static OkHttpHelper initClient(OkHttpClient okHttpClient) {
+        if (instance == null) {
+            synchronized (OkHttpHelper.class) {
+                if (instance == null)
+                    instance = new OkHttpHelper(okHttpClient);
+            }
+        }
         return instance;
     }
 
@@ -88,6 +116,7 @@ public class OkHttpHelper {
         client.newCall(request)
                 .enqueue(new MyCallback(new Handler(), responseHandler));
     }
+
 
     private class MyCallback implements Callback {
         private Handler mHandler;
@@ -148,8 +177,36 @@ public class OkHttpHelper {
         return (networkInfo != null && networkInfo.isConnected());
     }
 
+    public static GetBuilder get() {
+        return new GetBuilder();
+    }
 
+    public void execute(final RequestCall requestCall, ICallback iCallback) {
+        if (iCallback == null)
+            iCallback = ICallback.CALLBACK_DEFAULT;
+        final ICallback finalCallback = iCallback;
+        final int id = requestCall.getOkHttpRequest().getId();
+        requestCall.getCall().enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
 
+            }
 
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                try {
+                    Object o = finalCallback.parseNetworkResponse(response, id);
+                    sendSuccessResultCallback(o, finalCallback, id);
+                } catch (Exception e) {
+
+                }
+            }
+        });
+    }
+
+    private void sendSuccessResultCallback(Object o, ICallback callback, int id) {
+        if (callback == null) return;
+
+    }
 
 }
