@@ -5,8 +5,10 @@ import android.util.Log;
 import com.eoe.drugstore.bean.BeautyRecycler;
 import com.eoe.drugstore.net.GsonResponseHandler;
 import com.eoe.drugstore.net.OkHttpHelper;
+import com.eoe.drugstore.net.callback.GenericsCallback;
 import com.eoe.drugstore.net.callback.StringCallback;
 import com.eoe.drugstore.utils.Constants;
+import com.eoe.drugstore.utils.JsonGenericsSerializator;
 import com.eoe.drugstore.utils.MLog;
 
 import okhttp3.Call;
@@ -44,34 +46,67 @@ public class BeautyPresenter implements BeautyContract.Presenter {
 
 
         String url = Constants.vmUrl + "/HomeRecycler";
-//        String url = "https://www.qumi.com/api/vendor/android/transfer?app=%2060b16a926906a09e&ad=18775&imei=866818029419767&clientip=39.176.2.133&callback=http%3a%2f%2fwww.tuiaso.com%2fApp%2f100028.aspx%3fadname%3d%E5%88%A9%E5%BE%97%E5%AE%89%E5%8D%93%26imei%3d866818029419767%26source%3d%E8%B6%A3%E7%B1%B3";
-//        OkHttpHelper.getInstance(bTaskView.getContext()).
-//                get(url, new GsonResponseHandler<BeautyRecycler>() {
+//        String url = "http://www.391k.com/api/xapi.ashx/info.json?key=bd_hyrzjjfb4modhj&size=10&page=1";
+
+//        OkHttpHelper.getInstance().get(bTaskView.getContext(),url, null, new GsonResponseHandler<BeautyRecycler>() {
+//
+//            @Override
+//            public void onSuccess(int statusCode, BeautyRecycler response) {
+//                MLog.i(TAG, "请求成功  " + statusCode);
+//                if (response.isState()) {
+//                    bTaskView.showRecycler(response.getHmList());
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(int statusCode, String error_msg) {
+//
+//            }
+//
+//            @Override
+//            public void onProgress(long currentBytes, long totalBytes) {
+//
+//            }
+//        });
+
+
+        /**
+         * html请求
+         */
+        OkHttpHelper.get()
+                .url(url)
+                .id(100)
+                .build()
+                .execute(new GenericsCallback<BeautyRecycler>(new JsonGenericsSerializator()) {
+                    @Override
+                    public void onError(Call call, Exception e, int id) {
+
+                    }
+
+                    @Override
+                    public void onResponse(BeautyRecycler response, int id) {
+                        if (response.isState()) {
+                            bTaskView.showRecycler(response.getHmList());
+                        }
+                    }
+                });
+//
+//        OkHttpHelper.post()
+//                .url(urll)
+//                .build()
+//                .execute(new GenericsCallback<BeautyRecycler>(new JsonGenericsSerializator()) {
 //
 //                    @Override
-//                    public void onSuccess(int statusCode, BeautyRecycler response) {
-//                        MLog.i(TAG, "请求成功  " + statusCode);
-//                        if (response.isState()) {
-//                            bTaskView.showRecycler(response.getHmList());
-//                        }
+//                    public void onError(Call call, Exception e, int id) {
+//
 //                    }
 //
 //                    @Override
-//                    public void onFailure(int statusCode, String error_msg) {
-//
-//                    }
-//
-//                    @Override
-//                    public void onProgress(long currentBytes, long totalBytes) {
+//                    public void onResponse(BeautyRecycler response, int id) {
 //
 //                    }
 //                });
 
-
-        OkHttpHelper.get()
-                .url(url)
-                .id(100)
-                .build().execute(new MyStringCallback());
 
     }
 

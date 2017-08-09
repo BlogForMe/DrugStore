@@ -7,9 +7,11 @@ import android.net.NetworkInfo;
 import android.os.Handler;
 
 import com.eoe.drugstore.net.builder.GetBuilder;
+import com.eoe.drugstore.net.builder.PostFormBuilder;
 import com.eoe.drugstore.net.callback.ICallback;
 import com.eoe.drugstore.net.request.RequestCall;
 import com.eoe.drugstore.utils.MLog;
+import com.eoe.drugstore.utils.Platform;
 import com.google.gson.Gson;
 
 import java.io.File;
@@ -21,11 +23,11 @@ import okhttp3.Cache;
 import okhttp3.CacheControl;
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-import static com.eoe.drugstore.net.callback.ICallback.CALLBACK_DEFAULT;
 
 /**
  * Created by Administrator on 2017/6/20.
@@ -34,22 +36,12 @@ import static com.eoe.drugstore.net.callback.ICallback.CALLBACK_DEFAULT;
  */
 
 public class OkHttpHelper {
-    private String TAG = "OkHttpHelper";
-    private OkHttpClient client;
+    static String TAG = "OkHttpHelper";
     private static OkHttpHelper instance;
-    private Context ctx;
     public static final long DEFAULT_MILLISECONDS = 10_1000L;
 
-    public OkHttpHelper(Context context) {
-        this.ctx = context;
-        //缓存文件夹
-        File cacheFile = new File(ctx.getExternalCacheDir().toString(), "cache");
-        int cacheSize = 10 * 1024 * 1024;
-        Cache cache = new Cache(cacheFile, cacheSize);
-        client = new OkHttpClient.Builder()
-                .cache(cache)
-                .build();
-    }
+    private Platform mPlatform;
+
 
     public static OkHttpHelper getInstance() {
         return initClient(null);
@@ -67,7 +59,7 @@ public class OkHttpHelper {
         } else {
             mOkHttpClient = okHttpClient;
         }
-
+        mPlatform = Platform.get();
     }
 
     public static OkHttpHelper initClient(OkHttpClient okHttpClient) {
@@ -81,44 +73,86 @@ public class OkHttpHelper {
     }
 
 
-    public void get(String url, IResponseHandler responseHandler) {
-        get(url, null, responseHandler);
+    public static GetBuilder get() {
+        return new GetBuilder();
     }
+
+    public static PostFormBuilder post() {
+        return new PostFormBuilder();
+    }
+
+    public void execute(final RequestCall requestCall, ICallback iCallback) {
+        if (iCallback == null)
+            iCallback = ICallback.CALLBACK_DEFAULT;
+        final ICallback finalCallback = iCallback;
+        final int id = requestCall.getOkHttpRequest().getId();
+        requestCall.getCall().enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                try {
+                    Object o = finalCallback.parseNetworkResponse(response, id);
+                    sendSuccessResultCallback(o, finalCallback, id);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    private void sendSuccessResultCallback(final Object o, final ICallback callback, final int id) {
+        if (callback == null) return;
+        mPlatform.execute(new Runnable() {
+            @Override
+            public void run() {
+                callback.onResponse(o, id);
+//                callback.onA
+            }
+        });
+
+    }
+
 
     /**
-     * get请求
-     *
-     * @param url             请求地址
-     * @param params          请求参数
-     * @param responseHandler
+     * //     * get请求
+     * //     *
+     * //     * @param url             请求地址
+     * //     * @param params          请求参数
+     * //     * @param responseHandler
+     * //
      */
-    public void get(String url, Map<String, String> params, IResponseHandler responseHandler) {
-        StringBuilder paramUrl = new StringBuilder(url);
-        if (params != null && params.size() > 0) {
-            int i = 0;
-            for (Map.Entry<String, String> entry : params.entrySet()) {
-                if (i++ == 0)
-                    paramUrl.append("?").append(entry.getKey()).append("=").append(entry.getValue());
-                else
-                    paramUrl.append("&").append(entry.getKey()).append("=").append(entry.getValue());
-            }
-        }
-        //发起request
-        CacheControl cacheControl = new CacheControl.Builder()
-                .maxAge(60, TimeUnit.SECONDS)
-                .build();
+//    public void get(Context ctx, String url, Map<String, String> params, IResponseHandler responseHandler) {
+//        StringBuilder paramUrl = new StringBuilder(url);
+//        if (params != null && params.size() > 0) {
+//            int i = 0;
+//            for (Map.Entry<String, String> entry : params.entrySet()) {
+//                if (i++ == 0)
+//                    paramUrl.append("?").append(entry.getKey()).append("=").append(entry.getValue());
+//                else
+//                    paramUrl.append("&").append(entry.getKey()).append("=").append(entry.getValue());
+//            }
+//        }
 
-        Request request = new Request.Builder()
-                .url(paramUrl.toString())
-                .cacheControl(cacheControl)
-                .tag(ctx).build();
-        MLog.i(TAG, "请求url  " + url);
-        client.newCall(request)
-                .enqueue(new MyCallback(new Handler(), responseHandler));
-    }
+//        OkHttpClient okHttpClient = new OkHttpClient()
+//                .newBuilder()
+//                .cache(cache)                                   //在Myapplication可以看到
+//                .addNetworkInterceptor(new NewCacheInterceptor())
+//                .build();
+//
+//        Request request = new Request.Builder()
+////                .cacheControl(CacheControl.FORCE_CACHE)
+//                .url(paramUrl.toString())
+//                .build();
+//        okHttpClient.newCall(request)
+//                .enqueue(new MyCallback(new Handler(), responseHandler));
+//    }
 
 
-    private class MyCallback implements Callback {
+    private static class MyCallback implements Callback {
         private Handler mHandler;
         private IResponseHandler mIResponseHandler;
 
@@ -166,47 +200,15 @@ public class OkHttpHelper {
         }
     }
 
+
     /**
      * to use to check for network connectivity.
      *
      * @return
      */
-    private boolean isOnLine() {
+    private boolean isOnLine(Context ctx) {
         ConnectivityManager connectivityManager = (ConnectivityManager) ctx.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
         return (networkInfo != null && networkInfo.isConnected());
     }
-
-    public static GetBuilder get() {
-        return new GetBuilder();
-    }
-
-    public void execute(final RequestCall requestCall, ICallback iCallback) {
-        if (iCallback == null)
-            iCallback = ICallback.CALLBACK_DEFAULT;
-        final ICallback finalCallback = iCallback;
-        final int id = requestCall.getOkHttpRequest().getId();
-        requestCall.getCall().enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-
-            }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                try {
-                    Object o = finalCallback.parseNetworkResponse(response, id);
-                    sendSuccessResultCallback(o, finalCallback, id);
-                } catch (Exception e) {
-
-                }
-            }
-        });
-    }
-
-    private void sendSuccessResultCallback(Object o, ICallback callback, int id) {
-        if (callback == null) return;
-
-    }
-
 }

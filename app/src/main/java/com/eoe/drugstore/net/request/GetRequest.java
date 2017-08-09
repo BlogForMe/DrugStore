@@ -16,8 +16,8 @@ public class GetRequest extends OkHttpRequest {
     }
 
     @Override
-    protected Request buildRequest(RequestBody wrappedRequestBody) {
-        return null;
+    protected Request buildRequest(RequestBody requestBody) {
+        return builder.get().build();
     }
 
     @Override
