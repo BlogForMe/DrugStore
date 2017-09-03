@@ -2,14 +2,13 @@ package com.eoe.drugstore.home;
 
 import android.util.Log;
 
-import com.eoe.drugstore.bean.BeautyRecycler;
-import com.eoe.drugstore.net.GsonResponseHandler;
+import com.eoe.drugstore.bean.Tweet;
 import com.eoe.drugstore.net.OkHttpHelper;
 import com.eoe.drugstore.net.callback.GenericsCallback;
 import com.eoe.drugstore.net.callback.StringCallback;
 import com.eoe.drugstore.utils.Constants;
 import com.eoe.drugstore.utils.JsonGenericsSerializator;
-import com.eoe.drugstore.utils.MLog;
+import com.eoe.drugstore.utils.SharePreferenceHelper;
 
 import okhttp3.Call;
 
@@ -19,11 +18,17 @@ import okhttp3.Call;
  */
 
 public class BeautyPresenter implements BeautyContract.Presenter {
-    private String TAG = "BeautyPresenter";
+    String TAG = "BeautyPresenter";
     private BeautyContract.View bTaskView;
+    SharePreferenceHelper sp = null;
+
+
+    protected static String url = Constants.vmUrl + "/HomeRecycler";
+
 
     public BeautyPresenter(BeautyContract.View bView) {
         this.bTaskView = bView;
+        sp = new SharePreferenceHelper(bView.getContext(), SharePreferenceHelper.SPFILE);
     }
 
     @Override
@@ -44,71 +49,31 @@ public class BeautyPresenter implements BeautyContract.Presenter {
             bTaskView.setLoadingIndicator(true);
         }
 
-
-        String url = Constants.vmUrl + "/HomeRecycler";
-//        String url = "http://www.391k.com/api/xapi.ashx/info.json?key=bd_hyrzjjfb4modhj&size=10&page=1";
-
-//        OkHttpHelper.getInstance().get(bTaskView.getContext(),url, null, new GsonResponseHandler<BeautyRecycler>() {
-//
-//            @Override
-//            public void onSuccess(int statusCode, BeautyRecycler response) {
-//                MLog.i(TAG, "请求成功  " + statusCode);
-//                if (response.isState()) {
-//                    bTaskView.showRecycler(response.getHmList());
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(int statusCode, String error_msg) {
-//
-//            }
-//
-//            @Override
-//            public void onProgress(long currentBytes, long totalBytes) {
-//
-//            }
-//        });
-
+        String token = String.valueOf(sp.<String>get(SharePreferenceHelper.SP_KEY_TOKEN, ""));
+        String newsUrl = "https://www.oschina.net/action/openapi/tweet_list?access_token=" + token;
 
         /**
          * html请求
          */
         OkHttpHelper.get()
-                .url(url)
+                .url(newsUrl)
                 .id(100)
                 .build()
-                .execute(new GenericsCallback<BeautyRecycler>(new JsonGenericsSerializator()) {
+                .execute(new GenericsCallback<Tweet>(new JsonGenericsSerializator()) {
+
                     @Override
                     public void onError(Call call, Exception e, int id) {
 
                     }
 
                     @Override
-                    public void onResponse(BeautyRecycler response, int id) {
-                        if (response.isState()) {
-                            bTaskView.showRecycler(response.getHmList());
-                        }
+                    public void onResponse(Tweet news, int id) {
+                        Log.i(TAG, "D");
                     }
                 });
-//
-//        OkHttpHelper.post()
-//                .url(urll)
-//                .build()
-//                .execute(new GenericsCallback<BeautyRecycler>(new JsonGenericsSerializator()) {
-//
-//                    @Override
-//                    public void onError(Call call, Exception e, int id) {
-//
-//                    }
-//
-//                    @Override
-//                    public void onResponse(BeautyRecycler response, int id) {
-//
-//                    }
-//                });
-
 
     }
+
 
     public class MyStringCallback extends StringCallback {
 

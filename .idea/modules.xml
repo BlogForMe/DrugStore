@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DrugStore.iml" filepath="$PROJECT_DIR$/DrugStore.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaapkcomCalculator/javaapkcomCalculator.iml" filepath="$PROJECT_DIR$/javaapkcomCalculator/javaapkcomCalculator.iml" />
       <module fileurl="file://$PROJECT_DIR$/weatherjon/weatherjon.iml" filepath="$PROJECT_DIR$/weatherjon/weatherjon.iml" />
     </modules>
   </component>

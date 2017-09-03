@@ -1,7 +1,11 @@
 package com.eoe.drugstore.activity;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTabHost;
+import android.support.v4.app.ShareCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -59,6 +63,12 @@ public class MainActivity extends AppCompatActivity {
         text.setText(tab.getResName());
 
         return view;
+    }
+
+
+    public static void goMainActiivty(Activity activity) {
+        Intent intent = new Intent(activity, MainActivity.class);
+        activity.startActivity(intent);
     }
 
 }

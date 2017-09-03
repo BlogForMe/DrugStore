@@ -17,6 +17,7 @@ import com.google.gson.Gson;
 import java.io.File;
 import java.io.IOException;
 import java.util.Map;
+import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.Cache;
@@ -70,6 +71,11 @@ public class OkHttpHelper {
             }
         }
         return instance;
+    }
+
+
+    public Executor getDelivery() {
+        return mPlatform.defaultCallbackExecutor();
     }
 
 
