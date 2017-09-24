@@ -1,8 +1,11 @@
 package com.eoe.drugstore;
 
 import android.content.Context;
+import android.content.Intent;
 import android.webkit.JavascriptInterface;
 import android.widget.Toast;
+
+import com.eoe.drugstore.activity.MainActivity;
 
 /**
  * Created by jon on 17-9-3.
@@ -23,6 +26,8 @@ public class WebAppInterface {
      */
     @JavascriptInterface
     public void showToast(String toast) {
+        Intent intent = new Intent(mContext, MainActivity.class);
+        mContext.startActivity(intent);
         Toast.makeText(mContext, toast, Toast.LENGTH_SHORT).show();
     }
 }

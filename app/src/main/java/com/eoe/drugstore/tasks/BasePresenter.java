@@ -5,5 +5,5 @@ package com.eoe.drugstore.tasks;
  */
 
 public interface BasePresenter {
-    void start();
+    void start(boolean isRefresh);
 }

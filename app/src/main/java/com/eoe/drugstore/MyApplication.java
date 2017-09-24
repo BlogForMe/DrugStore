@@ -1,12 +1,14 @@
 package com.eoe.drugstore;
 
 import android.app.Application;
+import android.content.Context;
 
 import com.eoe.drugstore.net.OkHttpHelper;
 import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
 import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
+import com.google.android.exoplayer2.util.ConditionVariable;
 import com.google.android.exoplayer2.util.Util;
 
 import java.io.File;
@@ -28,12 +30,15 @@ import okhttp3.Response;
 
 public class MyApplication extends Application {
     private String userAgent;
+    static Context appContext;
 
 
     @Override
     public void onCreate() {
         super.onCreate();
         userAgent = Util.getUserAgent(this, "ExoPlayer");
+
+        appContext = getApplicationContext();
 
 //缓存文件夹
         File cacheFile = new File(getExternalCacheDir().toString(), "cache");
@@ -53,6 +58,10 @@ public class MyApplication extends Application {
 //                })
                 .build();
         OkHttpHelper.initClient(okHttpClient);
+    }
+
+    public static synchronized MyApplication context() {
+        return (MyApplication) appContext;
     }
 
     public DataSource.Factory buildDataSourceFactory(DefaultBandwidthMeter bandwidthMeter) {
