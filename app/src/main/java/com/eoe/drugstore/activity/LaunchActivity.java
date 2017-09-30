@@ -1,5 +1,6 @@
 package com.eoe.drugstore.activity;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -60,7 +61,8 @@ public class LaunchActivity extends AppCompatActivity {
         myWebView.addJavascriptInterface(new WebAppInterface(this), "Android");
 
 //        myWebView.loadUrl(oUrl);
-        myWebView.loadUrl("file:///android_asset/java.html");
+//        myWebView.loadUrl("file:///android_asset/java.html");
+        myWebView.loadUrl("file:///android_asset/registration-success.html");
 
     }
 
@@ -89,8 +91,22 @@ public class LaunchActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        String couponId = data.getStringExtra("couponId");
+        System.out.println(couponId);
+    }
+
     public void goMainActivity(View v) {
-        MainActivity.goMainActiivty(this);
+//        MainActivity.goMainActiivty(this);
+
+//        Intent intent = new Intent(this, FisrtActivity.class);
+//        startActivityForResult(intent, 0);
+
+
+        Intent intent = new Intent(this,FisrtActivity.class);
+        startActivityForResult(intent,0);//requestCode=0
     }
 
     private class MyViewClient extends WebViewClient {

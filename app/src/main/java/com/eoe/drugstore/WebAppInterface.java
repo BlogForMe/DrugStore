@@ -2,6 +2,7 @@ package com.eoe.drugstore;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.ParcelUuid;
 import android.webkit.JavascriptInterface;
 import android.widget.Toast;
 
@@ -29,6 +30,11 @@ public class WebAppInterface {
         Intent intent = new Intent(mContext, MainActivity.class);
         mContext.startActivity(intent);
         Toast.makeText(mContext, toast, Toast.LENGTH_SHORT).show();
+    }
+
+    @JavascriptInterface
+    public void jup() {
+        Toast.makeText(mContext, "你好", Toast.LENGTH_SHORT).show();
     }
 }
 
